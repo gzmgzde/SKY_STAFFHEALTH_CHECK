@@ -1,0 +1,84 @@
+body {
+  padding-top: 70px;
+  text-align: center;
+}
+main {
+  margin-top: 200px;
+}
+main .emojis {
+  margin-top: 100px;
+}
+main .progress-container {
+  position: relative;
+  margin: 20px 0;
+  width: 100%;
+  background-color: #e0e0e0;
+  border-radius: 20px;
+  overflow: hidden;
+  height: 20px;
+}
+
+main .progress-bar {
+  height: 100%;
+  width: 0%;
+  background-color: purple;
+  text-align: center;
+  line-height: 20px;
+  color: white;
+  border-radius: 20px;
+  transition: width 0.3s ease-in-out;
+}
+
+#nextQuestionBtn {
+  margin: 0 auto;
+  display: block;
+  padding: 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+#nextQuestionBtn:hover {
+  background-color: #0056b3;
+}
+
+#commentSection {
+  margin-top: 20px;
+}
+
+#commentsList {
+  list-style-type: none;
+  padding: 0;
+}
+
+#commentsList li {
+  background: #f3f3f3;
+  padding: 8px;
+  margin: 5px 0;
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.remove-btn {
+  background-color: red;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+  border-radius: 3px;
+  margin-left: 10px;
+}
+
+.remove-btn:hover {
+  background-color: darkred;
+}
+
+#surveyForm {
+  margin-top: 80px;
+  margin-bottom: 15px;
+}
