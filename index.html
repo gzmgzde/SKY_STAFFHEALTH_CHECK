@@ -1,0 +1,143 @@
+<!doctype html>
+<html>
+    <head>
+        <title> SKYvibe </title>
+        <link rel="stylesheet" type="text/css" href="index.css">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    </head>
+<style>
+    body {
+        background: linear-gradient(to bottom, #85add9,#e9b2b1); 
+    }
+</style>
+
+    <body>
+        <div class="banner">
+            <!-- SKYvibe logo and welcome messsage -->
+            <img src="logo.png" class="logo" alt="SKYvibe logo">
+            <h2 id="welcome"> Empowering teams with seamless Squad Health Checks. Gain insights, track progress, and enhance collaboration effortlessly. </h2> 
+
+            <!-- clouds animation -->
+            <div class="clouds">
+                <img src="cloud1.png" style="--i:1;">
+                <img src="cloud2.png" style="--i:2;">
+                <img src="cloud3.png" style="--i:3;">
+                <img src="cloud4.png" style="--i:4;">
+                <img src="cloud5.png" style="--i:5;">
+                <img src="cloud1.png" style="--i:10;">
+                <img src="cloud2.png" style="--i:9;">
+                <img src="cloud3.png" style="--i:8;">
+                <img src="cloud4.png" style="--i:7;">
+                <img src="cloud5.png" style="--i:6;">
+
+
+            </div>
+        </div>
+
+        <!-- Register and Login buttons -->
+        <section>
+            <button type="button" class="register" data-toggle="modal" data-target="#registerModal">Register</button>
+            <button type="button" class="login" data-toggle="modal" data-target="#loginModal">Login</button>
+        </section>
+
+        <!-- Registration Section -->
+        <section id="registrationSection" class="container">
+            <form id="registrationForm" method="POST" action="register.php">
+                <div class="mb-3">
+                    <label for="name" class="form-label">Name</label>
+                    <input type="text" class="form-control" id="name" required>
+                </div>
+                <div class="mb-3">
+                    <label for="surname" class="form-label">Surname</label>
+                    <input type="text" class="form-control" id="surname" required>
+                </div>
+                <div class="mb-3">
+                    <label for="email" class="form-label">Company Email</label>
+                    <input type="email" class="form-control" id="email" required>
+                </div>
+                <div class="mb-3">
+                    <label for="department" class="form-label">Department</label>
+                    <input type="text" class="form-control" id="department" required>
+                </div>
+                <div class="mb-3">
+                    <label for="staffId" class="form-label">Staff ID</label>
+                    <input type="text" class="form-control" id="staffId" required>
+                </div>
+                <div class="mb-3">
+                    <label for="password" class="form-label">Password</label>
+                    <input type="password" class="form-control" id="password" required 
+                           pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$" 
+                           title="Password must be at least 8 characters long, include one uppercase letter, one lowercase letter, one number, and one special character.">
+                </div>
+                <button type="submit" class="btn btn-primary">Register</button>
+            </form>
+            <div id="registrationResult" class="mt-4"></div>
+        </section>
+         <!-- Login Modal -->
+         <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="loginModalLabel">Login</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <form id="loginForm">
+                            <div class="form-group">
+                                <label for="loginEmail">Email address</label>
+                                <input type="email" class="form-control" id="loginEmail" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="loginPassword">Password</label>
+                                <input type="password" class="form-control" id="loginPassword" required>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Login</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+        <script>
+        
+        document.getElementById('showRegistrationButton').addEventListener('click', function() {
+                let registrationSection = document.getElementById('registrationSection');
+                if (registrationSection.style.display === 'none' || registrationSection.style.display === '') {
+                    registrationSection.style.display = 'block';
+                    this.textContent = 'Hide Registration';
+                } else {
+                    registrationSection.style.display = 'none';
+                    this.textContent = 'Register';
+                }
+            });
+
+            document.getElementById('registrationForm').addEventListener('submit', function(event) {
+                event.preventDefault();
+                let name = document.getElementById('name').value;
+                let surname = document.getElementById('surname').value;
+                let email = document.getElementById('email').value;
+                let department = document.getElementById('department').value;
+                let staffId = document.getElementById('staffId').value;
+                let password = document.getElementById('password').value;
+                
+                let message = `<h4>Registration Successful</h4>
+                               <p><strong>Name:</strong> ${name} ${surname}</p>
+                               <p><strong>Email:</strong> ${email}</p>
+                               <p><strong>Department:</strong> ${department}</p>
+                               <p><strong>Staff ID:</strong> ${staffId}</p>`;
+                
+                document.getElementById('registrationResult').innerHTML = message;
+            });
+            document.getElementById('loginForm').addEventListener('submit', function(event) {
+                event.preventDefault();
+                // Add login logic here
+                alert('Login form submitted');
+            });
+        </script>
+    </body>
+</html>
