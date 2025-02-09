@@ -23,7 +23,7 @@ document
 document
   .getElementById("surveyForm")
   .addEventListener("submit", function (event) {
-    event.preventDefault(); // Prevent page reload
+    event.preventDefault();
 
     const commentInput = document.getElementById("commentInput");
     const commentText = commentInput.value.trim();
@@ -34,12 +34,30 @@ document
     }
   });
 
-//Additional Comments display
+// Function to display submitted comments with edit & remove buttons
 function displayComment(comment) {
   const commentList = document.getElementById("commentsList");
+
   const newComment = document.createElement("li");
-  newComment.textContent = comment;
-  commentList.appendChild(newComment);
+
+  const commentText = document.createElement("span");
+  commentText.textContent = comment;
+  commentText.classList.add("comment-text");
+
+  // Create action container
+  const actionContainer = document.createElement("div");
+  actionContainer.classList.add("comment-actions");
+
+  // Create edit button
+  const editBtn = document.createElement("button");
+  editBtn.textContent = "Edit";
+  editBtn.classList.add("edit-btn");
+  editBtn.onclick = function () {
+    const newText = prompt("Edit your comment:", commentText.textContent);
+    if (newText !== null && newText.trim() !== "") {
+      commentText.textContent = newText.trim();
+    }
+  };
 
   // Create remove button
   const removeBtn = document.createElement("button");
@@ -49,6 +67,9 @@ function displayComment(comment) {
     commentList.removeChild(newComment);
   };
 
-  newComment.appendChild(removeBtn);
+  newComment.appendChild(commentText);
+  actionContainer.appendChild(editBtn);
+  actionContainer.appendChild(removeBtn);
+  newComment.appendChild(actionContainer);
   commentList.appendChild(newComment);
 }

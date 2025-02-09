@@ -1,9 +1,22 @@
 body {
+  background: linear-gradient(
+    96.2deg,
+    rgb(255, 230, 112) 10.4%,
+    rgb(255, 100, 100) 43.8%,
+    rgb(0, 93, 219) 105.8%
+  );
   padding-top: 70px;
   text-align: center;
 }
 main {
   margin-top: 200px;
+}
+main .container {
+  border: black solid 3px;
+  padding: 20px 50px;
+  background-color: rgb(241, 247, 255);
+  border-radius: 20px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 main .emojis {
   margin-top: 100px;
@@ -34,19 +47,25 @@ main .progress-bar {
   display: block;
   padding: 10px;
   background-color: #007bff;
-  color: white;
+  color: black;
   border: none;
   border-radius: 5px;
   cursor: pointer;
   margin-top: 10px;
+  transition: all ease-in 200ms;
 }
 
 #nextQuestionBtn:hover {
+  transition: all ease-out 200ms;
   background-color: #0056b3;
+  color: white;
 }
 
 #commentSection {
   margin-top: 20px;
+  padding-bottom: 0px;
+  margin: 0;
+  border-radius: 10px;
 }
 
 #commentsList {
@@ -56,6 +75,7 @@ main .progress-bar {
 
 #commentsList li {
   background: #f3f3f3;
+  border: black solid 2px;
   padding: 8px;
   margin: 5px 0;
   border-radius: 5px;
@@ -64,21 +84,141 @@ main .progress-bar {
   align-items: center;
 }
 
-.remove-btn {
-  background-color: red;
-  color: white;
-  border: none;
+.comment-actions {
+  display: flex;
+  gap: 5px;
+}
+
+.remove-btn .edit-btn {
   padding: 5px 10px;
   cursor: pointer;
   border-radius: 3px;
-  margin-left: 10px;
+  margin-left: 5px;
+}
+
+.remove-btn {
+  background-color: red;
+  border: white;
+  color: white;
+  border-radius: 10px;
 }
 
 .remove-btn:hover {
   background-color: darkred;
 }
 
+.edit-btn {
+  margin-left: 10px;
+  color: white;
+  background-color: #007bff;
+  border-radius: 10px;
+  border: white;
+}
+
+.edit-btn:hover {
+  background-color: #0056b3;
+}
+
 #surveyForm {
   margin-top: 80px;
   margin-bottom: 15px;
+}
+main .survey-field {
+  border: black solid 2px;
+  width: 300px;
+  text-align: center;
+  height: 45px;
+  border-radius: 10px;
+}
+main .survey-button {
+  height: 45px;
+  width: 100px;
+  color: black;
+  background-color: #007bff;
+  border-radius: 10px;
+  border: none;
+  transition: all ease-in 200ms;
+}
+.survey-button:hover {
+  background-color: #0056b3;
+  color: white;
+  transition: all ease-out 200ms;
+  border: none;
+}
+@keyframes float {
+  0% {
+    box-shadow: 0 5px 15px 0px rgba(0, 0, 0, 0.6);
+    transform: translatey(0px);
+  }
+  50% {
+    box-shadow: 0 25px 15px 0px rgba(0, 0, 0, 0.2);
+    transform: translatey(-20px);
+  }
+  100% {
+    box-shadow: 0 5px 15px 0px rgba(0, 0, 0, 0.6);
+    transform: translatey(0px);
+  }
+}
+
+@mixin increment-delay(
+  $offset: 0.05s,
+  $count: 10,
+  $delay: 0,
+  $type: transition
+) {
+  @for $i from 1 through $count {
+    $time: ($i * $offset) + $delay;
+    &:nth-child(#{$i}) {
+      #{$type}-delay: $time;
+    }
+  }
+}
+
+.container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.emojis {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 50%;
+}
+
+.emoji {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100px;
+  height: 80px;
+  cursor: pointer;
+  box-sizing: border-box;
+  border: 3px white solid;
+  border-radius: 50%;
+  overflow: hidden;
+  box-shadow: 0 5px 15px 0px rgba(0, 0, 0, 0.6);
+  transform: translatey(0px);
+  animation: float 6s ease-in-out infinite;
+
+  &:hover {
+    -webkit-animation-play-state: paused;
+    -moz-animation-play-state: paused;
+    -o-animation-play-state: paused;
+    animation-play-state: paused;
+  }
+
+  a {
+    text-decoration: none;
+  }
+  span {
+    width: 100%;
+    height: 100%;
+    font-size: 3rem;
+    border: none;
+  }
 }
