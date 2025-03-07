@@ -8,7 +8,7 @@
 body {
     background: linear-gradient(to bottom, #53b0d4, #e9b2b1);
     background-attachment: fixed;
-    /* Keeps gradient background fixed */
+    /* Keeps gradient background fixed even scrolled down */
     margin: 0;
     overflow-x: hidden;
 
@@ -87,15 +87,11 @@ body {
 
 .banner .clouds {
     position: fixed;
-    /* Fixes clouds to viewport */
     bottom: 0;
-    /* Aligns clouds to the bottom */
     left: 0;
     width: 100%;
     height: 200px;
-    /* Adjust height to fit clouds */
     pointer-events: none;
-    /* Allows clicks to pass through */
     z-index: -1;
 }
 
@@ -229,7 +225,7 @@ section {
     color: white;
     position: center;
     width: 502px;
-    height: 374px;
+    height: 380px;
     left: 469px;
     top: 260px;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
@@ -238,14 +234,13 @@ section {
 
 }
 
-
 .login-card input {
     width: 100%;
     padding: 10px;
     margin: 10px 0;
-    border: none;
+    border: 2px solid rgba(255, 255, 255, 0.5);
     border-radius: 20px;
-    background: rgba(255, 255, 255, 0.2);
+    background: transparent;
     color: white;
     font-size: 14px;
 }
@@ -263,7 +258,8 @@ section {
     display: block;
     color: rgba(255, 255, 255, 0.7);
     text-decoration: none;
-    margin: 10px 0;
+    margin-top: -37px;
+    margin-left: 310px;
 }
 
 .login-card .forgot-password:hover {
@@ -271,44 +267,60 @@ section {
 }
 
 .login-card .login-btn {
-    width: 100%;
-    padding: 10px;
+    width: 40%;
+    padding: 5px;
     border: none;
     border-radius: 20px;
     background: white;
-    color: #007bff;
+    color: #1C29D9;
     font-weight: bold;
     cursor: pointer;
+    font-size: 24px;
+    margin-top: 10px;
+    margin-left: 135px;
 }
 
-.login-card .login-btn:hover {
-    background: #e0e0e0;
+.login-card #email{
+    font-size: 16px;
+    margin-top: 40px;
+    height: 47px;
 }
 
-.login-card p {
-    margin: 10px 0;
-    font-size: 12px;
+.login-card #password {
+    font-size: 16px;
+    margin-top: 20px;
+    line-height: 1.2;
+    height: 47px;
 }
 
-.login-card .register-link {
-    color: #ffca28;
-    text-decoration: none;
+#checkbox{
+    margin-left: -200px;
+    margin-right:  -210px;
+    margin-top: -50px;
 }
 
-.login-card .register-link:hover {
-    text-decoration: underline;
-}
-
-.login-card .admin-btn {
-    width: 100%;
-    padding: 10px;
-    border: none;
+.login-card .admin-btn{
+    width: 20%;
+    padding: 5px;
+    border: 2px solid rgba(255, 255, 255, 0.5);
     border-radius: 20px;
-    background: #ffca28;
+    background: transparent;
     color: white;
-    cursor: pointer;
+    font-size: 16px;
+    top: 330px;
+    margin-left: 365px;
+    position: absolute;
 }
 
-.login-card .admin-btn:hover {
-    background: #ffb300;
+.login-card p{
+    margin-top: 10px;
+    margin-left: 118px;
+}
+.login-card .register-link{
+    color: #ff8f37;
+}
+
+.login-card input[type="password"]:not(:placeholder-shown) {
+    font-size: 30px !important;
+    max-height: 0%;
 }
