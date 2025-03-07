@@ -38,8 +38,9 @@
 
 
         <div class="content">
+            <!-- Get Started / scroll to login -->
             <div class="scroll-down" onclick="scrollTologin()">
-                <img src="images/arrow_up.png" alt="scroll-down arrow">
+                <img src="images/arrow_up.png" alt="scroll-down arrow"> 
 
                 <div class="get-started">
                     <h4>Get started</h4>
@@ -47,19 +48,23 @@
                 </div>
             </div>
 
+            <!-- Login Section -->
             <div class="login-section">
             <div class="login-card">
                 <form>
-                    <input type="email" placeholder="Email" required>
-                    <input type="password" placeholder="Password" required>
+                    <!-- Login form -->
+                    <input type="email" placeholder="Email" required id="email">
+                    <input type="password" placeholder="Password" required id="password">
 
-                    <label><input type="checkbox"> Remember Me</label>
-                    <a href="#" class="forgot-password">Forgot Password?</a>
+                    <!-- Remember me and forgot password -->
+                    <label><input type="checkbox" id="checkbox"> Remember Me</label>
+                    <a href=" " class="forgot-password">Forgot Password?</a>
 
+                    <!-- Login and Register buttons -->
                     <button type="submit" class="login-btn">Login</button>
-
                     <p>Don't have an account? <a href="#" class="register-link">Register</a></p>
-                    
+
+                    <!-- Admin button -->
                     <button type="button" class="admin-btn">Admin</button>
                 </form>
             </div>
@@ -67,6 +72,7 @@
     </div>
 
             <script>
+                <!-- Scroll to login function -->
                 function scrollTologin() {
             document.querySelector('.login-section').scrollIntoView({ behavior: 'smooth' });
         }
@@ -76,4 +82,3 @@
     </body>
 
     </html>
-    
