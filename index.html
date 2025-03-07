@@ -1,5 +1,6 @@
 <!doctype html>
 <htmllang="en">
+
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,11 +8,9 @@
         <link rel="stylesheet" type="text/css" href="index.css">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     </head>
-<style>
-    body {
-        background: linear-gradient(to bottom, #305b89c0,#e9b2b1); 
-    }
-</style>
+    <style>
+
+    </style>
 
     <body>
         <div class="banner">
@@ -38,28 +37,43 @@
         </div>
 
 
-        <!-- scroll down --> 
-        <div class="scroll-down">
-            <img src="images/arrow_up.png" alt="scroll-down arrow">
+        <div class="content">
+            <div class="scroll-down" onclick="scrollTologin()">
+                <img src="images/arrow_up.png" alt="scroll-down arrow">
 
-        <div class="get-started">
-            <h4>Get started</h4>
-            
+                <div class="get-started">
+                    <h4>Get started</h4>
+
+                </div>
+            </div>
+
+            <div class="login-section">
+            <div class="login-card">
+                <form>
+                    <input type="email" placeholder="Email" required>
+                    <input type="password" placeholder="Password" required>
+
+                    <label><input type="checkbox"> Remember Me</label>
+                    <a href="#" class="forgot-password">Forgot Password?</a>
+
+                    <button type="submit" class="login-btn">Login</button>
+
+                    <p>Don't have an account? <a href="#" class="register-link">Register</a></p>
+                    
+                    <button type="button" class="admin-btn">Admin</button>
+                </form>
+            </div>
         </div>
     </div>
-        <!-- Register and Login buttons -->
-        <section>
-            <button type="button" class="register" data-toggle="modal" data-target="#registerModal">Register</button>
-            <button type="button" class="login" data-toggle="modal" data-target="#loginModal">Log in</button>
-        </section>
-        
 
-        <script>
-            document.getElementsByClassName('scroll-down').addEventListener('click', function() {
-                document.getElementsByClassName('login').scrollIntoView({ behavior: 'smooth' });
-            });
-        </script>
+            <script>
+                function scrollTologin() {
+            document.querySelector('.login-section').scrollIntoView({ behavior: 'smooth' });
+        }
+            </script>
 
 
     </body>
-</html>
+
+    </html>
+    
