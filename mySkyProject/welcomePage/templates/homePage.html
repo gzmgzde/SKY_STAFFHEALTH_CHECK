@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SKYvibe</title>
+    {% load static %} <!-- Load the static tag -->
+    <link rel="stylesheet" href="{% static 'welcomePage/css/homePage_css.css' %}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<style>
+
+</style>
+
+<body>
+    <div class="banner">
+        <!-- SKYvibe logo and welcome message -->
+        <img src="{% static 'welcomePage/images/logo.png' %}" class="logo" alt="SKYvibe logo">
+        <h2 id="welcome"> Your squad's health, reimagined.</h2>
+
+        <!-- clouds animation -->
+        <div class="clouds">
+            <img src="{% static 'welcomePage/images/cloud1.png' %}" style="--i:1;">
+            <img src="{% static 'welcomePage/images/cloud2.png' %}" style="--i:2;">
+            <img src="{% static 'welcomePage/images/cloud3.png' %}" style="--i:3;">
+            <img src="{% static 'welcomePage/images/cloud4.png' %}" style="--i:4;">
+            <img src="{% static 'welcomePage/images/cloud5.png' %}" style="--i:5;">
+            <img src="{% static 'welcomePage/images/cloud1.png' %}" style="--i:10;">
+            <img src="{% static 'welcomePage/images/cloud2.png' %}" style="--i:9;">
+            <img src="{% static 'welcomePage/images/cloud3.png' %}" style="--i:8;">
+            <img src="{% static 'welcomePage/images/cloud4.png' %}" style="--i:7;">
+            <img src="{% static 'welcomePage/images/cloud5.png' %}" style="--i:6;">
+        </div>
+    </div>
+
+    <div class="content">
+        <!-- Get Started / scroll to login -->
+        <div class="scroll-down" onclick="scrollTologin()">
+            <img src="{% static 'welcomePage/images/arrow_up.png' %}" alt="scroll-down arrow">
+
+            <div class="get-started">
+                <h4>Get started</h4>
+            </div>
+        </div>
+
+        <!-- Login Section -->
+        <div class="login-section">
+            <div class="login-card">
+                <form>
+                    <!-- Login form -->
+                    <input type="email" placeholder="Email" required id="email">
+                    <input type="password" placeholder="Password" required id="password">
+
+                    <!-- Remember me and forgot password -->
+                    <label><input type="checkbox" id="checkbox"> Remember Me</label>
+                    <a href=" " class="forgot-password">Forgot Password?</a>
+
+                    <!-- Login and Register buttons -->
+                    <button type="submit" class="login-btn">Login</button>
+                    <p>Don't have an account? <a href="#" class="register-link">Register</a></p>
+
+                    <!-- Admin button -->
+                    <button type="button" class="admin-btn">Admin</button>
+                </form>
+            </div>
+
+            <!-- Register form (hidden as default, will become visible after user clicks "register") -->
+            <div class="register-card hidden" id="registerForm">
+                <button type="button" class="engineer-btn">Engineer</button>
+                <button type="button" class="management-btn">Management</button>
+                <a href="#" class="back-login">Back</a>
+
+                <form>
+                    <input type="text" placeholder="First Name" required id="firstname">
+                    <input type="text" placeholder="Surname" required id="surname">
+
+                    <input type="email" placeholder="Email" required id="reg-email">
+                    <input type="dropdown" placeholder="Team" required id="Team">
+                    <input type="dropdown" placeholder="Department" required id="Department">
+
+                    <input type="password" placeholder="Password" required id="reg-password">
+                    <input type="password" placeholder="Confirm Password" required id="confirm-password">
+
+                    <input type="checkbox" id="checkbox"> I agree Terms & Conditions <a href="#" class="terms"></a>
+                    <button type="submit" class="login-btn">Register</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        <!-- Scroll to login function -->
+        function scrollTologin() {
+            document.querySelector('.login-section').scrollIntoView({ behavior: 'smooth' });
+        }
+    </script>
+</body>
+
+</html>
