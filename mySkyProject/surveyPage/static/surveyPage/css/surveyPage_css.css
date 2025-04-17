@@ -22,13 +22,11 @@ nav {
   padding: 0 2rem;
 }
 .navbar {
-  width: 100%;
-  height: 60px;
-  margin: 0 auto;
-  max-width: 1200px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  padding: 0 20px !important;
+  height: 80px !important;
 }
 nav .profile-pic {
   border-radius: 50%;
@@ -36,14 +34,20 @@ nav .profile-pic {
   margin: 0;
   width: 80px;
 }
-.navbar span:last-child {
-  display: flex;
-  align-items: center;
-  gap: 10px; /* Adjust spacing between profile pic and arrow */
-}
 
 .fa-arrow-down {
   margin-left: 0; /* Ensure no extra margin */
+}
+
+.navbar-left {
+  display: flex !important;
+  align-items: center !important;
+}
+
+.navbar-right {
+  display: flex !important;
+  align-items: center !important;
+  gap: 10px !important; /* Add spacing between profile pic and arrow */
 }
 @media (max-width: 768px) {
   .navbar-logo img.logo {
@@ -56,6 +60,7 @@ nav .profile-pic {
   flex-direction: row !important; /* Ensure horizontal alignment */
   align-items: center !important;
   gap: 10px; /* Space between steps */
+  margin-top: 5px;
 }
 
 .custom-progress .progress-step {
@@ -75,11 +80,12 @@ nav .profile-pic {
   align-items: center;
   font-size: 14px;
   font-weight: bold;
+  margin-right: 5px;
 }
 
 .custom-progress .micro-circle {
-  width: 10px;
-  height: 10px;
+  width: 5px;
+  height: 5px;
   border-radius: 50%;
   background-color: #800080;
 }
@@ -88,13 +94,151 @@ main {
   width: 100%;
   display: flex;
   justify-content: center;
+  align-items: center;
+}
+.header-container {
+  position: absolute;
+  margin-top: 170px;
+  color: white;
+}
+.back-button {
+  cursor: pointer;
+}
+.fa-less-than {
+  margin-right: 4px;
 }
 
 main .container-survey {
   text-align: center;
   margin-top: 250px;
-  background-color: white;
+  background-color: #f1f7ff;
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  padding: 20px 15px;
+  padding: 30px 15px;
+}
+.survey-heading {
+  margin-top: 20px;
+}
+.survey-header-container {
+  position: relative;
+  text-align: center;
+}
+.survey-header-container h1 {
+  margin-bottom: 10px;
+}
+.scale-bar-container {
+  margin-top: 100px !important;
+  width: 100%;
+  max-width: 600px;
+  margin: 20px auto;
+  text-align: center;
+  position: relative;
+}
+
+/* Emoji container */
+.emoji-container {
+  display: flex;
+  justify-content: space-between;
+  position: absolute;
+  top: -75px; /* Position emojis above the scale bar */
+  left: 0;
+  right: 0;
+}
+
+.emoji {
+  width: 70px;
+  height: 70px;
+}
+
+.scale-bar {
+  position: relative;
+  width: 100%;
+  height: 20px;
+  background: linear-gradient(
+    to right,
+    #fe4b3c,
+    #ffb024,
+    #349a67
+  ); /* Gradient colors */
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.scale-slider {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 20px;
+  background: transparent;
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: 0;
+  pointer-events: none;
+}
+
+.scale-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  background-color: #adadad;
+  border-radius: 50%;
+  pointer-events: auto;
+  cursor: pointer;
+}
+
+.scale-slider::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  background-color: #000;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.scale-slider::-ms-thumb {
+  width: 20px;
+  height: 20px;
+  background-color: #000;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.survey-field {
+  padding: 12px 30px;
+  border-radius: 20px;
+  border: none;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+}
+.survey-button {
+  padding: 8px 3px;
+  width: 90px;
+  margin-left: 10px;
+  border-radius: 8px;
+  border: none;
+  background-color: #017bfe;
+}
+.survey-field::placeholder {
+  font-size: 12px;
+  opacity: 1; /* Ensure the placeholder is fully visible */
+  text-align: center;
+}
+.comment-container {
+  margin-top: 60px !important;
+}
+.col-12 .nextQuestionBtn {
+  margin-top: 40px;
+  padding: 10px 35px;
+  border-radius: 20px;
+  border: none;
+  background-color: #1c29d9;
+  color: white;
+  float: right;
+  margin-right: 10px;
+  transition: all 200ms ease-out;
+}
+
+.col-12 .nextQuestionBtn:hover {
+  background-color: #7a86f1;
+  transition: all 200ms ease-in-out;
 }

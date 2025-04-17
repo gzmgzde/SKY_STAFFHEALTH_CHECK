@@ -26,31 +26,25 @@
   </head>
   <body>
     <nav>
-      <div class="container">
-        <div class="row">
-          <div class="col-12">
-            <div class="navbar">
-              <span>
-                <h1 class="header-1">
-                  <img
-                    src="{% static 'surveyPage/images/logo.png' %}"
-                    alt="SkyVibe Logo"
-                    class="logo"
-                    height="70"
-                  />
-                </h1>
-              </span>
-              <span
-                ><img
-                  src="{% static 'surveyPage/images/Unknown.jpg' %}"
-                  alt="Navbar Profile Pic"
-                  class="profile-pic"
-                  height="60"
-                  weight="70"
-                />
-                <i class="fa-solid fa-arrow-down" style="color: #ffffff"></i>
-              </span>
-            </div>
+      <div class="container-fluid">
+        <div class="navbar">
+          <div class="navbar-left">
+            <img
+              src="{% static 'surveyPage/images/logo.png' %}"
+              alt="SkyVibe Logo"
+              class="logo"
+              height="70"
+            />
+          </div>
+          <div class="navbar-right">
+            <img
+              src="{% static 'surveyPage/images/Unknown.jpg' %}"
+              alt="Navbar Profile Pic"
+              class="profile-pic"
+              height="60"
+              weight="70"
+            />
+            <i class="fa-solid fa-arrow-down" style="color: #ffffff"></i>
           </div>
         </div>
       </div>
@@ -58,9 +52,9 @@
     <main>
       <div class="container">
         <div class="row">
-          <div class="col-12">
-            <p>Back</p>
-            <h3 class="header-1">2025 QUARTER 2 SQUAD HEALTH CHECK</h3>
+          <div class="header-container">
+            <p class="back-button"><i class="fa-solid fa-less-than"></i>Back</p>
+            <h3 class="header-text">2025 QUARTER 2 SQUAD HEALTH CHECK</h3>
           </div>
           <div class="container-survey">
             <div class="progress-container custom-progress">
@@ -135,29 +129,64 @@
                 </span>
               </div>
             </div>
-
-            <h1 class="header-1">Delivering Value</h1>
-            <h3>
-              Are you devilering great value of work to the company and its
-              stakeholders?
-            </h3>
-            <div class="col-12">
-              <form action="#" id="surveyForm">
-                <input
-                  type="text"
-                  class="survey-field"
-                  id="commentInput"
-                  placeholder="Additional comments..."
+            <div class="survey-header-container">
+              <h1 class="survey-heading">Delivering Value</h1>
+              <h3>
+                Are you devilering great value of work to the company and its
+                stakeholders?
+              </h3>
+            </div>
+            <div class="scale-bar-container">
+              <!-- Emoji placeholders -->
+              <div class="emoji-container">
+                <img
+                  src="{% static 'surveyPage/images/bad-emoji.png' %}"
+                  alt="Angry"
+                  class="emoji emoji-left"
                 />
-                <input type="submit" value="Submit" class="survey-button" />
-              </form>
+                <img
+                  src="{% static 'surveyPage/images/neutral-emoji.png' %}"
+                  alt="Neutral"
+                  class="emoji emoji-middle"
+                />
+                <img
+                  src="{% static 'surveyPage/images/good-emoji.png' %}"
+                  alt="Happy"
+                  class="emoji emoji-right"
+                />
+              </div>
+
+              <!-- Scale bar -->
+              <div class="scale-bar">
+                <input
+                  type="range"
+                  min="0"
+                  max="100"
+                  value="50"
+                  class="scale-slider"
+                />
+              </div>
+            </div>
+            <div class="col-12">
+              <div class="comment-container">
+                <form action="#" class="survey-form" id="surveyForm">
+                  <input
+                    type="text"
+                    class="survey-field"
+                    id="commentInput"
+                    placeholder="Additional comments..."
+                  />
+                  <button type="submit" class="survey-button">
+                  <i class="fa-solid fa-paper-plane" style="color: #ffffff;"></i>
+                </form>
+              </div>
             </div>
             <div id="commentSection">
               <ul id="commentsList"></ul>
             </div>
             <div class="col-12">
               <a href="surveyQ2.html"
-                ><button id="nextQuestionBtn">Next Question</button></a
+                ><button id="nextQuestionBtn" class="nextQuestionBtn">Next Question</button></a
               >
             </div>
           </div>
