@@ -217,6 +217,11 @@ main .container-survey {
   border-radius: 8px;
   border: none;
   background-color: #017bfe;
+  transition: all 200ms ease-out;
+}
+.survey-button:hover {
+  background-color: #1c29d9;
+  transition: all 200ms ease-in-out;
 }
 .survey-field::placeholder {
   font-size: 12px;
@@ -234,8 +239,34 @@ main .container-survey {
   background-color: #1c29d9;
   color: white;
   float: right;
-  margin-right: 10px;
   transition: all 200ms ease-out;
+}
+.col-6 .nextQuestionBtn {
+  margin-top: 40px;
+  padding: 10px 35px;
+  border-radius: 20px;
+  border: none;
+  background-color: #1c29d9;
+  color: white;
+  margin-left: 300px;
+  transition: all 200ms ease-out;
+}
+
+.col-6 .backBtn {
+  margin-top: 40px;
+  padding: 10px 72px;
+  border-radius: 20px;
+  border: none;
+  background-color: white;
+  color: black;
+  transition: all 200ms ease-out;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  margin-right: 300px;
+}
+.backAndNextBtns {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .col-12 .nextQuestionBtn:hover {
