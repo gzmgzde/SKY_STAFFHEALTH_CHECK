@@ -59,70 +59,70 @@
           <div class="container-survey">
             <div class="progress-container custom-progress">
               <div class="progress-bar">
-                <span class="progress-step">
+                  <span class="progress-step" id="q1">
                   <span class="circle">1</span>
-                  <span class="micro-circle"></span>
-                  <span class="micro-circle"></span>
+                  <span class="micro-circle" id="q1-micro-1"></span>
+                  <span class="micro-circle" id="q1-micro-2"></span>
                 </span>
-                <span class="progress-step">
+                <span class="progress-step" id="q2">
                   <span class="circle">2</span>
-                  <span class="micro-circle"></span>
-                  <span class="micro-circle"></span>
+                  <span class="micro-circle" id="q2-micro-1"></span>
+                  <span class="micro-circle" id="q2-micro-2"></span>
                 </span>
-                <span class="progress-step">
+                <span class="progress-step" id="q3">
                   <span class="circle">3</span>
-                  <span class="micro-circle"></span>
-                  <span class="micro-circle"></span>
+                  <span class="micro-circle" id="q3-micro-1"></span>
+                  <span class="micro-circle" id="q3-micro-"></span>
                 </span>
-                <span class="progress-step">
+                <span class="progress-step" id="q4">
                   <span class="circle">4</span>
-                  <span class="micro-circle"></span>
-                  <span class="micro-circle"></span>
+                  <span class="micro-circle" id="q4-micro-1"></span>
+                  <span class="micro-circle" id="q4-micro-2"></span>
                 </span>
-                <span class="progress-step">
+                <span class="progress-step" id="q5">
                   <span class="circle">5</span>
-                  <span class="micro-circle"></span>
-                  <span class="micro-circle"></span>
+                  <span class="micro-circle" id="q5-micro-1"></span>
+                  <span class="micro-circle" id="q5-micro-2"></span>
                 </span>
-                <span class="progress-step">
+                <span class="progress-step" id="q6">
                   <span class="circle">6</span>
-                  <span class="micro-circle"></span>
-                  <span class="micro-circle"></span>
+                  <span class="micro-circle" id="q6-micro-1"></span>
+                  <span class="micro-circle" id="q6-micro-2"></span>
                 </span>
-                <span class="progress-step">
+                <span class="progress-step" id="q7">
                   <span class="circle">7</span>
-                  <span class="micro-circle"></span>
-                  <span class="micro-circle"></span>
+                  <span class="micro-circle" id="q7-micro-1"></span>
+                  <span class="micro-circle" id="q7-micro-2"></span>
                 </span>
-                <span class="progress-step">
+                <span class="progress-step" id="q8">
                   <span class="circle">8</span>
-                  <span class="micro-circle"></span>
-                  <span class="micro-circle"></span>
+                  <span class="micro-circle" id="q8-micro-1"></span>
+                  <span class="micro-circle" id="q8-micro-2"></span>
                 </span>
-                <span class="progress-step">
+                <span class="progress-step" id="q9">
                   <span class="circle">9</span>
-                  <span class="micro-circle"></span>
-                  <span class="micro-circle"></span>
+                  <span class="micro-circle" id="q9-micro-1"></span>
+                  <span class="micro-circle" id="q9-micro-2"></span>
                 </span>
-                <span class="progress-step">
+                <span class="progress-step" id="q10">
                   <span class="circle">10</span>
-                  <span class="micro-circle"></span>
-                  <span class="micro-circle"></span>
+                  <span class="micro-circle" id="q10-micro-1"></span>
+                  <span class="micro-circle" id="q10-micro-2"></span>
                 </span>
-                <span class="progress-step">
+                <span class="progress-step" id="q11">
                   <span class="circle">11</span>
-                  <span class="micro-circle"></span>
-                  <span class="micro-circle"></span>
+                  <span class="micro-circle" id="q11-micro-1"></span>
+                  <span class="micro-circle" id="q11-micro-2"></span>
                 </span>
-                <span class="progress-step">
+                <span class="progress-step" id="q12">
                   <span class="circle">12</span>
-                  <span class="micro-circle"></span>
-                  <span class="micro-circle"></span>
+                  <span class="micro-circle" id="q12-micro-1"></span>
+                  <span class="micro-circle" id="q12-micro-2"></span>
                 </span>
-                <span class="progress-step">
+                <span class="progress-step"id="q13">
                   <span class="circle">13</span>
-                  <span class="micro-circle"></span>
-                  <span class="micro-circle"></span>
+                  <span class="micro-circle" id="q13-micro-1"></span>
+                  <span class="micro-circle" id="q13-micro-2"></span>
                 </span>
                 <span class="progress-step">
                   <span class="circle">14</span>
@@ -198,6 +198,7 @@
           </div>
         </div>
       </div>
+      <div id="progress-data" data-current-question="{{ current_question }}"></div>
     </main>
     <script src="{% static 'surveyPage/js/surveyPage_js.js' %}"></script>
     <script
