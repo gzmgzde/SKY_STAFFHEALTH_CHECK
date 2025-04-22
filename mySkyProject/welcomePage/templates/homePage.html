@@ -36,7 +36,7 @@
 
     <div class="content">
         <!-- Get Started / scroll to login -->
-        <div class="scroll-down" onclick="scrollTologin()">
+        <div class="scroll-down" onclick="scrollToLogin()">
             <img src="{% static 'welcomePage/images/arrow_up.png' %}" alt="scroll-down arrow">
 
             <div class="get-started">
@@ -58,7 +58,7 @@
 
                     <!-- Login and Register buttons -->
                     <button type="submit" class="login-btn">Login</button>
-                    <p>Don't have an account? <a href="#" class="register-link">Register</a></p>
+                    <p>Don't have an account? <a href="#register-card hidden" class="register-link">Register</a></p>
 
                     <!-- Admin button -->
                     <button type="button" class="admin-btn">Admin</button>
@@ -69,32 +69,215 @@
             <div class="register-card hidden" id="registerForm">
                 <button type="button" class="engineer-btn">Engineer</button>
                 <button type="button" class="management-btn">Management</button>
-                <a href="#" class="back-login">Back</a>
+                <a class="back-login" href="javascript:void(0);" onclick="scrollToLogin()"> &#60; Back</a>
 
                 <form>
+                    <div class="name-container">
                     <input type="text" placeholder="First Name" required id="firstname">
-                    <input type="text" placeholder="Surname" required id="surname">
+                    <input type="text" placeholder="Last Name" required id="surname">
+                    </div>
 
-                    <input type="email" placeholder="Email" required id="reg-email">
-                    <input type="dropdown" placeholder="Team" required id="Team">
-                    <input type="dropdown" placeholder="Department" required id="Department">
+                    <input type="email" placeholder="Company email" required id="reg-email">
+
+
+                    <div class="department-container">
+                    <select class="form-control" id="Department" required>
+                        <option value="department-AllDepartments">Select Department</option>
+                        <option value="department-BroadbandTech">Broadband Technology</option>
+                        <option value="department-NetworkOps">Network Operations</option>
+                        <option value="department-CloudInfrastructure">Cloud Infrastructure</option>
+                        <option value="department-StreamingServices">Streaming Services</option>
+                        <option value="department-DigitalMedia">Digital Media</option>
+                        <option value="department-ContentDelivery">Content Delivery</option>
+                        <option value="department-TVTechnology">TV Technology</option>
+                        <option value="department-MobileDevelopment">Mobile Development</option>
+                        <option value="department-AppInnovation">App Innovation</option>
+                        <option value="department-UserExperience">User Experience</option>
+                        <option value="department-CyberSecurity">Cyber Security</option>
+                        <option value="department-AIandAutomation">AI & Automation</option>
+                    </select>
+
+                    <select class="form-control" id="Team" required>
+                        <option value="team-AllTeams">Select Team</option>
+                        <option value="team-AI">AI</option>
+                        <option value="team-Analytics">Analytics</option>
+                        <option value="team-Android">Android</option>
+                        <option value="team-Kotlin">Kotlin</option>
+                        <option value="team-Swift">Swift</option>
+                        <option value="team-IoT">IoT</option>
+                        <option value="team-SkyNet">SkyNet</option>
+                        <option value="team-SkyVision">SkyVision</option>
+                        <option value="team-HDStream">HDStream</option>
+                        <option value="team-BroadcastOps">BroadcastOps</option>
+                        <option value="team-SatelliteSync">SatelliteSync</option>
+                        <option value="team-SkyBox">SkyBox</option>
+                        <option value="team-UltraHD">UltraHD</option>
+                        <option value="team-EntertainmentHub">Entertainment Hub</option>
+                        <option value="team-SkyGo">SkyGo</option>
+                        <option value="team-DigitalEdge">DigitalEdge</option>
+                        <option value="team-UXPioneers">UX Pioneers</option>
+                        <option value="team-AppVelocity">AppVelocity</option>
+                        <option value="team-MobileStream">MobileStream</option>
+                        <option value="team-CloudConnect">CloudConnect</option>
+                        <option value="team-SkyFi">SkyFi</option>
+                        <option value="team-CloudSync">CloudSync</option>
+                        <option value="team-SkyMobile">SkyMobile</option>
+                    </select>
+
+                    </div>
 
                     <input type="password" placeholder="Password" required id="reg-password">
-                    <input type="password" placeholder="Confirm Password" required id="confirm-password">
+                    <input type="password" placeholder="Confirm your Password" required id="confirm-password">
 
                     <input type="checkbox" id="checkbox"> I agree Terms & Conditions <a href="#" class="terms"></a>
                     <button type="submit" class="login-btn">Register</button>
                 </form>
             </div>
-        </div>
-    </div>
 
-    <script>
-        <!-- Scroll to login function -->
-        function scrollTologin() {
-            document.querySelector('.login-section').scrollIntoView({ behavior: 'smooth' });
-        }
-    </script>
+            <script>
+
+                // Scroll to login function
+                function scrollToLogin() {
+                    document.querySelector('.login-section').scrollIntoView({ behavior: 'smooth' });
+                }
+
+                // Team to Department mapping
+                const teamToDepartment = {
+                    'team-AI': 'department-AIandAutomation',
+                    'team-Analytics': 'department-DigitalMedia',
+                    'team-Android': 'department-MobileDevelopment',
+                    'team-Kotlin': 'department-MobileDevelopment',
+                    'team-Swift': 'department-MobileDevelopment',
+                    'team-IoT': 'department-CloudInfrastructure',
+                    'team-SkyNet': 'department-NetworkOps',
+                    'team-SkyVision': 'department-ContentDelivery',
+                    'team-HDStream': 'department-StreamingServices',
+                    'team-BroadcastOps': 'department-NetworkOps',
+                    'team-SatelliteSync': 'department-CloudInfrastructure',
+                    'team-SkyBox': 'department-TVTechnology',
+                    'team-UltraHD': 'department-TVTechnology',
+                    'team-EntertainmentHub': 'department-DigitalMedia',
+                    'team-SkyGo': 'department-StreamingServices',
+                    'team-DigitalEdge': 'department-DigitalMedia',
+                    'team-UXPioneers': 'department-UserExperience',
+                    'team-AppVelocity': 'department-AppInnovation',
+                    'team-MobileStream': 'department-MobileDevelopment',
+                    'team-CloudConnect': 'department-CloudInfrastructure',
+                    'team-SkyFi': 'department-CloudInfrastructure',
+                    'team-CloudSync': 'department-CloudInfrastructure',
+                    'team-SkyMobile': 'department-MobileDevelopment'
+
+
+                };
+
+                // Department to Team mapping
+                const departmentToTeam = {
+                    'department-AIandAutomation': ['team-AI'],
+                    'department-DigitalMedia': ['team-Analytics', 'team-EntertainmentHub', 'team-DigitalEdge'],
+                    'department-MobileDevelopment': ['team-Android', 'team-Kotlin', 'team-Swift', 'team-MobileStream', 'team-SkyMobile'],
+                    'department-CloudInfrastructure': ['team-IoT', 'team-SatelliteSync', 'team-CloudConnect', 'team-SkyFi', 'team-CloudSync'],
+                    'department-NetworkOps': ['team-SkyNet', 'team-BroadcastOps'],
+                    'department-ContentDelivery': ['team-SkyVision'],
+                    'department-StreamingServices': ['team-HDStream', 'team-SkyGo'],
+                    'department-TVTechnology': ['team-SkyBox', 'team-UltraHD'],
+                    'department-UserExperience': ['team-UXPioneers'],
+                    'department-AppInnovation': ['team-AppVelocity'],
+                    'department-BroadbandTech': [], // No teams assigned in your data
+                    'department-CyberSecurity': []  // No teams assigned in your data
+                };
+
+                const teamSelect = document.getElementById('Team');
+                const deptSelect = document.getElementById('Department');
+
+                // Store initial options for resetting
+                const allTeams = Array.from(teamSelect.options).map(opt => ({
+                    value: opt.value,
+                    text: opt.text
+                }));
+                const allDepartments = Array.from(deptSelect.options).map(opt => ({
+                    value: opt.value,
+                    text: opt.text
+                }));
+
+                // Populate team dropdown with specific teams or all teams
+                function populateTeams(teamList = allTeams.slice(1)) { // Skip "Select Team"
+                    teamSelect.innerHTML = '<option value="team-AllTeams" disabled selected >Select Team</option>';
+                    teamList.forEach(team => {
+                        const option = document.createElement('option');
+                        option.value = team.value;
+                        option.text = team.text;
+                        teamSelect.appendChild(option);
+                    });
+                }
+
+                // Populate department dropdown with all departments
+                function populateDepartments() {
+                    deptSelect.innerHTML = '<option value="department-AllDepartments" disabled selected >Select Department</option>';
+                    allDepartments.slice(1).forEach(dept => {
+                        const option = document.createElement('option');
+                        option.value = dept.value;
+                        option.text = dept.text;
+                        deptSelect.appendChild(option);
+                    });
+                }
+
+                //Event listener for team selection
+                teamSelect.addEventListener('change', function () {
+                    const selectedTeam = this.value;
+                    if (selectedTeam === 'team-AllTeams') {
+                        // Reset both team and department to initial state
+                        populateDepartments(allDepartments.slice(1));
+                        populateTeams(); // This also sets deptSelect.value to "department-AllDepartments"
+                        deptSelect.value = 'department-AllDepartments'; // Default to "Select Team"
+                    } else if (teamToDepartment[selectedTeam]) {
+                        const relatedDept = teamToDepartment[selectedTeam];
+                        deptSelect.value = relatedDept; // Auto-select related department
+                    }
+                });
+
+                // Event listener for department selection
+                deptSelect.addEventListener('change', function () {
+                    const selectedDept = this.value;
+                    if (selectedDept === 'department-AllDepartments') {
+                        populateTeams(allTeams.slice(1));
+                        teamSelect.value = 'team-AllTeams';
+                    } else if (departmentToTeam[selectedDept]) {
+                        const relatedTeams = departmentToTeam[selectedDept].map(teamValue =>
+                            allTeams.find(t => t.value === teamValue)
+                        ).filter(Boolean);
+                        populateTeams(relatedTeams);
+                        teamSelect.value = 'team-AllTeams'; // Default to "Select Team"
+                    }
+                });
+
+                // Initial setup
+                populateTeams();
+                populateDepartments();
+
+                // Register form toggle
+                const registerForm = document.getElementById('registerForm');
+                const registerLink = document.querySelector('.register-link');
+                const backLogin = document.querySelector('.back-login');
+                const loginCard = document.querySelector('.login-card');
+
+                // Show the register form when the "Register" link is clicked
+                registerLink.addEventListener('click', function (e) {
+                    e.preventDefault(); // Prevent default link behavior
+                    loginCard.classList.add('hidden'); // Hide the login form
+                    registerForm.classList.remove('hidden'); // Show the register form
+                });
+
+                // Show the login form when the "Back" link is clicked
+                backLogin.addEventListener('click', function (e) {
+                    e.preventDefault(); // Prevent default link behavior
+                    registerForm.classList.add('hidden'); // Hide the register form
+                    loginCard.classList.remove('hidden'); // Show the login form
+                });
+
+            </script>
 </body>
 
 </html>
+
+
+<!-- bu sadece engineer icin, managemen secildiginde N/A secenegi olmasi lazim. onu ekle -->
