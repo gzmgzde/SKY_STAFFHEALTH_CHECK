@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -119,7 +119,7 @@
                   <span class="micro-circle" id="q12-micro-1"></span>
                   <span class="micro-circle" id="q12-micro-2"></span>
                 </span>
-                <span class="progress-step"id="q13">
+                <span class="progress-step" id="q13">
                   <span class="circle">13</span>
                   <span class="micro-circle" id="q13-micro-1"></span>
                   <span class="micro-circle" id="q13-micro-2"></span>
@@ -139,31 +139,39 @@
             <div class="scale-bar-container">
               <!-- Emoji placeholders -->
               <div class="emoji-container">
-                <img
-                  src="{% static 'surveyPage/images/bad-emoji.png' %}"
-                  alt="Angry"
-                  class="emoji emoji-left"
-                />
-                <img
-                  src="{% static 'surveyPage/images/neutral-emoji.png' %}"
-                  alt="Neutral"
-                  class="emoji emoji-middle"
-                />
-                <img
-                  src="{% static 'surveyPage/images/good-emoji.png' %}"
-                  alt="Happy"
-                  class="emoji emoji-right"
-                />
+                <div class="scale-point" id="start-point" data-value="1">
+                  <img
+                    src="{% static 'surveyPage/images/bad-emoji.png' %}"
+                    alt="Bad"
+                    class="emoji emoji-left"
+                  />
+                </div>
+                <div class="scale-point" id="middle-point" data-value="2">
+                  <img
+                    src="{% static 'surveyPage/images/neutral-emoji.png' %}"
+                    alt="Neutral"
+                    class="emoji emoji-middle"
+                  />
+                </div>
+                <div class="scale-point" id="end-point" data-value="3">
+                  <img
+                    src="{% static 'surveyPage/images/good-emoji.png' %}"
+                    alt="Good"
+                    class="emoji emoji-right"
+                  />
+                </div>
               </div>
 
               <!-- Scale bar -->
               <div class="scale-bar">
                 <input
                   type="range"
-                  min="0"
-                  max="100"
-                  value="50"
+                  min="1"
+                  max="3"
+                  step="1"
+                  value="2"
                   class="scale-slider"
+                  id="scaleSlider"
                 />
               </div>
             </div>
@@ -177,7 +185,11 @@
                     placeholder="Additional comments..."
                   />
                   <button type="submit" class="survey-button">
-                  <i class="fa-solid fa-paper-plane" style="color: #ffffff;"></i>
+                    <i
+                      class="fa-solid fa-paper-plane"
+                      style="color: #ffffff"
+                    ></i>
+                  </button>
                 </form>
               </div>
             </div>
@@ -186,13 +198,18 @@
             </div>
             <div class="col-12">
               <a href="{% url 'survey_q2' %}"
-                ><button id="nextQuestionBtn" class="nextQuestionBtn">Next Question</button></a
+                ><button id="nextQuestionBtn" class="nextQuestionBtn">
+                  Next Question
+                </button></a
               >
             </div>
           </div>
         </div>
       </div>
-      <div id="progress-data" data-current-question="{{ current_question }}"></div>
+      <div
+        id="progress-data"
+        data-current-question="{{ current_question }}"
+      ></div>
     </main>
     <script src="{% static 'surveyPage/js/surveyPage_js.js' %}"></script>
     <script

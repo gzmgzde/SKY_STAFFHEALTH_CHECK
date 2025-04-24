@@ -55,6 +55,15 @@ nav .profile-pic {
     width: 30px;
   }
 }
+.custom-progress .circle,
+.custom-progress .micro-circle {
+  transition: background-color 200ms ease-in-out !important; /* Smooth transition for background color */
+}
+.custom-progress .circle.completed,
+.custom-progress .micro-circle.completed {
+  background-color: green;
+}
+
 .custom-progress .progress-bar {
   display: flex !important; /* Force flexbox layout */
   flex-direction: row !important; /* Ensure horizontal alignment */
@@ -145,6 +154,28 @@ main .container-survey {
   right: 0;
 }
 
+.scale-point {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.scale-point:hover {
+  transform: scale(1.2); /* Slightly enlarge on hover */
+}
+
+.scale-point.selected .emoji {
+  transform: scale(1.3);
+  filter: brightness(1.2); /* Brighten the emoji */
+}
+
+.scale-point.selected .label {
+  font-weight: bold;
+  color: green; /* Highlight selected label */
+}
+
 .emoji {
   width: 70px;
   height: 70px;
@@ -182,10 +213,15 @@ main .container-survey {
   appearance: none;
   width: 20px;
   height: 20px;
-  background-color: #adadad;
+  background-color: white;
+  border: black solid 2px;
   border-radius: 50%;
   pointer-events: auto;
   cursor: pointer;
+  transition: transform 0.2s ease;
+}
+.scale-slider::-webkit-slider-thumb:hover {
+  transform: scale(1.2);
 }
 
 .scale-slider::-moz-range-thumb {
@@ -194,6 +230,10 @@ main .container-survey {
   background-color: #000;
   border-radius: 50%;
   cursor: pointer;
+  transition: transform 0.2s ease;
+}
+.scale-slider::-moz-range-thumb:hover {
+  transform: scale(1.2);
 }
 
 .scale-slider::-ms-thumb {
@@ -230,6 +270,57 @@ main .container-survey {
 }
 .comment-container {
   margin-top: 60px !important;
+}
+#commentSection {
+  margin-top: 20px;
+}
+
+#commentsList {
+  list-style-type: none;
+  padding: 0;
+}
+
+.comment-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #f9f9f9;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.comment-text {
+  flex: 1;
+  margin-right: 10px;
+}
+
+.comment-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.comment-buttons button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.comment-buttons button:hover {
+  background-color: #0056b3;
+}
+
+.comment-buttons .remove-btn {
+  background-color: #dc3545;
+}
+
+.comment-buttons .remove-btn:hover {
+  background-color: #a71d2a;
 }
 .col-12 .nextQuestionBtn {
   margin-top: 40px;
