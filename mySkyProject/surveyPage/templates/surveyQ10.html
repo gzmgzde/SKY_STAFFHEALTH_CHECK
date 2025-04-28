@@ -138,31 +138,39 @@
             <div class="scale-bar-container">
               <!-- Emoji placeholders -->
               <div class="emoji-container">
-                <img
-                  src="{% static 'surveyPage/images/bad-emoji.png' %}"
-                  alt="Angry"
-                  class="emoji emoji-left"
-                />
-                <img
-                  src="{% static 'surveyPage/images/neutral-emoji.png' %}"
-                  alt="Neutral"
-                  class="emoji emoji-middle"
-                />
-                <img
-                  src="{% static 'surveyPage/images/good-emoji.png' %}"
-                  alt="Happy"
-                  class="emoji emoji-right"
-                />
+                <div class="scale-point" id="start-point" data-value="1">
+                  <img
+                    src="{% static 'surveyPage/images/bad-emoji.png' %}"
+                    alt="Bad"
+                    class="emoji emoji-left"
+                  />
+                </div>
+                <div class="scale-point" id="middle-point" data-value="2">
+                  <img
+                    src="{% static 'surveyPage/images/neutral-emoji.png' %}"
+                    alt="Neutral"
+                    class="emoji emoji-middle"
+                  />
+                </div>
+                <div class="scale-point" id="end-point" data-value="3">
+                  <img
+                    src="{% static 'surveyPage/images/good-emoji.png' %}"
+                    alt="Good"
+                    class="emoji emoji-right"
+                  />
+                </div>
               </div>
 
               <!-- Scale bar -->
               <div class="scale-bar">
                 <input
                   type="range"
-                  min="0"
-                  max="100"
-                  value="50"
+                  min="1"
+                  max="3"
+                  step="1"
+                  value="2"
                   class="scale-slider"
+                  id="scaleSlider"
                 />
               </div>
             </div>

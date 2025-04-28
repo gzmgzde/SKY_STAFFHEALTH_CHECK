@@ -55,40 +55,6 @@ nav .profile-pic {
     width: 30px;
   }
 }
-.custom-progress .progress-bar {
-  display: flex !important; /* Force flexbox layout */
-  flex-direction: row !important; /* Ensure horizontal alignment */
-  align-items: center !important;
-  gap: 10px; /* Space between steps */
-  margin-top: 5px;
-}
-
-.custom-progress .progress-step {
-  display: flex !important; /* Ensure each step is inline */
-  align-items: center !important;
-  gap: 3px;
-}
-
-.custom-progress .circle {
-  width: 30px;
-  height: 30px;
-  border-radius: 50%;
-  background-color: #800080;
-  color: white;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 14px;
-  font-weight: bold;
-  margin-right: 5px;
-}
-
-.custom-progress .micro-circle {
-  width: 5px;
-  height: 5px;
-  border-radius: 50%;
-  background-color: #800080;
-}
 
 main {
   width: 100%;
@@ -126,153 +92,6 @@ main .container-survey {
 .survey-header-container h1 {
   margin-bottom: 10px;
 }
-.scale-bar-container {
-  margin-top: 100px !important;
-  width: 100%;
-  max-width: 600px;
-  margin: 20px auto;
-  text-align: center;
-  position: relative;
-}
-
-/* Emoji container */
-.emoji-container {
-  display: flex;
-  justify-content: space-between;
-  position: absolute;
-  top: -75px; /* Position emojis above the scale bar */
-  left: 0;
-  right: 0;
-}
-
-.emoji {
-  width: 70px;
-  height: 70px;
-}
-
-.scale-bar {
-  position: relative;
-  width: 100%;
-  height: 20px;
-  background: linear-gradient(
-    to right,
-    #fe4b3c,
-    #ffb024,
-    #349a67
-  ); /* Gradient colors */
-  border-radius: 10px;
-  overflow: hidden;
-}
-
-.scale-slider {
-  -webkit-appearance: none;
-  appearance: none;
-  width: 100%;
-  height: 20px;
-  background: transparent;
-  position: absolute;
-  top: 0;
-  left: 0;
-  margin: 0;
-  pointer-events: none;
-}
-
-.scale-slider::-webkit-slider-thumb {
-  -webkit-appearance: none;
-  appearance: none;
-  width: 20px;
-  height: 20px;
-  background-color: #adadad;
-  border-radius: 50%;
-  pointer-events: auto;
-  cursor: pointer;
-}
-
-.scale-slider::-moz-range-thumb {
-  width: 20px;
-  height: 20px;
-  background-color: #000;
-  border-radius: 50%;
-  cursor: pointer;
-}
-
-.scale-slider::-ms-thumb {
-  width: 20px;
-  height: 20px;
-  background-color: #000;
-  border-radius: 50%;
-  cursor: pointer;
-}
-
-.survey-field {
-  padding: 12px 30px;
-  border-radius: 20px;
-  border: none;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
-}
-.survey-button {
-  padding: 8px 3px;
-  width: 90px;
-  margin-left: 10px;
-  border-radius: 8px;
-  border: none;
-  background-color: #017bfe;
-  transition: all 200ms ease-out;
-}
-.survey-button:hover {
-  background-color: #1c29d9;
-  transition: all 200ms ease-in-out;
-}
-.survey-field::placeholder {
-  font-size: 12px;
-  opacity: 1; /* Ensure the placeholder is fully visible */
-  text-align: center;
-}
-.comment-container {
-  margin-top: 60px !important;
-}
-.col-12 .nextQuestionBtn {
-  margin-top: 40px;
-  padding: 10px 35px;
-  border-radius: 20px;
-  border: none;
-  background-color: #1c29d9;
-  color: white;
-  float: right;
-  transition: all 200ms ease-out;
-}
-.col-6 .nextQuestionBtn {
-  margin-top: 40px;
-  padding: 10px 35px;
-  border-radius: 20px;
-  border: none;
-  background-color: #1c29d9;
-  color: white;
-  margin-left: 300px;
-  transition: all 200ms ease-out;
-}
-
-.col-6 .backBtn {
-  margin-top: 40px;
-  padding: 10px 72px;
-  border-radius: 20px;
-  border: none;
-  background-color: white;
-  color: black;
-  transition: all 200ms ease-out;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-  margin-right: 300px;
-}
-.backAndNextBtns {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.col-12 .nextQuestionBtn:hover {
-  background-color: #7a86f1;
-  transition: all 200ms ease-in-out;
-}
 
 /* For Setting page CSS */
 
@@ -283,7 +102,7 @@ main .container-survey {
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
 }
 
-.form-select, 
+.form-select,
 .form-control {
   border-radius: 10px;
 }
@@ -292,14 +111,14 @@ main .container-survey {
   border-radius: 10px;
 }
 
-h2, h5 {
+h2,
+h5 {
   font-weight: bold;
 }
 
 .container {
   max-width: 1000px;
 }
-
 
 .form-check-input {
   margin-top: 0;
@@ -317,7 +136,6 @@ h2, h5 {
   opacity: 1;
   margin: 20px 0;
 }
-
 
 .form-check-input.small-switch {
   width: 40px;

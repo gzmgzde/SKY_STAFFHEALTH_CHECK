@@ -48,6 +48,9 @@ if (progressData) {
 function setupVoting() {
   const scalePoints = document.querySelectorAll(".scale-point");
   const scaleSlider = document.getElementById("scaleSlider");
+  const currentQuestion = progressData
+    ? parseInt(progressData.dataset.currentQuestion)
+    : null;
 
   // Function to update the selected point
   function updateSelectedPoint(value) {
@@ -63,6 +66,11 @@ function setupVoting() {
     }
 
     console.log(`Selected Value: ${value}`); // Log the selected value
+
+    // Save the vote to localStorage
+    if (currentQuestion) {
+      localStorage.setItem(`vote_question_${currentQuestion}`, value);
+    }
   }
 
   // Add click event listeners to scale points
@@ -86,8 +94,14 @@ function setupVoting() {
     updateSelectedPoint(value);
   });
 
-  // Initialize the default selected point
-  updateSelectedPoint(scaleSlider.value);
+  // Initialize the default selected point from localStorage
+  if (currentQuestion) {
+    const savedVote = localStorage.getItem(`vote_question_${currentQuestion}`);
+    if (savedVote) {
+      scaleSlider.value = savedVote;
+      updateSelectedPoint(savedVote);
+    }
+  }
 }
 
 // Initialize the voting functionality
