@@ -22,4 +22,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('welcomePage.urls')),
     path('survey/', include('surveyPage.urls')),
+    path('settings/', include('settingsandbadges.urls')),
 ]
