@@ -49,22 +49,24 @@
             <div class="login-card">
 
                 <form id="loginForm">
+                    
                     <!-- Login form -->
-                    <input type="email" placeholder="Email" required id="email">
+                    <input type="email" name="email" placeholder="Email" required id="email">
 
 
                     <div class="password-container">
-                        <input type="password" placeholder="Password" required id="password">
+                        <input type="password" name="password" placeholder="Password" required id="password">
                         <img src="{% static 'welcomePage/images/eye.png' %}" alt="Toggle password visibility"
                             class="toggle-password">
                     </div>
 
                     <!-- Remember me and forgot password -->
-                    <label><input type="checkbox" id="checkbox"> Remember Me</label>
-                    <a href=" " class="forgot-password">Forgot Password?</a>
+                    <label><input type="checkbox" name="remember_me" id="checkbox"> Remember Me</label>
+
+                    <a href="#forgot-password hidden " class="forgot-password">Forgot Password?</a>
 
                     <!-- Login and Register buttons -->
-                    <a href=" ">
+                    <a href="{% url 'admin:index' %} ">
                         <button type="submit" class="login-btn">Login</button>
                     </a>
 
@@ -78,9 +80,35 @@
                 </form>
             </div>
 
+            <div class="forgot-password hidden" id="forgotPassword">
+                <a class="back-login" href="javascript:void(0);" onclick="scrollToLogin()"> &#60; Back</a>
+
+                <h4>Forgot Your Password</h4>
+                <p>Please enter the email address you'd like your password reset information sent to.</p>
+
+                <input type="email" placeholder="Email" required id="reg-email">
+
+                <button type="submit" class="request-reset-btn">Request Reset Link</button>
+
+            </div>
+
+            <div class="reset-password hidden" id="resetPassword">
+                <a class="back-forgot-password" href="javascript:void(0);" onclick="scrollToLogin()"> &#60; Back</a> <!-- Back to forgot password -->
+
+                <h4>Reset Your Password</h4>
+                <p>Enter a new password for </p>
+
+                <input type="email" placeholder="Email" required id="reg-email">
+
+                <button type="submit" class="request-reset-btn">Request Reset Link</button>
+
+            </div>
+
+
             <!-- Register form (hidden as default, will become visible after user clicks "register") -->
             <div class="register-card hidden" id="registerForm">
 
+                <form id="registerform"></form>
                 <div class="button-container">
                     <button type="button" class="engineer-btn">Engineer</button>
                     <button type="button" class="management-btn">Management</button>
@@ -88,7 +116,7 @@
 
                 <a class="back-login" href="javascript:void(0);" onclick="scrollToLogin()"> &#60; Back</a>
 
-                <form id="registerform">
+                
                     <div class="name-container">
                         <input type="text" placeholder="First Name" required id="firstname">
                         <input type="text" placeholder="Last Name" required id="surname">
@@ -157,8 +185,7 @@
                     </div>
 
 
-                    <input type="checkbox" required id="checkbox"> I agree Terms & Conditions <a href="#"
-                        class="terms"></a>
+                    <input type="checkbox" required id="checkbox"> I agree <a href="https://www.sky.com/help/articles/sky-terms-and-conditions" class="terms" target="skyTerms&Conditions" style="color: white">Terms & Conditions</a>
                     <button type="submit" class="register-btn">Register</button>
                 </form>
             </div>
@@ -263,43 +290,43 @@
 
                 //Event listener for team selection
                 teamSelect.addEventListener('change', function () {
-    const selectedTeam = this.value;
-    if (selectedTeam === 'team-AllTeams') {
-        // Reset both team and department to initial state
-        populateDepartments();
-        populateTeams();
-        deptSelect.value = 'department-AllDepartments';
-    } else if (selectedTeam === 'N/A') {
-        // Allow any department to be selected when team is "N/A"
-        populateDepartments();
-        // Add "N/A" to deptSelect if in management mode
-        if (isManagementMode && !Array.from(deptSelect.options).some(opt => opt.value === 'N/A')) {
-            const deptOption = document.createElement('option');
-            deptOption.value = 'N/A';
-            deptOption.text = 'N/A';
-            deptSelect.appendChild(deptOption);
-        }
-        deptSelect.value = 'department-AllDepartments';
-    } else if (teamToDepartment[selectedTeam]) {
-        const relatedDept = teamToDepartment[selectedTeam];
-        deptSelect.value = relatedDept; // Auto-select related department
-    }
-    // Ensure teamSelect stays "N/A" if deptSelect is "N/A"
-    if (deptSelect.value === 'N/A' && teamSelect.value !== 'N/A') {
-        teamSelect.innerHTML = '<option value="N/A" selected>N/A</option>';
-    }
-});
+                    const selectedTeam = this.value;
+                    if (selectedTeam === 'team-AllTeams') {
+                        // Reset both team and department to initial state
+                        populateDepartments();
+                        populateTeams();
+                        deptSelect.value = 'department-AllDepartments';
+                    } else if (selectedTeam === 'N/A') {
+                        // Allow any department to be selected when team is "N/A"
+                        populateDepartments();
+                        // Add "N/A" to deptSelect if in management mode
+                        if (isManagementMode && !Array.from(deptSelect.options).some(opt => opt.value === 'N/A')) {
+                            const deptOption = document.createElement('option');
+                            deptOption.value = 'N/A';
+                            deptOption.text = 'N/A';
+                            deptSelect.appendChild(deptOption);
+                        }
+                        deptSelect.value = 'department-AllDepartments';
+                    } else if (teamToDepartment[selectedTeam]) {
+                        const relatedDept = teamToDepartment[selectedTeam];
+                        deptSelect.value = relatedDept; // Auto-select related department
+                    }
+                    // Ensure teamSelect stays "N/A" if deptSelect is "N/A"
+                    if (deptSelect.value === 'N/A' && teamSelect.value !== 'N/A') {
+                        teamSelect.innerHTML = '<option value="N/A" selected>N/A</option>';
+                    }
+                });
 
                 // Event listener for department selection
                 deptSelect.addEventListener('change', function () {
-    const selectedDept = this.value;
-    if (selectedDept === 'department-AllDepartments') {
-        populateTeams();
-        teamSelect.value = 'team-AllTeams';
-    } else {
-        updateTeamSelect(deptSelect, teamSelect);
-    }
-});
+                    const selectedDept = this.value;
+                    if (selectedDept === 'department-AllDepartments') {
+                        populateTeams();
+                        teamSelect.value = 'team-AllTeams';
+                    } else {
+                        updateTeamSelect(deptSelect, teamSelect);
+                    }
+                });
 
                 // Initial setup
                 populateTeams();
@@ -341,39 +368,39 @@
                     updateTeamSelect(deptSelect, teamSelect);
 
                     engineerBtn.classList.remove('active'); // Highlight Engineer button
-    managementBtn.classList.add('active'); // Remove highlight from Management button
+                    managementBtn.classList.add('active'); // Remove highlight from Management button
 
 
                 }
 
                 function updateTeamSelect(deptSelect, teamSelect) {
-    const currentTeam = teamSelect.value; // Preserve current team selection
-    if (deptSelect.value === 'N/A') {
-        // When dept is "N/A", teamSelect should only have "N/A"
-        teamSelect.innerHTML = '<option value="N/A" selected>N/A</option>';
-    } else if (isManagementMode) {
-        // After management button is clicked, include "N/A" and related teams for the department
-        const relatedTeams = departmentToTeam[deptSelect.value] || [];
-        teamSelect.innerHTML = '<option value="team-AllTeams" disabled selected>Select Team</option>';
-        // Always include "N/A"
-        const naOption = document.createElement('option');
-        naOption.value = 'N/A';
-        naOption.text = 'N/A';
-        teamSelect.appendChild(naOption);
-        // Add related teams
-        relatedTeams.forEach(teamValue => {
-            const team = allTeams.find(t => t.value === teamValue);
-            if (team) {
-                const option = document.createElement('option');
-                option.value = team.value;
-                option.text = team.text;
-                teamSelect.appendChild(option);
-            }
-        });
-        // Restore previous selection if it still exists, else default to "team-AllTeams"
-        teamSelect.value = Array.from(teamSelect.options).some(opt => opt.value === currentTeam) ? currentTeam : 'team-AllTeams';
-    }
-}
+                    const currentTeam = teamSelect.value; // Preserve current team selection
+                    if (deptSelect.value === 'N/A') {
+                        // When dept is "N/A", teamSelect should only have "N/A"
+                        teamSelect.innerHTML = '<option value="N/A" selected>N/A</option>';
+                    } else if (isManagementMode) {
+                        // After management button is clicked, include "N/A" and related teams for the department
+                        const relatedTeams = departmentToTeam[deptSelect.value] || [];
+                        teamSelect.innerHTML = '<option value="team-AllTeams" disabled selected>Select Team</option>';
+                        // Always include "N/A"
+                        const naOption = document.createElement('option');
+                        naOption.value = 'N/A';
+                        naOption.text = 'N/A';
+                        teamSelect.appendChild(naOption);
+                        // Add related teams
+                        relatedTeams.forEach(teamValue => {
+                            const team = allTeams.find(t => t.value === teamValue);
+                            if (team) {
+                                const option = document.createElement('option');
+                                option.value = team.value;
+                                option.text = team.text;
+                                teamSelect.appendChild(option);
+                            }
+                        });
+                        // Restore previous selection if it still exists, else default to "team-AllTeams"
+                        teamSelect.value = Array.from(teamSelect.options).some(opt => opt.value === currentTeam) ? currentTeam : 'team-AllTeams';
+                    }
+                }
                 // Set dropdowns to Engineer mode
                 function setEngineerMode() {
                     populateDepartments();
@@ -383,7 +410,7 @@
                     isManagementMode = false; // Reset management mode
 
                     engineerBtn.classList.add('active'); // Highlight Engineer button
-    managementBtn.classList.remove('active'); // Remove highlight from Management button
+                    managementBtn.classList.remove('active'); // Remove highlight from Management button
 
                 }
 
@@ -404,4 +431,3 @@
 </body>
 
 </html>
-

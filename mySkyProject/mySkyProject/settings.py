@@ -43,7 +43,8 @@ INSTALLED_APPS = [
     'surveyPage',
     'settingsandbadges',
     'pageProfile',
-    'badges'
+    'badges',
+    'dashboardPage'
 ]
 
 MIDDLEWARE = [
@@ -135,3 +136,5 @@ STATIC_ROOT = BASE_DIR / 'staticfiles'  # For production (used by collectstatic)
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+AUTH_USER_MODEL = 'welcomePage.User'
