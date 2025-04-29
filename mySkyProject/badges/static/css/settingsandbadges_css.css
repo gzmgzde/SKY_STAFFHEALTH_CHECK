@@ -1,0 +1,151 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "skyFont", sans-serif;
+}
+body {
+  background: linear-gradient(180deg, #53b0d4 20%, #e9b2b1 100%);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+}
+@font-face {
+  font-family: "skyFont";
+  src: url('../fonts/Sky_Text.ttf')
+    format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+nav {
+  position: relative;
+  padding: 0 2rem;
+}
+.navbar {
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  padding: 0 20px !important;
+  height: 80px !important;
+}
+nav .profile-pic {
+  border-radius: 50%;
+  object-fit: cover;
+  margin: 0;
+  width: 80px;
+}
+
+.fa-arrow-down {
+  margin-left: 0; /* Ensure no extra margin */
+}
+
+.navbar-left {
+  display: flex !important;
+  align-items: center !important;
+}
+
+.navbar-right {
+  display: flex !important;
+  align-items: center !important;
+  gap: 10px !important; /* Add spacing between profile pic and arrow */
+}
+@media (max-width: 768px) {
+  .navbar-logo img.logo {
+    height: 30px;
+    width: 30px;
+  }
+}
+
+main {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.header-container {
+  position: absolute;
+  margin-top: 170px;
+  color: white;
+}
+.back-button {
+  cursor: pointer;
+}
+.fa-less-than {
+  margin-right: 4px;
+}
+
+main .container-survey {
+  text-align: center;
+  margin-top: 250px;
+  background-color: #f1f7ff;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding: 30px 15px;
+}
+.survey-heading {
+  margin-top: 20px;
+}
+.survey-header-container {
+  position: relative;
+  text-align: center;
+}
+.survey-header-container h1 {
+  margin-bottom: 10px;
+}
+
+/* For Setting page CSS */
+
+.card {
+  border: none;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.4); /* light transparent white */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.form-select,
+.form-control {
+  border-radius: 10px;
+}
+
+.btn-primary {
+  border-radius: 10px;
+}
+
+h2,
+h5 {
+  font-weight: bold;
+}
+
+.container {
+  max-width: 1000px;
+}
+
+.form-check-input {
+  margin-top: 0;
+  margin-right: 6px;
+}
+
+.form-check-label img {
+  margin-right: 6px;
+}
+
+.custom-hr {
+  border: none;
+  height: 2px;
+  background-color: white;
+  opacity: 1;
+  margin: 20px 0;
+}
+
+.form-check-input.small-switch {
+  width: 40px;
+  height: 22px;
+}
+
+.form-check-input.small-switch:checked {
+  background-color: #28a745; /* Green color when ON */
+}
+
+.form-check-input {
+  border-radius: 10px; /* Rounded corners for the switch */
+}
