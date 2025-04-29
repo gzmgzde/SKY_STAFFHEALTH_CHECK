@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>SKYvibe - Team Health Check</title>
+        <link rel="stylesheet" type="text/css" href="index.css">
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    </head>
+    <style>
+
+    </style>
+
+    <body>
+        <div class="dashboard">
+            <!-- Header -->
+            <header>
+                <div class="logo">
+                    <img src="images/logo.png" alt="SKYvibe">
+                </div>
+                <div class="header-right">
+                    <button class="my-team-btn">MY TEAM</button>
+                    <div class="profile-icon">👤</div>
+                </div>
+            </header>
+
+            <!-- Main Content -->
+            <main>
+                <div class="back-button">‹ Back</div>
+                
+                <div class="title-section">
+                    <h1>2024 QUARTER 1 SQUAD HEALTH CHECK</h1>
+                    <p class="total-responses">TOTAL RESPONSES: 7</p>
+                </div>
+
+                <div class="content-grid">
+                    <!-- Left Column -->
+                    <div class="team-answers">
+                        <h2>TEAM ANSWERS</h2>
+                        <div class="metrics-grid">
+                            <div class="metric-item" data-metric="DELIVERING_VALUE" onclick="window.location.href='metric-detail.html?metric=DELIVERING_VALUE'">
+                                <span>DELIVERING VALUE</span>
+                                <span class="emoji neutral">😐</span>
+                            </div>
+                            <div class="metric-item" onclick="window.location.href='metric-detail.html?metric=EASY_TO_RELEASE'">
+                                <span>EASY TO RELEASE</span>
+                                <span class="emoji neutral">😐</span>
+                            </div>
+                            <div class="metric-item" onclick="window.location.href='metric-detail.html?metric=HEALTH_OF_CODEBASE'">
+                                <span>HEALTH OF CODEBASE</span>
+                                <span class="emoji happy">😊</span>
+                            </div>
+                            <div class="metric-item" onclick="window.location.href='metric-detail.html?metric=LEARNING'">
+                                <span>LEARNING</span>
+                                <span class="emoji happy">😊</span>
+                            </div>
+                            <div class="metric-item" onclick="window.location.href='metric-detail.html?metric=FUN'">
+                                <span>FUN</span>
+                                <span class="emoji happy">😊</span>
+                            </div>
+                            <div class="metric-item" onclick="window.location.href='metric-detail.html?metric=MISSION'">
+                                <span>MISSION</span>
+                                <span class="emoji neutral">😐</span>
+                            </div>
+                            <div class="metric-item" onclick="window.location.href='metric-detail.html?metric=PAWNS_OR_PLAYERS'">
+                                <span>PAWNS OR PLAYERS</span>
+                                <span class="emoji sad">😞</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right Column -->
+                    <div class="team-metrics">
+                        <div class="view-toggle">
+                            <button class="active">ME</button>
+                            <div class="team-dropdown">
+                                MY TEAM ▼
+                                <div class="dropdown-content">
+                                    <div>ALL TEAMS</div>
+                                    <div>IOS</div>
+                                    <div>KOTLIN</div>
+                                    <div>XCODE</div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="metrics-grid">
+                            <div class="metric-item" onclick="window.location.href='metric-detail.html?metric=SUITABLE_PROCESS'">
+                                <span>SUITABLE PROCESS</span>
+                                <span class="emoji neutral">😐</span>
+                            </div>
+                            <div class="metric-item" onclick="window.location.href='metric-detail.html?metric=SPEED'">
+                                <span>SPEED</span>
+                                <span class="emoji neutral">😐</span>
+                            </div>
+                            <div class="metric-item" onclick="window.location.href='metric-detail.html?metric=SUPPORT'">
+                                <span>SUPPORT</span>
+                                <span class="emoji happy">😊</span>
+                            </div>
+                            <div class="metric-item" onclick="window.location.href='metric-detail.html?metric=TEAMWORK'">
+                                <span>TEAMWORK</span>
+                                <span class="emoji happy">😊</span>
+                            </div>
+                            <div class="metric-item" onclick="window.location.href='metric-detail.html?metric=WORK_LIFE'">
+                                <span>WORK-LIFE</span>
+                                <span class="emoji happy">😊</span>
+                            </div>
+                            <div class="metric-item" onclick="window.location.href='metric-detail.html?metric=RIGHT_TOOLS'">
+                                <span>RIGHT TOOLS</span>
+                                <span class="emoji happy">😊</span>
+                            </div>
+                            <div class="metric-item" onclick="window.location.href='metric-detail.html?metric=TESTING'">
+                                <span>TESTING</span>
+                                <span class="emoji neutral">😐</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Bottom Section -->
+                <div class="bottom-section">
+                    <div class="progression-chart">
+                        <h2>TEAM PROGRESSION</h2>
+                        <div class="date-range">
+                            <span>FROM: 2023 - Q1</span>
+                            <span>TO: 2024 - Q1</span>
+                        </div>
+                        <canvas id="progressionChart"></canvas>
+                    </div>
+
+                    <div class="feedback-summary">
+                        <h2>TEAM FEEDBACK SUMMARY</h2>
+                        <div class="feedback-content">
+                            <p>Better documentation and automation can enhance code quality and releases.</p>
+                            <p>Regular learning, team activities, and clear mission alignment boost engagement.</p>
+                            <p>Faster decisions, stronger collaboration, and the right tools improve efficiency, while better testing ensures stability.</p>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+        <script src="script.js"></script>
+    </body>
+
+    </html>
