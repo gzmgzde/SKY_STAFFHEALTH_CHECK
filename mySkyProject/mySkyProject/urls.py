@@ -25,4 +25,5 @@ urlpatterns = [
     path('settings/', include('settingsandbadges.urls')),
     path('badges/', include('badges.urls')),
     path('profile/', include('pageProfile.urls')),
+     path('dashboard/', include('dashboardPage.urls')),
 ]
