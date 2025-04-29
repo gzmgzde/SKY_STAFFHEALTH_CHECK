@@ -172,12 +172,20 @@
                   value="2"
                   class="scale-slider"
                   id="scaleSlider"
+                  name="vote_value"
                 />
               </div>
             </div>
             <div class="col-12">
               <div class="comment-container">
-                <form action="#" class="survey-form" id="surveyForm">
+                <form method="POST" class="survey-form" id="surveyForm">
+                  {% csrf_token %}
+                  <input
+                    type="hidden"
+                    name="health_card_id"
+                    value="{{ current_question.health_card_id }}"
+                  />
+                  <input type="hidden" name="user_id" value="user1" />
                   <input
                     type="text"
                     class="survey-field"
@@ -197,7 +205,7 @@
               <ul id="commentsList"></ul>
             </div>
             <div class="col-12">
-              <a href="{% url 'survey_q2' %}"
+              <a href="{% url 'survey_question' question_number|add:1 %}"
                 ><button id="nextQuestionBtn" class="nextQuestionBtn">
                   Next Question
                 </button></a

@@ -193,12 +193,12 @@
             </div>
             <div class="backAndNextBtns">
             <div class="col-6">
-              <a href="{% url 'survey_q8' %}"
+              <a href="{% url 'survey_question' question_number|add:-1 %}"
                 ><button id="backBtn" class="backBtn">Back</button></a
               >
               </div>
               <div class="col-6">
-              <a href="{% url 'survey_q10' %}"
+              <a href="{% url 'survey_question' question_number|add:1 %}"
                 ><button id="nextQuestionBtn" class="nextQuestionBtn">Next Question</button></a
               >
               </div>
