@@ -43,7 +43,7 @@ INSTALLED_APPS = [
     'surveyPage',
     'settingsandbadges',
     'pageProfile',
-    'badges'
+    'badges',
     'dashboardPage'
 ]
 
