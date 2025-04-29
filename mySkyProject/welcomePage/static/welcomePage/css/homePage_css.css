@@ -206,14 +206,14 @@ body {
     color: white;
 }
 
-.login-card .login-btn, .register-card .register-btn {
+.login-card .login-btn .register-card .register-btn {
     width: 40%;
     padding: 5px;
     border: none;
     border-radius: 20px;
     background: white;
     color: #1C29D9;
-    font-weight: bold;
+    font-weight: bolder;
     cursor: pointer;
     font-size: 24px;
     margin-top: 10px;
@@ -346,4 +346,35 @@ body {
 .department-container select option {
     background: #1C29D9; /* Dropdown background color */
     color: white; /* Dropdown text color */
+}
+
+/* Container for Engineer and Management buttons */
+.button-container {
+    display: flex; /* Place buttons side by side */
+    justify-content: space-between; /* Add space between the buttons */
+    align-items: center; /* Align buttons vertically */
+    margin-bottom: 20px; /* Add spacing below the buttons */
+}
+
+/* Common styles for both buttons */
+.button-container .engineer-btn,
+.button-container .management-btn {
+    flex: 1; /* Make both buttons take equal width */
+    padding: 10px;
+    border: none;
+    border-radius: 20px;
+    background: white; /* Button background color */
+    color: #1C29D9; /* Button text color */
+    font-weight: bold;
+    font-size: 16px;
+    cursor: pointer;
+    margin: 0 5px; /* Add spacing between the buttons */
+    text-align: center;
+}
+
+/* Hover effect for buttons */
+.button-container .engineer-btn:hover,
+.button-container .management-btn:hover {
+    background: #1C29D9; /* Change background color on hover */
+    color: white; /* Change text color on hover */
 }

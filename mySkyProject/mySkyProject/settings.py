@@ -42,6 +42,8 @@ INSTALLED_APPS = [
     'welcomePage',
     'surveyPage',
     'settingsandbadges'
+    'badges',
+    'pageProfile'
 ]
 
 MIDDLEWARE = [

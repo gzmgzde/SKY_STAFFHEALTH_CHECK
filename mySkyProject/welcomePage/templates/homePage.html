@@ -57,72 +57,80 @@
                     <a href=" " class="forgot-password">Forgot Password?</a>
 
                     <!-- Login and Register buttons -->
+                    <a href=" "> 
                     <button type="submit" class="login-btn">Login</button>
+                    </a>
+
                     <p>Don't have an account? <a href="#register-card hidden" class="register-link">Register</a></p>
 
                     <!-- Admin button -->
-                    <button type="button" class="admin-btn">Admin</button>
+                    <a href="{% url 'admin:index' %}">
+                        <button type="button" class="admin-btn">Admin</button>
+                    </a>
+
                 </form>
             </div>
 
             <!-- Register form (hidden as default, will become visible after user clicks "register") -->
             <div class="register-card hidden" id="registerForm">
+                <div class="button-container">
                 <button type="button" class="engineer-btn">Engineer</button>
                 <button type="button" class="management-btn">Management</button>
+                </div>
                 <a class="back-login" href="javascript:void(0);" onclick="scrollToLogin()"> &#60; Back</a>
 
                 <form>
                     <div class="name-container">
-                    <input type="text" placeholder="First Name" required id="firstname">
-                    <input type="text" placeholder="Last Name" required id="surname">
+                        <input type="text" placeholder="First Name" required id="firstname">
+                        <input type="text" placeholder="Last Name" required id="surname">
                     </div>
 
                     <input type="email" placeholder="Company email" required id="reg-email">
 
 
                     <div class="department-container">
-                    <select class="form-control" id="Department" required>
-                        <option value="department-AllDepartments">Select Department</option>
-                        <option value="department-BroadbandTech">Broadband Technology</option>
-                        <option value="department-NetworkOps">Network Operations</option>
-                        <option value="department-CloudInfrastructure">Cloud Infrastructure</option>
-                        <option value="department-StreamingServices">Streaming Services</option>
-                        <option value="department-DigitalMedia">Digital Media</option>
-                        <option value="department-ContentDelivery">Content Delivery</option>
-                        <option value="department-TVTechnology">TV Technology</option>
-                        <option value="department-MobileDevelopment">Mobile Development</option>
-                        <option value="department-AppInnovation">App Innovation</option>
-                        <option value="department-UserExperience">User Experience</option>
-                        <option value="department-CyberSecurity">Cyber Security</option>
-                        <option value="department-AIandAutomation">AI & Automation</option>
-                    </select>
+                        <select class="form-control" id="Department" required>
+                            <option value="department-AllDepartments">Select Department</option>
+                            <option value="department-BroadbandTech">Broadband Technology</option>
+                            <option value="department-NetworkOps">Network Operations</option>
+                            <option value="department-CloudInfrastructure">Cloud Infrastructure</option>
+                            <option value="department-StreamingServices">Streaming Services</option>
+                            <option value="department-DigitalMedia">Digital Media</option>
+                            <option value="department-ContentDelivery">Content Delivery</option>
+                            <option value="department-TVTechnology">TV Technology</option>
+                            <option value="department-MobileDevelopment">Mobile Development</option>
+                            <option value="department-AppInnovation">App Innovation</option>
+                            <option value="department-UserExperience">User Experience</option>
+                            <option value="department-CyberSecurity">Cyber Security</option>
+                            <option value="department-AIandAutomation">AI & Automation</option>
+                        </select>
 
-                    <select class="form-control" id="Team" required>
-                        <option value="team-AllTeams">Select Team</option>
-                        <option value="team-AI">AI</option>
-                        <option value="team-Analytics">Analytics</option>
-                        <option value="team-Android">Android</option>
-                        <option value="team-Kotlin">Kotlin</option>
-                        <option value="team-Swift">Swift</option>
-                        <option value="team-IoT">IoT</option>
-                        <option value="team-SkyNet">SkyNet</option>
-                        <option value="team-SkyVision">SkyVision</option>
-                        <option value="team-HDStream">HDStream</option>
-                        <option value="team-BroadcastOps">BroadcastOps</option>
-                        <option value="team-SatelliteSync">SatelliteSync</option>
-                        <option value="team-SkyBox">SkyBox</option>
-                        <option value="team-UltraHD">UltraHD</option>
-                        <option value="team-EntertainmentHub">Entertainment Hub</option>
-                        <option value="team-SkyGo">SkyGo</option>
-                        <option value="team-DigitalEdge">DigitalEdge</option>
-                        <option value="team-UXPioneers">UX Pioneers</option>
-                        <option value="team-AppVelocity">AppVelocity</option>
-                        <option value="team-MobileStream">MobileStream</option>
-                        <option value="team-CloudConnect">CloudConnect</option>
-                        <option value="team-SkyFi">SkyFi</option>
-                        <option value="team-CloudSync">CloudSync</option>
-                        <option value="team-SkyMobile">SkyMobile</option>
-                    </select>
+                        <select class="form-control" id="Team" required>
+                            <option value="team-AllTeams">Select Team</option>
+                            <option value="team-AI">AI</option>
+                            <option value="team-Analytics">Analytics</option>
+                            <option value="team-Android">Android</option>
+                            <option value="team-Kotlin">Kotlin</option>
+                            <option value="team-Swift">Swift</option>
+                            <option value="team-IoT">IoT</option>
+                            <option value="team-SkyNet">SkyNet</option>
+                            <option value="team-SkyVision">SkyVision</option>
+                            <option value="team-HDStream">HDStream</option>
+                            <option value="team-BroadcastOps">BroadcastOps</option>
+                            <option value="team-SatelliteSync">SatelliteSync</option>
+                            <option value="team-SkyBox">SkyBox</option>
+                            <option value="team-UltraHD">UltraHD</option>
+                            <option value="team-EntertainmentHub">Entertainment Hub</option>
+                            <option value="team-SkyGo">SkyGo</option>
+                            <option value="team-DigitalEdge">DigitalEdge</option>
+                            <option value="team-UXPioneers">UX Pioneers</option>
+                            <option value="team-AppVelocity">AppVelocity</option>
+                            <option value="team-MobileStream">MobileStream</option>
+                            <option value="team-CloudConnect">CloudConnect</option>
+                            <option value="team-SkyFi">SkyFi</option>
+                            <option value="team-CloudSync">CloudSync</option>
+                            <option value="team-SkyMobile">SkyMobile</option>
+                        </select>
 
                     </div>
 
@@ -130,7 +138,7 @@
                     <input type="password" placeholder="Confirm your Password" required id="confirm-password">
 
                     <input type="checkbox" id="checkbox"> I agree Terms & Conditions <a href="#" class="terms"></a>
-                    <button type="submit" class="login-btn">Register</button>
+                    <button type="submit" class="register-btn">Register</button>
                 </form>
             </div>
 

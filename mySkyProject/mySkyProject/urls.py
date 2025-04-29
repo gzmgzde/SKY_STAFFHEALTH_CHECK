@@ -23,4 +23,5 @@ urlpatterns = [
     path('', include('welcomePage.urls')),
     path('survey/', include('surveyPage.urls')),
     path('settings/', include('settingsandbadges.urls')),
+    path('badges/', include('badges.urls'))
 ]
