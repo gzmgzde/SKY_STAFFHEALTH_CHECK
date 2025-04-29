@@ -41,9 +41,9 @@ INSTALLED_APPS = [
     # Add the following line to the list of installed apps
     'welcomePage',
     'surveyPage',
-    'settingsandbadges'
-    'badges',
-    'pageProfile'
+    'settingsandbadges',
+    'pageProfile',
+    'badges'
 ]
 
 MIDDLEWARE = [
