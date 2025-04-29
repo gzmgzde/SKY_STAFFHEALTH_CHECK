@@ -263,43 +263,43 @@
 
                 //Event listener for team selection
                 teamSelect.addEventListener('change', function () {
-                    const selectedTeam = this.value;
-                    if (selectedTeam === 'team-AllTeams') {
-                        // Reset both team and department to initial state
-                        populateDepartments();
-                        populateTeams();
-                        deptSelect.value = 'department-AllDepartments';
-                    } else if (selectedTeam === 'N/A') {
-                        // Allow any department to be selected when team is "N/A"
-                        populateDepartments();
-                        // Add "N/A" to deptSelect if in management mode
-                        if (isManagementMode && !Array.from(deptSelect.options).some(opt => opt.value === 'N/A')) {
-                            const deptOption = document.createElement('option');
-                            deptOption.value = 'N/A';
-                            deptOption.text = 'N/A';
-                            deptSelect.appendChild(deptOption);
-                        }
-                        deptSelect.value = 'department-AllDepartments';
-                    } else if (teamToDepartment[selectedTeam]) {
-                        const relatedDept = teamToDepartment[selectedTeam];
-                        deptSelect.value = relatedDept; // Auto-select related department
-                    }
-                    // Ensure teamSelect stays "N/A" if deptSelect is "N/A"
-                    if (deptSelect.value === 'N/A' && teamSelect.value !== 'N/A') {
-                        teamSelect.innerHTML = '<option value="N/A" selected>N/A</option>';
-                    }
-                });
+    const selectedTeam = this.value;
+    if (selectedTeam === 'team-AllTeams') {
+        // Reset both team and department to initial state
+        populateDepartments();
+        populateTeams();
+        deptSelect.value = 'department-AllDepartments';
+    } else if (selectedTeam === 'N/A') {
+        // Allow any department to be selected when team is "N/A"
+        populateDepartments();
+        // Add "N/A" to deptSelect if in management mode
+        if (isManagementMode && !Array.from(deptSelect.options).some(opt => opt.value === 'N/A')) {
+            const deptOption = document.createElement('option');
+            deptOption.value = 'N/A';
+            deptOption.text = 'N/A';
+            deptSelect.appendChild(deptOption);
+        }
+        deptSelect.value = 'department-AllDepartments';
+    } else if (teamToDepartment[selectedTeam]) {
+        const relatedDept = teamToDepartment[selectedTeam];
+        deptSelect.value = relatedDept; // Auto-select related department
+    }
+    // Ensure teamSelect stays "N/A" if deptSelect is "N/A"
+    if (deptSelect.value === 'N/A' && teamSelect.value !== 'N/A') {
+        teamSelect.innerHTML = '<option value="N/A" selected>N/A</option>';
+    }
+});
 
                 // Event listener for department selection
                 deptSelect.addEventListener('change', function () {
-                    const selectedDept = this.value;
-                    if (selectedDept === 'department-AllDepartments') {
-                        populateTeams();
-                        teamSelect.value = 'team-AllTeams';
-                    } else {
-                        updateTeamSelect(deptSelect, teamSelect);
-                    }
-                });
+    const selectedDept = this.value;
+    if (selectedDept === 'department-AllDepartments') {
+        populateTeams();
+        teamSelect.value = 'team-AllTeams';
+    } else {
+        updateTeamSelect(deptSelect, teamSelect);
+    }
+});
 
                 // Initial setup
                 populateTeams();
@@ -311,7 +311,19 @@
                 const backLogin = document.querySelector('.back-login');
                 const loginCard = document.querySelector('.login-card');
 
+                // Show the register form when the "Register" link is clicked
+                registerLink.addEventListener('click', function (e) {
+                    e.preventDefault(); // Prevent default link behavior
+                    loginCard.classList.add('hidden'); // Hide the login form
+                    registerForm.classList.remove('hidden'); // Show the register form
+                });
 
+                // Show the login form when the "Back" link is clicked
+                backLogin.addEventListener('click', function (e) {
+                    e.preventDefault(); // Prevent default link behavior
+                    registerForm.classList.add('hidden'); // Hide the register form
+                    loginCard.classList.remove('hidden'); // Show the login form
+                });
 
                 // Management team/department selection
                 function setManagementMode() {
@@ -328,46 +340,51 @@
                     deptSelect.value = 'N/A';
                     updateTeamSelect(deptSelect, teamSelect);
 
+                    engineerBtn.classList.remove('active'); // Highlight Engineer button
+    managementBtn.classList.add('active'); // Remove highlight from Management button
+
+
                 }
 
                 function updateTeamSelect(deptSelect, teamSelect) {
-                    const currentTeam = teamSelect.value; // Preserve current team selection
-                    if (deptSelect.value === 'N/A') {
-                        // When dept is "N/A", teamSelect should only have "N/A"
-                        teamSelect.innerHTML = '<option value="N/A" selected>N/A</option>';
-                    } else if (isManagementMode) {
-                        // After management button is clicked, include "N/A" and related teams for the department
-                        const relatedTeams = departmentToTeam[deptSelect.value] || [];
-                        teamSelect.innerHTML = '<option value="team-AllTeams" disabled selected>Select Team</option>';
-                        // Always include "N/A"
-                        const naOption = document.createElement('option');
-                        naOption.value = 'N/A';
-                        naOption.text = 'N/A';
-                        teamSelect.appendChild(naOption);
-                        // Add related teams
-                        relatedTeams.forEach(teamValue => {
-                            const team = allTeams.find(t => t.value === teamValue);
-                            if (team) {
-                                const option = document.createElement('option');
-                                option.value = team.value;
-                                option.text = team.text;
-                                teamSelect.appendChild(option);
-                            }
-                        });
-                        // Restore previous selection if it still exists, else default to "team-AllTeams"
-                        teamSelect.value = Array.from(teamSelect.options).some(opt => opt.value === currentTeam) ? currentTeam : 'team-AllTeams';
-                    }
-                }
-
-
-
+    const currentTeam = teamSelect.value; // Preserve current team selection
+    if (deptSelect.value === 'N/A') {
+        // When dept is "N/A", teamSelect should only have "N/A"
+        teamSelect.innerHTML = '<option value="N/A" selected>N/A</option>';
+    } else if (isManagementMode) {
+        // After management button is clicked, include "N/A" and related teams for the department
+        const relatedTeams = departmentToTeam[deptSelect.value] || [];
+        teamSelect.innerHTML = '<option value="team-AllTeams" disabled selected>Select Team</option>';
+        // Always include "N/A"
+        const naOption = document.createElement('option');
+        naOption.value = 'N/A';
+        naOption.text = 'N/A';
+        teamSelect.appendChild(naOption);
+        // Add related teams
+        relatedTeams.forEach(teamValue => {
+            const team = allTeams.find(t => t.value === teamValue);
+            if (team) {
+                const option = document.createElement('option');
+                option.value = team.value;
+                option.text = team.text;
+                teamSelect.appendChild(option);
+            }
+        });
+        // Restore previous selection if it still exists, else default to "team-AllTeams"
+        teamSelect.value = Array.from(teamSelect.options).some(opt => opt.value === currentTeam) ? currentTeam : 'team-AllTeams';
+    }
+}
                 // Set dropdowns to Engineer mode
                 function setEngineerMode() {
                     populateDepartments();
                     populateTeams();
                     deptSelect.disabled = false;
                     teamSelect.disabled = false;
-                    isManagementMode = false;
+                    isManagementMode = false; // Reset management mode
+
+                    engineerBtn.classList.add('active'); // Highlight Engineer button
+    managementBtn.classList.remove('active'); // Remove highlight from Management button
+
                 }
 
                 engineerBtn.addEventListener('click', function () {
@@ -383,22 +400,8 @@
 
 
 
-
-                // Show the register form when the "Register" link is clicked
-                registerLink.addEventListener('click', function (e) {
-                    e.preventDefault(); // Prevent default link behavior
-                    loginCard.classList.add('hidden'); // Hide the login form
-                    registerForm.classList.remove('hidden'); // Show the register form
-                });
-
-                // Show the login form when the "Back" link is clicked
-                backLogin.addEventListener('click', function (e) {
-                    e.preventDefault(); // Prevent default link behavior
-                    registerForm.classList.add('hidden'); // Hide the register form
-                    loginCard.classList.remove('hidden'); // Show the login form
-                });
-
             </script>
 </body>
 
 </html>
+

@@ -171,7 +171,6 @@ body {
     position: relative;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     backdrop-filter: blur(4.5px);
-    border-radius: 20px;
 }
 
 .login-card input, .register-card input {
@@ -179,7 +178,7 @@ body {
     padding: 10px;
     margin: 10px 0;
     border: 2px solid rgba(255, 255, 255, 0.5);
-    border-radius: 20px;
+    border-radius: 25px;
     background: transparent;
     color: white;
     font-size: 14px;
@@ -212,7 +211,7 @@ body {
     max-width: 200px;
     padding: 10px;
     border: none;
-    border-radius: 20px;
+    border-radius: 25px;
     background: white;
     color: #1C29D9;
     font-weight: bold;
@@ -265,7 +264,7 @@ font-size: 16px;
     width: 20%;
     padding: 5px;
     border: 2px solid rgba(255, 255, 255, 0.5);
-    border-radius: 20px;
+    border-radius: 25px;
     background: transparent;
     color: white;
     font-size: 16px;
@@ -340,7 +339,7 @@ font-size: 16px;
     width: 100%;
     padding: 10px 40px 10px 10px; /* Add padding on right for eye icon */
     border: 2px solid rgba(255, 255, 255, 0.5);
-    border-radius: 20px;
+    border-radius: 25px;
     background: transparent;
     color: white;
     font-size: 14px;
@@ -385,7 +384,7 @@ font-size: 16px;
     flex: 1; 
     padding: 10px;
     border: 2px solid rgba(255, 255, 255, 0.5);
-    border-radius: 20px;
+    border-radius: 25px;
     background: transparent;
     color: white;
     font-size: 14px;
@@ -400,7 +399,7 @@ font-size: 16px;
     flex: 1; /* Make both inputs take equal width */
     padding: 10px;
     border: 2px solid rgba(255, 255, 255, 0.5);
-    border-radius: 20px;
+    border-radius: 25px;
     background: transparent;
     color: white;
     font-size: 14px;
@@ -409,7 +408,7 @@ font-size: 16px;
     flex: 1; /* Match the width of name-container inputs */
     padding: 10px; /* Match padding of name-container inputs */
     border: 2px solid rgba(255, 255, 255, 0.5); /* Match border */
-    border-radius: 20px; /* Match border-radius */
+    border-radius: 25px; /* Match border-radius */
     background: transparent; /* Match background */
     color: white; /* Match text color */
     font-size: 14px; /* Match font size */
@@ -440,22 +439,23 @@ font-size: 16px;
 /* Common styles for both buttons */
 .button-container .engineer-btn,
 .button-container .management-btn {
-    flex: 1; /* Make both buttons take equal width */
+    width: 100%;
+    max-width: 200px;
     padding: 10px;
-    border: none;
-    border-radius: 20px;
-    background: white; /* Button background color */
-    color: #1C29D9; /* Button text color */
+    border-radius: 25px;
     font-weight: bold;
-    font-size: 16px;
+    font-size: 20px;
     cursor: pointer;
-    margin: 0 5px; /* Add spacing between the buttons */
     text-align: center;
+    margin: 5px auto;
+    display: block;
+    background: transparent;
+    color: white;
+    border: 2px solid white; 
 }
 
-/* Hover effect for buttons */
-.button-container .engineer-btn:hover,
-.button-container .management-btn:hover {
-    background: #1C29D9; /* Change background color on hover */
-    color: white; /* Change text color on hover */
+.button-container .engineer-btn.active,
+.button-container .management-btn.active {
+    color: #1C29D9;
+    background: rgba(255, 255, 255, 0.574);
 }
