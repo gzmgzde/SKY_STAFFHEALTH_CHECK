@@ -127,8 +127,6 @@ class Vote(models.Model):
     class Meta:
         managed = False
         db_table = 'Vote'
-
-
 class AuthGroup(models.Model):
     name = models.CharField(unique=True, max_length=150)
 
