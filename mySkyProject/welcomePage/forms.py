@@ -157,3 +157,16 @@ class UserLoginForm(AuthenticationForm):
             if not password:
                 raise forms.ValidationError("Password is required.")
             return password
+        
+class ForgotPasswordForm(forms.Form):
+    email = forms.EmailField(
+        required=True,
+        help_text="Enter your registered email address.",
+        widget=forms.EmailInput(attrs={'placeholder': 'Email'}),
+    )
+
+    def clean_email(self):
+        email = self.cleaned_data.get('email')
+        if not User.objects.filter(email=email).exists():
+            raise forms.ValidationError("This email is not registered.")
+        return email

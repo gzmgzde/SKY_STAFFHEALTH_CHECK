@@ -16,8 +16,9 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include 
-from welcomePage import views
+from welcomePage import views as welcome_views
 from django.contrib.auth import views as auth_views
+
 
 
 urlpatterns = [
@@ -28,4 +29,10 @@ urlpatterns = [
     path('badges/', include('badges.urls')),
     path('profile/', include('pageProfile.urls')),
     path('dashboard/', include('dashboardPage.urls')),
+
+    path('forgot-password/', welcome_views.forgot_password, name='forgot_password'),
+    path('login/', welcome_views.login_view, name='login'),
+    path('register/', welcome_views.register, name='register'),
+    path('create-new-password/', welcome_views.password_reset, name='create_new_password'),
+
 ]
