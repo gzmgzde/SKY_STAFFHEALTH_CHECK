@@ -33,7 +33,7 @@
               src="{% static 'surveyPage/images/logo.png' %}"
               alt="SkyVibe Logo"
               class="logo"
-              height="70"
+              height="120"
             />
           </div>
           <div class="navbar-right">
@@ -50,7 +50,9 @@
                 <li><a href="#">Hello Manta!</a></li>
                 <li><a href="#">👩🏻‍💻Profile</a></li>
                 <li><a href="#">🏆Badges</a></li>
-                <li><a href="#">💻Settings</a></li>
+                <li>
+                  <a href="">💻Settings</a>
+                </li>
                 <li><a href="#">Logout</a></li>
               </ul>
             </div>
@@ -61,7 +63,8 @@
     <main>
       <div class="container">
         <div class="row">
-          <div class="grid .grid-1-column">
+          <div class="grid grid-1-column">
+            <h4>ONGOING ASSESSMENTS</h4>
             <div class="card">
               <div class="card-header grid">
                 <img
@@ -71,6 +74,41 @@
               </div>
               <div class="card-body">
                 <p class="card-status">NOT STARTED</p>
+                <h5>2025 QUARTER 1 SQUAD HEALTH CHECK</h5>
+                <p>By Admin 1 month ago</p>
+              </div>
+              <div class="card-footer">
+                <p><a href="#" target="_blank">VIEW</a></p>
+              </div>
+            </div>
+          </div>
+          <h4>COMPLETED ASSESSMENTS</h4>
+          <div class="grid grid-2-column">
+            <div class="card">
+              <div class="card-header grid">
+                <img
+                  src="{% static 'dashboardPage/images/card-image2.png' %}"
+                  alt="Sky Survey Card Image"
+                />
+              </div>
+              <div class="card-body">
+                <p class="card-status">COMPLETED</p>
+                <h5>2025 QUARTER 1 SQUAD HEALTH CHECK</h5>
+                <p>By Admin 1 month ago</p>
+              </div>
+              <div class="card-footer">
+                <p><a href="#" target="_blank">VIEW</a></p>
+              </div>
+            </div>
+            <div class="card thirdCard">
+              <div class="card-header grid">
+                <img
+                  src="{% static 'dashboardPage/images/card-image3.png' %}"
+                  alt="Sky Survey Card Image"
+                />
+              </div>
+              <div class="card-body">
+                <p class="card-status">COMPLETED</p>
                 <h5>2025 QUARTER 1 SQUAD HEALTH CHECK</h5>
                 <p>By Admin 1 month ago</p>
               </div>
