@@ -21,7 +21,7 @@
     />
     <link
       rel="stylesheet"
-      href="{% static 'surveyPage/css/surveyPage_css.css' %}"
+      href="{% static 'dashboardPage/dashboard_css.css' %}"
     />
   </head>
   <body>
@@ -45,9 +45,48 @@
               weight="70"
             />
             <i class="fa-solid fa-arrow-down" style="color: #ffffff"></i>
+            <div class="dropdown-menu">
+              <ul>
+                <li><a href="#">Hello Manta!</a></li>
+                <li><a href="#">👩🏻‍💻Profile</a></li>
+                <li><a href="#">🏆Badges</a></li>
+                <li><a href="#">💻Settings</a></li>
+                <li><a href="#">Logout</a></li>
+              </ul>
+            </div>
           </div>
         </div>
       </div>
     </nav>
+    <main>
+      <div class="container">
+        <div class="row">
+          <div class="grid .grid-1-column">
+            <div class="card">
+              <div class="card-header grid">
+                <img
+                  src="{% static 'dashboardPage/images/card-image.png' %}"
+                  alt="Sky Survey Card Image"
+                />
+              </div>
+              <div class="card-body">
+                <p class="card-status">NOT STARTED</p>
+                <h5>2025 QUARTER 1 SQUAD HEALTH CHECK</h5>
+                <p>By Admin 1 month ago</p>
+              </div>
+              <div class="card-footer">
+                <p><a href="#" target="_blank">VIEW</a></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <script src="{% static 'dashboardPage/js/dashboard_js.js' %}"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
   </body>
 </html>

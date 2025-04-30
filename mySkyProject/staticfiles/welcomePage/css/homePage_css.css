@@ -171,7 +171,6 @@ body {
     position: relative;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     backdrop-filter: blur(4.5px);
-    border-radius: 20px;
 }
 
 .login-card input, .register-card input {
@@ -179,7 +178,7 @@ body {
     padding: 10px;
     margin: 10px 0;
     border: 2px solid rgba(255, 255, 255, 0.5);
-    border-radius: 20px;
+    border-radius: 25px;
     background: transparent;
     color: white;
     font-size: 14px;
@@ -206,21 +205,41 @@ body {
     color: white;
 }
 
-.login-card .login-btn, .register-card .register-btn {
-    width: 40%;
-    padding: 5px;
+.login-card .login-btn,
+.register-card .register-btn {
+    width: 100%;
+    max-width: 200px;
+    padding: 10px;
     border: none;
-    border-radius: 20px;
+    border-radius: 25px;
     background: white;
     color: #1C29D9;
     font-weight: bold;
+    font-size: 20px;
     cursor: pointer;
-    font-size: 24px;
-    margin-top: 10px;
+    text-align: center;
+    margin: 10px auto;
     display: block;
-    margin-left: auto;
-    margin-right: auto;
-    cursor:grab;
+}
+
+.back-login{
+color: white;
+font-size: 16px;
+}
+
+.login-card .login-btn:hover,
+.register-card .register-btn:hover {
+    background: #1C29D9;
+    color: white;
+}
+
+.login-card a .login-btn {
+    text-decoration: none;
+    color: #1C29D9;
+}
+
+.login-card a .login-btn:hover {
+    color: white;
 }
 
 .login-card #email {
@@ -228,7 +247,6 @@ body {
     margin-top: 40px;
     height: 47px;
 }
-
 .login-card #password {
     font-size: 16px;
     margin-top: 20px;
@@ -246,7 +264,7 @@ body {
     width: 20%;
     padding: 5px;
     border: 2px solid rgba(255, 255, 255, 0.5);
-    border-radius: 20px;
+    border-radius: 25px;
     background: transparent;
     color: white;
     font-size: 16px;
@@ -254,6 +272,12 @@ body {
     left: 84%;
     transform: translateX(-50%);
     position: absolute;
+}
+
+.login-card .admin-btn:hover {
+    border-color: white;
+    color: #1C29D9;
+    background: white;
 }
 
 .login-card p {
@@ -289,6 +313,62 @@ body {
         width: 30%;
         font-size: 14px;
     }
+
+    .password-container .toggle-password {
+        width: 18px;
+        height: 18px;
+    }
+}
+
+.password-container {
+    position: relative;
+    width: 100%;
+    margin: 10px 0;
+}
+
+.password-requirements{
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 14px;
+    margin-top: -10px;
+    margin-bottom: 10px;
+};
+
+/* Style password inputs */
+.password-container input[type="password"],
+.password-container input[type="text"] {
+    width: 100%;
+    padding: 10px 40px 10px 10px; /* Add padding on right for eye icon */
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    border-radius: 25px;
+    background: transparent;
+    color: white;
+    font-size: 14px;
+}
+
+.password-container input::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+/* Style eye icon image */
+.password-container .toggle-password {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    opacity: 0.7; /* Matches previous rgba(255, 255, 255, 0.7) */
+    transition: opacity 0.3s;
+}
+
+.password-container .toggle-password.visible {
+    opacity: 1;
+}
+
+.login-card .password-container .toggle-password {
+    right: 10px; 
+    top: 42px;
 }
 
 .hidden {
@@ -301,10 +381,10 @@ body {
 }
 
 .name-container input {
-    flex: 1; /* Make both inputs take equal width */
+    flex: 1; 
     padding: 10px;
     border: 2px solid rgba(255, 255, 255, 0.5);
-    border-radius: 20px;
+    border-radius: 25px;
     background: transparent;
     color: white;
     font-size: 14px;
@@ -319,7 +399,7 @@ body {
     flex: 1; /* Make both inputs take equal width */
     padding: 10px;
     border: 2px solid rgba(255, 255, 255, 0.5);
-    border-radius: 20px;
+    border-radius: 25px;
     background: transparent;
     color: white;
     font-size: 14px;
@@ -328,7 +408,7 @@ body {
     flex: 1; /* Match the width of name-container inputs */
     padding: 10px; /* Match padding of name-container inputs */
     border: 2px solid rgba(255, 255, 255, 0.5); /* Match border */
-    border-radius: 20px; /* Match border-radius */
+    border-radius: 25px; /* Match border-radius */
     background: transparent; /* Match background */
     color: white; /* Match text color */
     font-size: 14px; /* Match font size */
@@ -346,4 +426,36 @@ body {
 .department-container select option {
     background: #1C29D9; /* Dropdown background color */
     color: white; /* Dropdown text color */
+}
+
+/* Container for Engineer and Management buttons */
+.button-container {
+    display: flex; /* Place buttons side by side */
+    justify-content: space-between; /* Add space between the buttons */
+    align-items: center; /* Align buttons vertically */
+    margin-bottom: 20px; /* Add spacing below the buttons */
+}
+
+/* Common styles for both buttons */
+.button-container .engineer-btn,
+.button-container .management-btn {
+    width: 100%;
+    max-width: 200px;
+    padding: 10px;
+    border-radius: 25px;
+    font-weight: bold;
+    font-size: 20px;
+    cursor: pointer;
+    text-align: center;
+    margin: 5px auto;
+    display: block;
+    background: transparent;
+    color: white;
+    border: 2px solid white; 
+}
+
+.button-container .engineer-btn.active,
+.button-container .management-btn.active {
+    color: #1C29D9;
+    background: rgba(255, 255, 255, 0.574);
 }
