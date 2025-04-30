@@ -27,38 +27,65 @@
             <img src="{% static 'welcomePage/images/cloud4.png' %}" style="--i:7;">
             <img src="{% static 'welcomePage/images/cloud5.png' %}" style="--i:6;">
         </div>
-    
 
-    <!-- Login Section -->
-    {% block content %}
-    <div class="login-section">
-        <div class="login-card">
-            <form id="loginForm" action="" method="post">
-                {% csrf_token %}
 
-                {{form}}
+        <!-- Login Section -->
+        {% block content %}
+        <div class="login-section">
+            <div class="login-card" style="width: 400px;">
+                
+                <form id="loginForm" action="" method="post">
+                    {% csrf_token %}
 
-                <!-- Remember me and forgot password -->
-                <label><input type="checkbox" name="remember_me" id="checkbox"> Remember Me</label>
+                    <br>
+                    <div class="form-errors">
+                        {% if form.non_field_errors %}
+                        <ul>
+                            {% for error in form.non_field_errors %}
+                            <li>{{ error }}</li>
+                            {% endfor %}
+                        </ul>
+                        {% endif %}
+                        {% for field in form %}
+                        {% for error in field.errors %}
+                        <ul>
+                            <li>{{ error }}</li>
+                        </ul>
+                        {% endfor %}
+                        {% endfor %}
+                    </div>
 
-                <a href="{% url 'forgot_password' %} " class="forgot-password">Forgot Password?</a>
 
-                <!-- Login and Register buttons -->
-                <a href="{% url 'admin:index' %} ">
-                    <button type="submit" class="login-btn">Login</button>
-                </a>
+                    <div class="form-group">
+                        {{ form.username }}
+                    </div>
 
-                <p>Don't have an account? <a href="{% url 'register'}" class="register-link">Register</a></p>
+                    <div class="form-group">
+                        {{ form.password }}
+                    </div>
 
-                <!-- Admin button -->
-                <a href="{% url 'admin:index' %}">
-                    <button type="button" class="admin-btn">Admin</button>
-                </a>
 
-            </form>
+                    <!-- Remember me and forgot password -->
+                    <label><input type="checkbox" name="remember_me" id="checkbox"> Remember Me</label>
+
+                    <a href="{% url 'forgot_password' %} " class="forgot-password">Forgot Password?</a>
+
+                    
+                        <button type="submit" class="login-btn">Login</button>
+                    
+
+                    <p>Don't have an account? <a href="{% url 'register'%}" class="register-link">Register</a></p>
+
+                    <!-- Admin button -->
+                    <a href="{% url 'admin:index' %}">
+                        <button type="button" class="admin-btn">Admin</button>
+                    </a>
+
+                </form>
+            </div>
         </div>
-    </div>
     </div>
     {% endblock content %}
 </body>
+
 </html>

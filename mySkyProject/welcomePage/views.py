@@ -1,8 +1,9 @@
 from django.contrib import messages
 from django.shortcuts import redirect, render
-from django.http import HttpResponse
-from .forms import *
+from .forms import UserRegisterForm, UserLoginForm
 from django.contrib.auth.decorators import login_required
+from django.contrib.auth import login, authenticate
+
 
 
 # Create your views here.
@@ -11,8 +12,24 @@ def home(request):
     return render(request, 'homePage.html')
 
 
-def login(request):
-    return render(request, 'login.html')
+def login_view(request):
+    if request.method == 'POST':
+        form = UserLoginForm(request, data=request.POST)
+        if form.is_valid():
+            username = form.cleaned_data.get('username')
+            password = form.cleaned_data.get('password')
+            user = authenticate(request, username=username, password=password)
+
+            if user is not None:
+                login(request,user)  # Log the user in
+                return redirect('/dashboard')  # Redirect to the dashboard page after successful login
+            else:
+                form.add_error(None, 'Invalid credentials')
+    else:
+        form = UserLoginForm()
+
+    return render(request, 'login.html', {'form': form})
+
 
 
 def forgot_password(request):
@@ -40,3 +57,4 @@ def register(request):
 @login_required()
 def profile(request):
     return render(request, 'users/profile.html')
+

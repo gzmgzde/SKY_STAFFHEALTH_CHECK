@@ -139,3 +139,5 @@ STATIC_ROOT = BASE_DIR / 'staticfiles'  # For production (used by collectstatic)
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 AUTH_USER_MODEL = 'welcomePage.User'
+
+LOGIN_REDIRECT_URL = "/dashboardPage:dashboard"

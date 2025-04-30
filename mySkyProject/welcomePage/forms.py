@@ -1,5 +1,5 @@
 from django import forms
-from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.forms import UserCreationForm,AuthenticationForm
 from .models import Department, User, Team
 import uuid
 import logging
@@ -110,3 +110,52 @@ class UserRegisterForm(UserCreationForm):
         except Exception as e:
             logger.error(f"An error occurred while saving the user: {e}")
             raise
+
+
+
+class UserLoginForm(AuthenticationForm):
+    # Override the default username field to use EmailField
+        username = forms.EmailField(
+            widget=forms.EmailInput(attrs={
+                'class': 'form-control',
+                'placeholder': 'Email'
+            }),
+            label="Email"  # You can define label here as well
+        )
+
+        password = forms.CharField(
+            widget=forms.PasswordInput(attrs={
+                'class': 'form-control',
+                'placeholder': 'Password'
+            }),
+            label="Password"
+        )
+
+        def __init__(self, *args, **kwargs):
+            super().__init__(*args, **kwargs)
+            # Although we already set the labels in field declaration,
+            # this reinforces that 'username' should be labelled as "Email"
+            self.fields['username'].label = "Email"
+            self.fields['password'].label = "Password"
+
+        def clean(self):
+            # Call the base class clean method to run the standard authentication logic.
+            cleaned_data = super().clean()
+            if not cleaned_data.get('username'):
+                raise forms.ValidationError("Email is required.")
+            if not cleaned_data.get('password'):
+                raise forms.ValidationError("Password is required.")
+            return cleaned_data
+
+        def clean_username(self):
+            username = self.cleaned_data.get('username')
+            # Check if the user exists for a given email.
+            if username and not User.objects.filter(email=username).exists():
+                raise forms.ValidationError("This email is not registered.")
+            return username
+
+        def clean_password(self):
+            password = self.cleaned_data.get('password')
+            if not password:
+                raise forms.ValidationError("Password is required.")
+            return password
