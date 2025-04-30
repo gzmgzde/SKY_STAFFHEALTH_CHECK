@@ -171,3 +171,17 @@ class ForgotPasswordForm(forms.Form):
         if not User.objects.filter(email=email).exists():
             raise forms.ValidationError("This email is not registered.")
         return email
+    
+class PasswordResetForm(forms.Form):
+    new_password = forms.CharField(widget=forms.PasswordInput(attrs={'placeholder':'Enter new Password'}), label="New Password")
+    confirm_password = forms.CharField(widget=forms.PasswordInput(attrs={'placeholder':'Confirm new Password'}), label="Confirm Password")
+
+    def clean(self):
+        cleaned_data = super().clean()
+        new_password = cleaned_data.get("new_password")
+        confirm_password = cleaned_data.get("confirm_password")
+
+        if new_password != confirm_password:
+            raise forms.ValidationError("The two password fields must match.")
+
+        return cleaned_data
