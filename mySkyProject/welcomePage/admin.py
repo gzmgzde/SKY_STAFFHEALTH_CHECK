@@ -1,5 +1,4 @@
 from django.contrib import admin
-
 from .forms import UserRegisterForm
 from .models import Administrator, Department,  Team,  User
 
@@ -31,7 +30,8 @@ class UserAdmin(admin.ModelAdmin):
     ordering = ('role',)
     list_per_page = 25
     list_max_show_all = 100
-    form = UserRegisterForm  # Use the custom form
+    form = UserRegisterForm  
+    
 
     def get_queryset(self, request):
         queryset = super().get_queryset(request)

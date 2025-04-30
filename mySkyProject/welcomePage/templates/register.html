@@ -33,11 +33,12 @@
     {% block content %}
       <!-- Register form - user clicks "register") -->
       <div class="register-card" id="registerForm">
-        <a class="back-login" href="{% url 'login' %}"> &#60; Back</a>
+        <br>
+        <a class="back-login" href="{% url 'login' %}" style="font-size: larger;"> &#60; Back</a>
 
         <form id="registerform" action="" method="post" >
         {% csrf_token %}
-        <br>
+        
         <div class="form-errors">
             {% if form.non_field_errors %}
                 <ul>
@@ -80,6 +81,7 @@
         </div>
         <div class="form-group">
             {{ form.password1 }}
+            <img src="{% static 'welcomePage/images/eye.png' %}" class="toggle-password" alt="Toggle Password Visibility">
         </div>
         <p class="password-requirements">
             Password should contain at least 8 characters, a mix of uppercase and lowercase letters, numbers
@@ -88,6 +90,7 @@
 
         <div class="form-group">
             {{ form.password2 }}
+            <img src="{% static 'welcomePage/images/eye.png' %}" class="toggle-password" alt="Toggle Password Visibility">
 
         </div>
 
@@ -101,5 +104,17 @@
     </div>
     </div>
 {% endblock content %}
+
+<script>
+    //password toggle
+    document.querySelectorAll('.toggle-password').forEach(icon => {
+               icon.addEventListener('click', function () {
+                   const passwordInput = this.previousElementSibling;
+                   const isPassword = passwordInput.type === 'password';
+                   passwordInput.type = isPassword ? 'text' : 'password';
+                   this.classList.toggle('visible', isPassword);
+               });
+           });
+</script>
 </body>
 </html>

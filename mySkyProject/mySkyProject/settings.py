@@ -139,3 +139,15 @@ STATIC_ROOT = BASE_DIR / 'staticfiles'  # For production (used by collectstatic)
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 AUTH_USER_MODEL = 'welcomePage.User'
+
+LOGIN_REDIRECT_URL = "/dashboardPage:dashboard"
+
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'  
+DEFAULT_FROM_EMAIL = 'skyvibe.westminster@hotmail.com'
+
+EMAIL_HOST = 'smtp.office365.com'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_HOST_USER = 'skyvibe.westminster@hotmail.com'
+EMAIL_HOST_PASSWORD = 'ocdskstgaprkqttp'
+DEFAULT_FROM_EMAIL = EMAIL_HOST_USER

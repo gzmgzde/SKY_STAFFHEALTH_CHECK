@@ -27,38 +27,83 @@
             <img src="{% static 'welcomePage/images/cloud4.png' %}" style="--i:7;">
             <img src="{% static 'welcomePage/images/cloud5.png' %}" style="--i:6;">
         </div>
-    
 
-    <!-- Login Section -->
-    {% block content %}
-    <div class="login-section">
-        <div class="login-card">
-            <form id="loginForm" action="" method="post">
-                {% csrf_token %}
 
-                {{form}}
+        <!-- Login Section -->
+        {% block content %}
+        <div class="login-section">
+            <div class="login-card">
 
-                <!-- Remember me and forgot password -->
-                <label><input type="checkbox" name="remember_me" id="checkbox"> Remember Me</label>
+                <form id="loginForm" action="" method="post">
+                    {% csrf_token %}
 
-                <a href="{% url 'forgot_password' %} " class="forgot-password">Forgot Password?</a>
+                    <br>
+                    <div class="form-errors">
+                        {% if form.non_field_errors %}
+                        <ul>
+                            {% for error in form.non_field_errors %}
+                            <li>{{ error }}</li>
+                            {% endfor %}
+                        </ul>
+                        {% endif %}
+                        {% for field in form %}
+                        {% for error in field.errors %}
+                        <ul>
+                            <li>{{ error }}</li>
+                        </ul>
+                        {% endfor %}
+                        {% endfor %}
+                    </div>
 
-                <!-- Login and Register buttons -->
-                <a href="{% url 'admin:index' %} ">
+                    <div class="login-inputs">
+                        <div class="form-group">
+                            {{ form.username }}
+                        </div>
+
+                        <div class="form-group">
+                                {{ form.password }}
+                                
+                      
+                            <img src="{% static 'welcomePage/images/eye.png' %}" class="toggle-password" style="cursor: pointer;" 
+                                    alt="Toggle Password Visibility">
+                        </div>
+
+                    </div>
+                    <br>
+                    <!-- Remember me and forgot password -->
+                    <label><input type="checkbox" name="remember_me" id="checkbox"> Remember Me</label>
+
+                    
+                    <a href="{% url 'forgot_password' %} " class="forgot-password">Forgot Password?</a>
+
+
                     <button type="submit" class="login-btn">Login</button>
-                </a>
 
-                <p>Don't have an account? <a href="{% url 'register'}" class="register-link">Register</a></p>
 
-                <!-- Admin button -->
-                <a href="{% url 'admin:index' %}">
-                    <button type="button" class="admin-btn">Admin</button>
-                </a>
+                    <p>Don't have an account? <a href="{% url 'register'%}" class="register-link">Register</a></p>
 
-            </form>
+                    <!-- Admin button -->
+                    <a href="{% url 'admin:index' %}">
+                        <button type="button" class="admin-btn">Admin</button>
+                    </a>
+
+                </form>
+            </div>
         </div>
     </div>
-    </div>
     {% endblock content %}
+
+    <script>
+        //password toggle
+        document.querySelectorAll('.toggle-password').forEach(icon => {
+            icon.addEventListener('click', function () {
+                const passwordInput = this.previousElementSibling;
+                const isPassword = passwordInput.type === 'password';
+                passwordInput.type = isPassword ? 'text' : 'password';
+                this.classList.toggle('visible', isPassword);
+            });
+        });
+    </script>
 </body>
+
 </html>
