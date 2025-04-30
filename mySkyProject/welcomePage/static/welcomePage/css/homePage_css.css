@@ -133,7 +133,7 @@ body {
     z-index: 100;
 }
 
-.login-card, .register-card, .forgot-password-card, .reset-password-card {
+.register-card, .forgot-password-card, .reset-password-card {
     background: linear-gradient(180deg, rgba(255, 143, 55, 0.8) 9%, rgba(255, 14, 86, 0.8) 51.12%, rgba(0, 91, 255, 0.75) 97%);
     padding: 30px;
     border-radius: 20px;
@@ -284,10 +284,6 @@ font-size: 16px;
     color: #ff8f37;
 }
 
-.login-card input[type="password"]:not(:placeholder-shown) {
-    font-size: 30px !important;
-    max-height: 0%;
-}
 
 @media (max-width: 768px) {
     .logo {
@@ -345,7 +341,7 @@ font-size: 16px;
 }
 
 /* Style eye icon image */
-.password-container .toggle-password {
+ .toggle-password {
     position: absolute;
     right: 10px;
     top: 50%;
@@ -357,11 +353,11 @@ font-size: 16px;
     transition: opacity 0.3s;
 }
 
-.password-container .toggle-password.visible {
+.toggle-password.visible {
     opacity: 1;
 }
 
-.login-card .password-container .toggle-password {
+ .toggle-password {
     right: 10px; 
     top: 42px;
 }
@@ -494,29 +490,25 @@ font-size: 16px;
     cursor: pointer;
     accent-color: #1C29D9; /* Set the checkbox color */
 }
-.login-card, .register-card {
-        width: 90%;
-        padding: 20px;
-    }
+.login-card .terms-container input[type="checkbox"] {
+    margin-left: -200px;
+    margin-right: -210px;
+    margin-top: -50px;
+}
 
-    .login-card .login-btn, .register-card .register-btn {
-        width: 60%;
-        font-size: 18px;
-    }
-
-    .login-card .admin-btn, .register-card .admin-btn {
-        width: 80px;
-        font-size: 14px;
-        bottom: 10px;
-        right: 10px;
-    }
-
-    .password-container .toggle-password {
-        width: 18px;
-        height: 18px;
-    }
-
-    .name-container, .department-container, .department-team-container {
-        flex-direction: column;
-        gap: 5px;
-    }
+.login-card{
+    background: linear-gradient(180deg, rgba(255, 143, 55, 0.8) 9%, rgba(255, 14, 86, 0.8) 51.12%, rgba(0, 91, 255, 0.75) 97%);
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 100% !important; 
+    text-align: left;
+    color: white;
+    position: relative;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(4.5px);
+}
+.passwordfield .toggle-password{
+    position: absolute;
+    margin-top: 20px;
+}

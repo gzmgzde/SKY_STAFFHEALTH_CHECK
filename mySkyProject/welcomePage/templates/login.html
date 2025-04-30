@@ -32,9 +32,9 @@
         <!-- Login Section -->
         {% block content %}
         <div class="login-section">
-            <div class="login-card" style="width: 400px;">
+            <div class="login-card">
                 
-                <form id="loginForm" action="" method="post">
+                <form id="loginForm" action="" method="post" style="max-width: 500px;">
                     {% csrf_token %}
 
                     <br>
@@ -61,8 +61,12 @@
                     </div>
 
                     <div class="form-group">
+                        <div class="password-field">
                         {{ form.password }}
+                        <img src="{% static 'welcomePage/images/eye.png' %}" class="toggle-password" alt="Toggle Password Visibility">
+                        </div>
                     </div>
+                    
 
 
                     <!-- Remember me and forgot password -->
@@ -86,6 +90,18 @@
         </div>
     </div>
     {% endblock content %}
+
+    <script>
+         //password toggle
+         document.querySelectorAll('.toggle-password').forEach(icon => {
+                    icon.addEventListener('click', function () {
+                        const passwordInput = this.previousElementSibling;
+                        const isPassword = passwordInput.type === 'password';
+                        passwordInput.type = isPassword ? 'text' : 'password';
+                        this.classList.toggle('visible', isPassword);
+                    });
+                });
+    </script>
 </body>
 
 </html>

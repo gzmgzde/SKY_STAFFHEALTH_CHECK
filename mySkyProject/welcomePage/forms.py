@@ -117,7 +117,6 @@ class UserLoginForm(AuthenticationForm):
     # Override the default username field to use EmailField
         username = forms.EmailField(
             widget=forms.EmailInput(attrs={
-                'class': 'form-control',
                 'placeholder': 'Email'
             }),
             label="Email"  # You can define label here as well
@@ -125,7 +124,6 @@ class UserLoginForm(AuthenticationForm):
 
         password = forms.CharField(
             widget=forms.PasswordInput(attrs={
-                'class': 'form-control',
                 'placeholder': 'Password'
             }),
             label="Password"
