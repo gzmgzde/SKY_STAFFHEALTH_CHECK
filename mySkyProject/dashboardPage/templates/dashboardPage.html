@@ -29,12 +29,14 @@
       <div class="container-fluid">
         <div class="navbar">
           <div class="navbar-left">
-            <img
-              src="{% static 'surveyPage/images/logo.png' %}"
-              alt="SkyVibe Logo"
-              class="logo"
-              height="120"
-            />
+            <a href="{% url 'dashboard:dashboardPage' %}">
+              <img
+                src="{% static 'surveyPage/images/logo.png' %}"
+                alt="SkyVibe Logo"
+                class="logo"
+                height="120"
+              />
+            </a>
           </div>
           <div class="navbar-right">
             <img
@@ -49,9 +51,11 @@
               <ul>
                 <li><a href="#">Hello Manta!</a></li>
                 <li><a href="#">👩🏻‍💻Profile</a></li>
-                <li><a href="#">🏆Badges</a></li>
+                <li><a href="{% url 'badges:badges' %}">🏆Badges</a></li>
                 <li>
-                  <a href="">💻Settings</a>
+                  <a href="{% url 'settingsandbadges:settings' %}"
+                    >💻Settings</a
+                  >
                 </li>
                 <li><a href="#">Logout</a></li>
               </ul>
