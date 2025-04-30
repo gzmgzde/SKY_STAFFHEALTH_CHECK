@@ -16,6 +16,8 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include 
+from welcomePage import views
+from django.contrib.auth import views as auth_views
 
 
 urlpatterns = [
@@ -26,4 +28,9 @@ urlpatterns = [
     path('badges/', include('badges.urls')),
     path('profile/', include('pageProfile.urls')),
     path('dashboard/', include('dashboardPage.urls')),
+
+    path('login/', auth_views.LoginView.as_view(template_name='welcomePage/login.html'), name='login'),
+    path('forgot_password/', auth_views.PasswordChangeView.as_view(template_name='welcomePage/forgot_password.html'), name='forgot_password'),
+    path('password_reset/', auth_views.PasswordChangeDoneView.as_view(template_name='welcomePage/password_reset.html'), name='password_reset'),
+    path('register/', auth_views.PasswordResetView.as_view(template_name='welcomePage/register.html'), name='register'),
 ]
