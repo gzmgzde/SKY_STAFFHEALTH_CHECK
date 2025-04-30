@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SKYvibe</title>
+    {% load static %} <!-- Load the static tag -->
+    <link rel="stylesheet" href="{% static 'welcomePage/css/homePage_css.css' %}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+
+<body>
+
+    <div class="banner">
+
+        <!-- clouds animation -->
+        <div class="clouds">
+            <img src="{% static 'welcomePage/images/cloud1.png' %}" style="--i:1;">
+            <img src="{% static 'welcomePage/images/cloud2.png' %}" style="--i:2;">
+            <img src="{% static 'welcomePage/images/cloud3.png' %}" style="--i:3;">
+            <img src="{% static 'welcomePage/images/cloud4.png' %}" style="--i:4;">
+            <img src="{% static 'welcomePage/images/cloud5.png' %}" style="--i:5;">
+            <img src="{% static 'welcomePage/images/cloud1.png' %}" style="--i:10;">
+            <img src="{% static 'welcomePage/images/cloud2.png' %}" style="--i:9;">
+            <img src="{% static 'welcomePage/images/cloud3.png' %}" style="--i:8;">
+            <img src="{% static 'welcomePage/images/cloud4.png' %}" style="--i:7;">
+            <img src="{% static 'welcomePage/images/cloud5.png' %}" style="--i:6;">
+        </div>
+    
+
+    <!-- Login Section -->
+    {% block content %}
+    <div class="login-section">
+        <div class="login-card">
+            <form id="loginForm" action="" method="post">
+                {% csrf_token %}
+
+                {{form}}
+
+                <!-- Remember me and forgot password -->
+                <label><input type="checkbox" name="remember_me" id="checkbox"> Remember Me</label>
+
+                <a href="{% url 'forgot_password' %} " class="forgot-password">Forgot Password?</a>
+
+                <!-- Login and Register buttons -->
+                <a href="{% url 'admin:index' %} ">
+                    <button type="submit" class="login-btn">Login</button>
+                </a>
+
+                <p>Don't have an account? <a href="{% url 'register'}" class="register-link">Register</a></p>
+
+                <!-- Admin button -->
+                <a href="{% url 'admin:index' %}">
+                    <button type="button" class="admin-btn">Admin</button>
+                </a>
+
+            </form>
+        </div>
+    </div>
+    </div>
+    {% endblock content %}
+</body>
+</html>

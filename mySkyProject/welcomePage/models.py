@@ -1,107 +1,110 @@
 from django.db import models
+from django.contrib.auth.models import AbstractBaseUser, BaseUserManager
 
 class Administrator(models.Model):
-    admin_id = models.CharField(max_length=255, primary_key=True)
-    email = models.EmailField(unique=True)
-    password = models.CharField(max_length=255)
+    admin_id = models.TextField(db_column='Admin_Id', primary_key=True, blank=True, null=False)
+    email = models.TextField(db_column='Email', unique=True, blank=True, null=True)
+    password = models.TextField(db_column='Password', blank=True, null=True)
 
     class Meta:
+        managed = True
         db_table = 'Administrator'
 
-class Badge(models.Model):
-    # Use Django's implicit auto-incrementing ID as the primary key
-    badge_id = models.CharField(max_length=255, null=True, unique=True)  # Allow NULL to match SQL
-    tier_level = models.CharField(max_length=50)
-
-    class Meta:
-        db_table = 'Badge'
 
 class Department(models.Model):
-    department_id = models.CharField(max_length=255, primary_key=True)
-    department_name = models.CharField(max_length=255)
-    user = models.ForeignKey('User', on_delete=models.CASCADE, null=True, related_name='departments')
-    team = models.ForeignKey('Team', on_delete=models.CASCADE, null=True, related_name='department_teams')
+    department_id = models.TextField(db_column='Department_Id', primary_key=True, blank=True, null=False)
+    department_name = models.TextField(db_column='Department_Name')
+    # Removed circular foreign keys to User and Team
 
     class Meta:
+        managed = True
         db_table = 'Department'
 
-class HealthCard(models.Model):
-    # Use Django's implicit auto-incrementing ID as the primary key
-    health_card_id = models.CharField(max_length=255, null=True, unique=True)  # Allow NULL to match SQL
-    health_card_name = models.CharField(max_length=255)
-    health_card_description = models.TextField()
+    def __str__(self):
+        return self.department_name
 
-    class Meta:
-        db_table = 'Health_Card'
-
-class HealthRecord(models.Model):
-    record_id = models.AutoField(primary_key=True)
-    record_time = models.CharField(max_length=255, null=True)
-    record_date = models.CharField(max_length=255, null=True)
-    team_summary = models.ForeignKey('TeamSummary', on_delete=models.CASCADE, null=True, related_name='health_records')
-    session_id = models.IntegerField(unique=True)
-    session_duration = models.FloatField(null=True)
-    session_date = models.CharField(max_length=255, null=True)
-    health_card = models.ForeignKey('HealthCard', on_delete=models.CASCADE, null=True, related_name='health_records')
-    department = models.ForeignKey('Department', on_delete=models.CASCADE, null=True, related_name='health_records')
-
-    class Meta:
-        db_table = 'Health_Record'
-
-class SKYEAI(models.Model):
-    chat_id = models.CharField(max_length=255, primary_key=True)
-    prompt = models.TextField(null=True)
-    response = models.TextField(null=True)
-    user = models.ForeignKey('User', on_delete=models.CASCADE, null=True, related_name='skye_ai_chats')
-
-    class Meta:
-        db_table = 'SKYE-AI'
 
 class Team(models.Model):
-    team_id = models.CharField(max_length=255, primary_key=True)
-    team_name = models.CharField(max_length=255)
-    department = models.ForeignKey('Department', on_delete=models.CASCADE, null=True, related_name='teams')
-    team_summary = models.ForeignKey('TeamSummary', on_delete=models.CASCADE, null=True, related_name='teams')
+    team_id = models.TextField(db_column='Team_Id', primary_key=True, blank=True, null=False)
+    team_name = models.TextField(db_column='Team_Name')
+    department = models.ForeignKey(
+    Department, 
+    on_delete=models.CASCADE, 
+    db_column='Depart_Id',
+    blank=True,  # Make this consistent with database
+    null= True,   # Make this consistent with database
+    related_name='teams'
+)
 
     class Meta:
+        managed = True
         db_table = 'Team'
 
-class TeamSummary(models.Model):
-    team_sum_id = models.CharField(max_length=255, primary_key=True)
-    vote_average = models.FloatField(null=True)
-    progress_trend = models.CharField(max_length=255, null=True)
-    team = models.ForeignKey('Team', on_delete=models.CASCADE, null=True, related_name='team_summaries')
-    record = models.ForeignKey('HealthRecord', on_delete=models.CASCADE, null=True, related_name='team_summaries')
+    def __str__(self):
+        return self.team_name
+
+
+class UserManager(BaseUserManager):
+    def create_user(self, email, password=None, **extra_fields):
+        if not email:
+            raise ValueError('Users must have an email address')
+        user = self.model(email=self.normalize_email(email), **extra_fields)
+        user.set_password(password)
+        user.save(using=self._db)
+        return user
+
+    def create_superuser(self, email, password, **extra_fields):
+        extra_fields.setdefault('is_staff', True)
+        extra_fields.setdefault('is_superuser', True)
+
+        if extra_fields.get('is_staff') is not True:
+            raise ValueError('Superuser must have is_staff=True.')
+        if extra_fields.get('is_superuser') is not True:
+            raise ValueError('Superuser must have is_superuser=True.')
+
+        return self.create_user(email, password, **extra_fields)
+
+
+class User(AbstractBaseUser):
+    user_id = models.TextField(db_column='User_Id', primary_key=True, blank=True, null=False)
+    name = models.TextField(db_column='Name')
+    email = models.TextField(db_column='Email', unique=True, blank=True, null=True)
+    password = models.TextField(db_column='Password', blank=True, null=True)
+    role = models.CharField(db_column='Role', max_length=50, blank=True, null=True)
+    admin = models.ForeignKey(Administrator, on_delete=models.SET_NULL, db_column='admin_id', blank=True, null=True, related_name='users')
+    department = models.ForeignKey(Department, on_delete=models.SET_NULL, db_column='Depart_Id', blank=True, null=True, related_name='users')
+    team = models.ForeignKey(Team, on_delete=models.SET_NULL, db_column='Team_Id', blank=True, null=True, related_name='users')
+
+
+    is_active = models.BooleanField(default=True)
+    is_staff = models.BooleanField(default=False)
+    is_superuser = models.BooleanField(default=False)
+
+    USERNAME_FIELD = 'email'
+    REQUIRED_FIELDS = ['name', 'role']
+
+    objects = UserManager()
 
     class Meta:
-        db_table = 'Team_Summary'
-
-class User(models.Model):
-    user_id = models.CharField(max_length=255, primary_key=True)
-    name = models.CharField(max_length=255)
-    email = models.EmailField()
-    username = models.CharField(max_length=255, null=True)
-    password = models.CharField(max_length=255, null=True)
-    role = models.CharField(max_length=255)
-    admin = models.ForeignKey('Administrator', on_delete=models.CASCADE, null=True, related_name='users')
-    session_id = models.IntegerField(unique=True, null=True)
-    session_duration = models.FloatField(null=True)
-    session_date = models.CharField(max_length=255, null=True)
-    badge = models.ForeignKey('Badge', on_delete=models.CASCADE, null=True, related_name='users')
-    view_profile = models.CharField(max_length=255, null=True)
-    profile_picture = models.BinaryField(null=True)
-    login_error_times = models.IntegerField(null=True)
-
-    class Meta:
+        managed = True
         db_table = 'User'
 
-class Vote(models.Model):
-    vote_id = models.AutoField(primary_key=True)
-    vote_value = models.FloatField(null=True)
-    progress_status = models.CharField(max_length=255, null=True)
-    vote_comment = models.TextField(null=True)
-    user = models.ForeignKey('User', on_delete=models.CASCADE, null=True, related_name='votes')
-    health_card = models.ForeignKey('HealthCard', on_delete=models.CASCADE, null=True, related_name='votes')
+    def get_full_name(self):
+        return self.name
 
-    class Meta:
-        db_table = 'Vote'
+    def get_short_name(self):
+        return self.name
+
+    def has_perm(self, perm, obj=None):
+        return self.is_superuser
+
+    def has_module_perms(self, app_label):
+        return self.is_superuser
+
+    @property
+    def is_anonymous(self):
+        return False
+
+    @property
+    def is_authenticated(self):
+        return True

@@ -1,59 +1,114 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>SKY: Badges</title>
-  {% load static %}
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
-  <link rel="stylesheet" href="{% static 'badges/css/settingsandbadges_css.css' %}">
-  <style>
-    .third-card-body {
-      height: 407.23px;
-    }
-    @media (min-width: 768px) {
-      .third-card-body { height: 432.61px; }
-    }
-    @media (min-width: 992px) {
-      .third-card-body { height: 410px; }
-    }
-  </style>
-</head>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SKY: Badges</title>
+    {% load static %}
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
 
-<body>
-<nav>
-  <div class="container-fluid">
-    <div class="navbar">
-      <div class="navbar-left">
-        <img src="{% static 'badges/images/logo.png' %}" alt="SkyVibe Logo" class="logo" height="70">
-      </div>
-      <div class="navbar-right">
-        <div class="dropdown">
-          <img
-            src="{% static 'badges/images/Unknown.jpg' %}"
-            alt="Navbar Profile Pic"
-            class="profile-pic dropdown-toggle"
-            height="60"
-            weight="70"
-            data-bs-toggle="dropdown"
-            aria-expanded="false"
-            style="cursor: pointer;"
-          />
-          <i class="fa-solid fa-arrow-down" style="color: #ffffff; cursor: pointer;" data-bs-toggle="dropdown" aria-expanded="false"></i>
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#logoutModal">Logout</a></li>
-          </ul>
+    <style></style>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="{% static 'badges/css/badges_css.css' %}" />
+  </head>
 
-          <!-- Logout Modal -->
-          <div class="modal fade" id="logoutModal" tabindex="-1" aria-labelledby="logoutModalLabel" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered" style="max-width: 380px;">
-              <div class="modal-content" style="background-color: #f1f7ff;">
-                <div class="modal-body text-center p-4">
-                  <p class="mb-4 fw-bolder fs-4" style="font-weight: 900;">Are you sure you want to logout?</p>
-                  <div class="d-flex justify-content-center" style="gap: 5rem !important;">
-                    <button type="button" class="btn btn-light fw-bold rounded-pill px-4 shadow-lg" data-bs-dismiss="modal" style="box-shadow: 0 4px 8px rgba(0,0,0,0.1);">no</button>
-                    <a href="/" class="btn btn-primary fw-bold rounded-pill px-4 shadow-lg" style="box-shadow: 0 4px 8px rgba(0,0,0,0.2);">yes</a>
+  <body>
+    <nav>
+      <div class="container-fluid">
+        <div class="navbar">
+          <div class="navbar-left">
+            <img
+              src="{% static 'badges/images/logo.png' %}"
+              alt="SkyVibe Logo"
+              class="logo"
+              height="70"
+            />
+          </div>
+          <div class="navbar-right">
+            <div class="dropdown">
+              <img
+                src="{% static 'badges/images/Unknown.jpg' %}"
+                alt="Navbar Profile Pic"
+                class="profile-pic dropdown-toggle"
+                height="60"
+                weight="70"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+                style="cursor: pointer"
+              />
+              <i
+                class="fa-solid fa-arrow-down"
+                style="color: #ffffff; cursor: pointer"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              ></i>
+              <ul class="dropdown-menu">
+                <li>
+                  <a
+                    class="dropdown-item"
+                    href="#"
+                    data-bs-toggle="modal"
+                    data-bs-target="#logoutModal"
+                    >Logout</a
+                  >
+                </li>
+              </ul>
+
+              <!-- Logout Modal -->
+              <div
+                class="modal fade"
+                id="logoutModal"
+                tabindex="-1"
+                aria-labelledby="logoutModalLabel"
+                aria-hidden="true"
+              >
+                <div
+                  class="modal-dialog modal-dialog-centered"
+                  style="max-width: 380px"
+                >
+                  <div class="modal-content" style="background-color: #f1f7ff">
+                    <div class="modal-body text-center p-4">
+                      <p
+                        class="mb-4 fw-bolder fs-4"
+                        style="font-weight: 900; color: black"
+                      >
+                        Are you sure you want to logout?
+                      </p>
+                      <div
+                        class="d-flex justify-content-center"
+                        style="gap: 5rem !important"
+                      >
+                        <button
+                          type="button"
+                          class="btn btn-light fw-bold rounded-pill px-4 shadow-lg"
+                          data-bs-dismiss="modal"
+                          style="box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1)"
+                        >
+                          no
+                        </button>
+                        <a
+                          href="{% url 'logout' %}"
+                          class="btn btn-primary fw-bold rounded-pill px-4 shadow-lg"
+                          style="box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2)"
+                          >yes</a
+                        >
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -61,102 +116,170 @@
           </div>
         </div>
       </div>
-    </div>
-  </div>
-</nav>
+    </nav>
+    <div class="container mt-5">
+      <h2 class="text-center fw-bold mb-5">🏅 Your Badges</h2>
 
-<main>
-  <div class="container">
-    <div class="row">
-      <center><h2 style="color: white; font-weight: bolder; margin-top: 30px; margin-bottom: 20px;">Badges</h2></center>
-      <hr>
+      <div class="carousel-container">
+        <button id="prevBtn" class="carousel-button">
+          <i class="fas fa-chevron-left"></i>
+        </button>
 
-      <div class="row mt-4">
-        
-        {% if badge_level >= 1 %}
-        <div class="col-md-4 mb-4">
-          <div class="card">
-            <div class="card-body text-center">
-              <h5 class="card-title mb-2">Congratulations!</h5>
-              <img src="{% static 'badges/images/bronze_badge.png' %}" class="card-img-top mx-auto" alt="Bronze Badge" style="width: 200px; height: 200px; object-fit: contain;">
-              <h4 class="mt-2"><strong>BRONZE</strong></h4>
-              <p class="mb-1" style="font-size: 0.8rem;margin-top: -10px;font-weight:500;">New Badge!</p>
-              <ul class="list-styled">
-                <li>New Completed Score</li>
-                <li>New Achievement</li>
-                <li>New NEW</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-        {% else %}
-        <div class="col-md-4 mb-4">
-          <div class="card rounded-4" style="background-color: #959594;">
-            <div class="card-body text-center d-flex justify-content-center align-items-center third-card-body">
-              <i class="fa-solid fa-lock" style="font-size: 3rem; color: #000000;"></i>
-            </div>
-          </div>
-        </div>
-        {% endif %}
+        <div id="badgeCarousel" class="carousel-track"></div>
 
-        {% if badge_level >= 2 %}
-        <div class="col-md-4 mb-4">
-          <div class="card">
-            <div class="card-body text-center">
-              <h5 class="card-title mb-2">Congratulations!</h5>
-              <img src="{% static 'badges/images/gold_badge.png' %}" class="card-img-top mx-auto" alt="Gold Badge" style="width: 200px; height: 200px; object-fit: contain;">
-              <h4 class="mt-2"><strong>GOLD</strong></h4>
-              <p class="mb-1" style="font-size: 0.8rem;margin-top: -10px;font-weight:500;">New Badge!</p>
-              <ul class="list-styled">
-                <li>New Completed Score</li>
-                <li>New Achievement</li>
-                <li>New NEW</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-        {% else %}
-        <div class="col-md-4 mb-4">
-          <div class="card rounded-4" style="background-color: #959594;">
-            <div class="card-body text-center d-flex justify-content-center align-items-center third-card-body">
-              <i class="fa-solid fa-lock" style="font-size: 3rem; color: #000000;"></i>
-            </div>
-          </div>
-        </div>
-        {% endif %}
-
-        {% if badge_level >= 3 %}
-        <div class="col-md-4 mb-4">
-          <div class="card">
-            <div class="card-body text-center">
-              <h5 class="card-title mb-2">Congratulations!</h5>
-              <img src="{% static 'badges/images/diamond_badge.png' %}" class="card-img-top mx-auto" alt="Diamond Badge" style="width: 200px; height: 200px; object-fit: contain;">
-              <h4 class="mt-2"><strong>DIAMOND</strong></h4>
-              <p class="mb-1" style="font-size: 0.8rem;margin-top: -10px;font-weight:500;">New Badge!</p>
-              <ul class="list-styled">
-                <li>New Completed Score</li>
-                <li>New Achievement</li>
-                <li>New NEW</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-        {% else %}
-        <div class="col-md-4 mb-4">
-          <div class="card rounded-4" style="background-color: #959594;">
-            <div class="card-body text-center d-flex justify-content-center align-items-center third-card-body">
-              <i class="fa-solid fa-lock" style="font-size: 3rem; color: #000000;"></i>
-            </div>
-          </div>
-        </div>
-        {% endif %}
-
+        <button id="nextBtn" class="carousel-button">
+          <i class="fas fa-chevron-right"></i>
+        </button>
       </div>
     </div>
-  </div>
-</main>
 
-<script src="{% static 'badges/js/settingsandbadges_js.js' %}"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-</body>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/js/all.min.js"
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      // Get the dynamically passed badge level from Django
+      const badgeLevel = {{ badge_level }};
+      const badges = [
+        {
+          image: "{% static 'badges/images/BadgeBronzeQ32022.png' %}",
+          name: "BRONZE",
+          detail1: "New Completed Score",
+          detail2: "New Achievement",
+          detail3: "New NEW",
+        },
+        {
+          image: "{% static 'badges/images/BadgeGoldQ22022.png' %}",
+          name: "GOLD",
+          detail1: "New Completed Score",
+          detail2: "New Achievement",
+          detail3: "New NEW",
+        },
+        {
+          image: "{% static 'badges/images/BadgeDiamondQ12022.png' %}",
+          name: "DIAMOND",
+          detail1: "New Completed Score",
+          detail2: "New Achievement",
+          detail3: "New NEW",
+        },
+        {
+          image: "{% static 'badges/images/BadgeBronzeQ32023.png' %}",
+          name: "BRONZE",
+          detail1: "New Completed Score",
+          detail2: "New Achievement",
+          detail3: "New NEW",
+        },
+        {
+          image: "{% static 'badges/images/BadgeGoldQ22023.png' %}",
+          name: "GOLD",
+          detail1: "New Completed Score",
+          detail2: "New Achievement",
+          detail3: "New NEW",
+        },
+        {
+          image: "{% static 'badges/images/BadgeDiamondQ12023.png' %}",
+          name: "DIAMOND",
+          detail1: "New Completed Score",
+          detail2: "New Achievement",
+          detail3: "New NEW",
+        },
+        {
+          image: "{% static 'badges/images/BadgeBronzeQ32024.png' %}",
+          name: "BRONZE",
+          detail1: "New Completed Score",
+          detail2: "New Achievement",
+          detail3: "New NEW",
+        },
+        {
+          image: "{% static 'badges/images/BadgeGoldQ22024.png' %}",
+          name: "GOLD",
+          detail1: "New Completed Score",
+          detail2: "New Achievement",
+          detail3: "New NEW",
+        },
+        {
+          image: "{% static 'badges/images/BadgeDiamondQ12024.png' %}",
+          name: "DIAMOND",
+          detail1: "New Completed Score",
+          detail2: "New Achievement",
+          detail3: "New NEW",
+        },
+      ];
+
+      const track = document.getElementById("badgeCarousel");
+      let currentSlide = 0;
+      const badgesPerSlide = 3;
+
+      function renderBadges() {
+        track.innerHTML = ""; // Clear the current badges in the carousel
+        badges.forEach((badge, index) => {
+          const card = document.createElement("div");
+          card.className = "badge-card";
+
+          // Check if the badge is unlocked
+          if (index < badgeLevel) {
+            card.innerHTML = `
+              <div class="card text-center text-black">
+                <div class="card-body">
+                  <h5 class="card-title mb-2">🎉 Congratulations!</h5>
+                  <img src="${badge.image}" class="img-fluid mx-auto" style="width: 200px; height: 200px; object-fit: contain;" alt="${badge.name} Badge">
+                  <h4 class="mt-3"><strong>${badge.name}</strong></h4>
+                  <p class="mb-1 text-secondary" style="font-size: 0.95rem;">${badge.detail1}</p>
+                  <p class="mb-1 text-secondary" style="font-size: 0.95rem;">${badge.detail2}</p>
+                  <p class="mb-1 text-secondary" style="font-size: 0.95rem;">${badge.detail3}</p>
+                </div>
+              </div>
+            `;
+          } else {
+            card.innerHTML = `
+              <div class="card text-center text-black">
+                <div class="locked">
+                  <i class="fa-solid fa-lock"></i>
+                </div>
+              </div>
+            `;
+          }
+
+          track.appendChild(card);
+        });
+      }
+
+      function updateCarousel() {
+        const badgeCards = document.querySelectorAll(".badge-card");
+        if (badgeCards.length === 0) return;
+
+        const cardWidth = badgeCards[0].offsetWidth;
+        const offset = currentSlide * cardWidth * badgesPerSlide;
+
+        track.style.transform = `translateX(-${offset}px)`;
+
+        // Hide/show nav buttons
+        document.getElementById("prevBtn").style.display =
+          currentSlide === 0 ? "none" : "flex";
+        document.getElementById("nextBtn").style.display =
+          (currentSlide + 1) * badgesPerSlide >= badges.length
+            ? "none"
+            : "flex";
+      }
+
+      document.getElementById("nextBtn").addEventListener("click", () => {
+        if ((currentSlide + 1) * badgesPerSlide < badges.length) {
+          currentSlide++;
+          updateCarousel();
+        }
+      });
+
+      document.getElementById("prevBtn").addEventListener("click", () => {
+        if (currentSlide > 0) {
+          currentSlide--;
+          updateCarousel();
+        }
+      });
+
+      renderBadges();
+      updateCarousel();
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
 </html>
