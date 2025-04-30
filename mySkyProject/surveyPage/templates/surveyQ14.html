@@ -49,9 +49,9 @@
               <ul>
                 <li><a href="#">Hello Manta!</a></li>
                 <li><a href="#">👩🏻‍💻Profile</a></li>
-                <li><a href="{% url 'badges:badges' %}">🏆Badges</a></li>
+                <li><a href="#">🏆Badges</a></li>
                 <li>
-                  <a href="{% url 'settings:settings' %}"
+                  <a href="#"
                     >💻Settings</a
                   >
                 </li>
@@ -219,7 +219,7 @@
               >
               </div>
               <div class="col-6">
-              <a href="{% url '#' %}"
+              <a href="{% url 'survey_question' question_number|add:+1 %}"
                 ><button id="nextQuestionBtn" class="nextQuestionBtn">Complete</button></a
               >
               </div>

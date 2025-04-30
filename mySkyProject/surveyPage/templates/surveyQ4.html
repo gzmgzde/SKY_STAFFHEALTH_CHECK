@@ -45,6 +45,17 @@
               weight="70"
             />
             <i class="fa-solid fa-arrow-down" style="color: #ffffff"></i>
+            <div class="dropdown-menu">
+              <ul>
+                <li>Hello Manta!</li>
+                <li><a href="#">👩🏻‍💻Profile</a></li>
+                <li><a href="#">🏆Badges</a></li>
+                <li>
+                  <a href="#">💻Settings</a>
+                </li>
+                <li><a href="#">Logout</a></li>
+              </ul>
+            </div>
           </div>
         </div>
       </div>
@@ -194,21 +205,6 @@
                       class="fa-solid fa-paper-plane"
                       style="color: #ffffff"
                     ></i>
-                    <div class="dropdown-menu">
-                      <ul>
-                        <li><a href="#">Hello Manta!</a></li>
-                        <li><a href="#">👩🏻‍💻Profile</a></li>
-                        <li>
-                          <a href="{% url 'badges:badges' %}">🏆Badges</a>
-                        </li>
-                        <li>
-                          <a href="{% url 'settings:settings' %}"
-                            >💻Settings</a
-                          >
-                        </li>
-                        <li><a href="#">Logout</a></li>
-                      </ul>
-                    </div>
                   </button>
                 </form>
               </div>
