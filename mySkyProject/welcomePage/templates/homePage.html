@@ -49,7 +49,7 @@
             <div class="login-card">
 
                 <form id="loginForm">
-                    
+
                     <!-- Login form -->
                     <input type="email" name="email" placeholder="Email" required id="email">
 
@@ -80,28 +80,46 @@
                 </form>
             </div>
 
-            <div class="forgot-password hidden" id="forgotPassword">
-                <a class="back-login" href="javascript:void(0);" onclick="scrollToLogin()"> &#60; Back</a>
+            <div class="forgot-password-card hidden" id="forgotPassword">
+                <a class="back-login" href="javascript:void(0);" onclick="showLoginForm();"> &#60; Back</a>
 
-                <h4>Forgot Your Password</h4>
+                <h3>Forgot Your Password</h3>
+                
                 <p>Please enter the email address you'd like your password reset information sent to.</p>
 
-                <input type="email" placeholder="Email" required id="reg-email">
+                <form id="forgotPasswordForm">
+                    <input type="email" placeholder="Email" required id="forgot-email">
 
-                <button type="submit" class="request-reset-btn">Request Reset Link</button>
-
+                    <button type="submit" class="request-reset-btn" href="javascript:void(0);" onclick="showResetPasswordForm();">Request Reset Link</button>
+                </form>
             </div>
 
-            <div class="reset-password hidden" id="resetPassword">
-                <a class="back-forgot-password" href="javascript:void(0);" onclick="scrollToLogin()"> &#60; Back</a> <!-- Back to forgot password -->
 
-                <h4>Reset Your Password</h4>
-                <p>Enter a new password for </p>
+            <div class="reset-password-card hidden" id="resetPassword">
+                <a class="back-login" href="javascript:void(0);" onclick="showForgotPasswordForm();"> &#60;
+                    Back</a>
 
-                <input type="email" placeholder="Email" required id="reg-email">
+                <h3>Reset Your Password</h3>
+                <p>Please enter a new password for your account.</p>
 
-                <button type="submit" class="request-reset-btn">Request Reset Link</button>
+                <form id="resetPasswordForm">
+                    <div class="password-container">
+                        <input type="password" placeholder="New Password" required id="new-password">
+                        <img src="{% static 'welcomePage/images/eye.png' %}" alt="Toggle password visibility"
+                            class="toggle-password">
+                    </div>
+                    <p class="password-requirements">
+                        Password should contain at least 8 characters, a mix of uppercase and lowercase letters, numbers
+                        and special characters.
+                    </p>
+                    <div class="password-container">
+                        <input type="password" placeholder="Confirm New Password" required id="confirm-new-password">
+                        <img src="{% static 'welcomePage/images/eye.png' %}" alt="Toggle password visibility"
+                            class="toggle-password">
+                    </div>
 
+                    <button type="submit" class="reset-password-btn">Reset Password</button>
+                </form>
             </div>
 
 
@@ -114,79 +132,81 @@
                     <button type="button" class="management-btn">Management</button>
                 </div>
 
-                <a class="back-login" href="javascript:void(0);" onclick="scrollToLogin()"> &#60; Back</a>
-
-                
-                    <div class="name-container">
-                        <input type="text" placeholder="First Name" required id="firstname">
-                        <input type="text" placeholder="Last Name" required id="surname">
-                    </div>
-
-                    <input type="email" placeholder="Company email" required id="reg-email">
+                <a class="back-login" href="javascript:void(0);" onclick="showLoginForm();"> &#60; Back</a>
 
 
-                    <div class="department-container">
-                        <select class="form-control" id="Department" required>
-                            <option value="department-AllDepartments">Select Department</option>
-                            <option value="department-NetworkOps">Network Operations</option>
-                            <option value="department-CloudInfrastructure">Cloud Infrastructure</option>
-                            <option value="department-StreamingServices">Streaming Services</option>
-                            <option value="department-DigitalMedia">Digital Media</option>
-                            <option value="department-ContentDelivery">Content Delivery</option>
-                            <option value="department-TVTechnology">TV Technology</option>
-                            <option value="department-MobileDevelopment">Mobile Development</option>
-                            <option value="department-AppInnovation">App Innovation</option>
-                            <option value="department-UserExperience">User Experience</option>
-                            <option value="department-AIandAutomation">AI & Automation</option>
-                        </select>
+                <div class="name-container">
+                    <input type="text" placeholder="First Name" required id="firstname">
+                    <input type="text" placeholder="Last Name" required id="surname">
+                </div>
 
-                        <select class="form-control" id="Team" required>
-                            <option value="team-AllTeams">Select Team</option>
-                            <option value="team-AI">AI</option>
-                            <option value="team-Analytics">Analytics</option>
-                            <option value="team-Android">Android</option>
-                            <option value="team-Kotlin">Kotlin</option>
-                            <option value="team-Swift">Swift</option>
-                            <option value="team-IoT">IoT</option>
-                            <option value="team-SkyNet">SkyNet</option>
-                            <option value="team-SkyVision">SkyVision</option>
-                            <option value="team-HDStream">HDStream</option>
-                            <option value="team-BroadcastOps">BroadcastOps</option>
-                            <option value="team-SatelliteSync">SatelliteSync</option>
-                            <option value="team-SkyBox">SkyBox</option>
-                            <option value="team-UltraHD">UltraHD</option>
-                            <option value="team-EntertainmentHub">Entertainment Hub</option>
-                            <option value="team-SkyGo">SkyGo</option>
-                            <option value="team-DigitalEdge">DigitalEdge</option>
-                            <option value="team-UXPioneers">UX Pioneers</option>
-                            <option value="team-AppVelocity">AppVelocity</option>
-                            <option value="team-MobileStream">MobileStream</option>
-                            <option value="team-CloudConnect">CloudConnect</option>
-                            <option value="team-SkyFi">SkyFi</option>
-                            <option value="team-CloudSync">CloudSync</option>
-                            <option value="team-SkyMobile">SkyMobile</option>
-                        </select>
-
-                    </div>
-
-                    <div class="password-container">
-                        <input type="password" placeholder="Password" required id="reg-password">
-                        <img src="{% static 'welcomePage/images/eye.png' %}" alt="Toggle password visibility"
-                            class="toggle-password">
-                    </div>
-                    <p class="password-requirements">
-                        Password should contain at least 8 characters, a mix of uppercase and lowercase letters, numbers
-                        and special characters.
-                    </p>
-                    <div class="password-container">
-                        <input type="password" placeholder="Confirm your Password" required id="confirm-password">
-                        <img src="{% static 'welcomePage/images/eye.png' %}" alt="Toggle password visibility"
-                            class="toggle-password">
-                    </div>
+                <input type="email" placeholder="Company email" required id="reg-email">
 
 
-                    <input type="checkbox" required id="checkbox"> I agree <a href="https://www.sky.com/help/articles/sky-terms-and-conditions" class="terms" target="skyTerms&Conditions" style="color: white">Terms & Conditions</a>
-                    <button type="submit" class="register-btn">Register</button>
+                <div class="department-container">
+                    <select class="form-control" id="Department" required>
+                        <option value="department-AllDepartments">Select Department</option>
+                        <option value="department-NetworkOps">Network Operations</option>
+                        <option value="department-CloudInfrastructure">Cloud Infrastructure</option>
+                        <option value="department-StreamingServices">Streaming Services</option>
+                        <option value="department-DigitalMedia">Digital Media</option>
+                        <option value="department-ContentDelivery">Content Delivery</option>
+                        <option value="department-TVTechnology">TV Technology</option>
+                        <option value="department-MobileDevelopment">Mobile Development</option>
+                        <option value="department-AppInnovation">App Innovation</option>
+                        <option value="department-UserExperience">User Experience</option>
+                        <option value="department-AIandAutomation">AI & Automation</option>
+                    </select>
+
+                    <select class="form-control" id="Team" required>
+                        <option value="team-AllTeams">Select Team</option>
+                        <option value="team-AI">AI</option>
+                        <option value="team-Analytics">Analytics</option>
+                        <option value="team-Android">Android</option>
+                        <option value="team-Kotlin">Kotlin</option>
+                        <option value="team-Swift">Swift</option>
+                        <option value="team-IoT">IoT</option>
+                        <option value="team-SkyNet">SkyNet</option>
+                        <option value="team-SkyVision">SkyVision</option>
+                        <option value="team-HDStream">HDStream</option>
+                        <option value="team-BroadcastOps">BroadcastOps</option>
+                        <option value="team-SatelliteSync">SatelliteSync</option>
+                        <option value="team-SkyBox">SkyBox</option>
+                        <option value="team-UltraHD">UltraHD</option>
+                        <option value="team-EntertainmentHub">Entertainment Hub</option>
+                        <option value="team-SkyGo">SkyGo</option>
+                        <option value="team-DigitalEdge">DigitalEdge</option>
+                        <option value="team-UXPioneers">UX Pioneers</option>
+                        <option value="team-AppVelocity">AppVelocity</option>
+                        <option value="team-MobileStream">MobileStream</option>
+                        <option value="team-CloudConnect">CloudConnect</option>
+                        <option value="team-SkyFi">SkyFi</option>
+                        <option value="team-CloudSync">CloudSync</option>
+                        <option value="team-SkyMobile">SkyMobile</option>
+                    </select>
+
+                </div>
+
+                <div class="password-container">
+                    <input type="password" placeholder="Password" required id="reg-password">
+                    <img src="{% static 'welcomePage/images/eye.png' %}" alt="Toggle password visibility"
+                        class="toggle-password">
+                </div>
+                <p class="password-requirements">
+                    Password should contain at least 8 characters, a mix of uppercase and lowercase letters, numbers
+                    and special characters.
+                </p>
+                <div class="password-container">
+                    <input type="password" placeholder="Confirm your Password" required id="confirm-password">
+                    <img src="{% static 'welcomePage/images/eye.png' %}" alt="Toggle password visibility"
+                        class="toggle-password">
+                </div>
+
+
+                <input type="checkbox" required id="checkbox"> I agree <a
+                    href="https://www.sky.com/help/articles/sky-terms-and-conditions" class="terms"
+                    target="skyTerms&Conditions" style="color: white">Terms & Conditions</a>
+                <button type="submit" class="register-btn">Register</button>
                 </form>
             </div>
 
@@ -346,11 +366,11 @@
                 });
 
                 // Show the login form when the "Back" link is clicked
-                backLogin.addEventListener('click', function (e) {
-                    e.preventDefault(); // Prevent default link behavior
+                function showLoginForm() {
                     registerForm.classList.add('hidden'); // Hide the register form
                     loginCard.classList.remove('hidden'); // Show the login form
-                });
+                    scrollToLogin(); // Scroll to the login section
+                }
 
                 // Management team/department selection
                 function setManagementMode() {
@@ -425,6 +445,47 @@
 
                 setEngineerMode();
 
+                // Forgot password form toggle
+                const forgotPasswordForm = document.getElementById('forgotPassword');
+                const forgotPasswordLink = document.querySelector('.forgot-password');
+                const backToLogin = document.querySelector('.back-login');
+
+                // Show the forgot password form when the "Forgot Password" link is clicked
+                forgotPasswordLink.addEventListener('click', function (e) {
+                    e.preventDefault(); // Prevent default link behavior
+                    loginCard.classList.add('hidden'); // Hide the login form
+                    forgotPasswordForm.classList.remove('hidden'); // Show the forgot password form
+                });
+
+                // Show the login form when the "Back" link is clicked
+                backToLogin.addEventListener('click', function () {
+                    forgotPasswordForm.classList.add('hidden'); // Hide the forgot password form
+                    loginCard.classList.remove('hidden'); // Show the login form
+                    scrollToLogin(); // Scroll to the login section
+                });
+
+                function showResetPasswordForm() {
+                    // Hide other cards
+                    document.getElementById('forgotPassword').classList.add('hidden');
+                    document.getElementById('loginForm').classList.add('hidden');
+                    document.getElementById('registerForm').classList.add('hidden');
+
+                    // Show the reset password card
+                    document.getElementById('resetPassword').classList.remove('hidden');
+                }
+                function showForgotPasswordForm() {
+                    // Hide the reset password card
+                    document.getElementById('resetPassword').classList.add('hidden');
+
+                    // Show the forgot password card
+                    document.getElementById('forgotPassword').classList.remove('hidden');
+                }
+                document.getElementById('forgotPasswordForm').addEventListener('submit', function (e) {
+                    e.preventDefault(); // Prevent form submission
+
+                    // Show the reset password card
+                    showResetPasswordForm();
+                });
 
 
             </script>
