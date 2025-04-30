@@ -162,7 +162,8 @@ class ForgotPasswordForm(forms.Form):
     email = forms.EmailField(
         required=True,
         help_text="Enter your registered email address.",
-        widget=forms.EmailInput(attrs={'placeholder': 'Email'}),
+        widget=forms.EmailInput(attrs={'placeholder': 'Email' ,'style': 'color: white;'})
+
     )
 
     def clean_email(self):

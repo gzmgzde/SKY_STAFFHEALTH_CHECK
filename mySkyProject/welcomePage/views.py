@@ -1,6 +1,6 @@
 from django.contrib import messages
 from django.shortcuts import redirect, render
-from .forms import UserRegisterForm, UserLoginForm
+from .forms import ForgotPasswordForm, UserRegisterForm, UserLoginForm
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import login, authenticate
 
@@ -31,9 +31,16 @@ def login_view(request):
     return render(request, 'login.html', {'form': form})
 
 
-
 def forgot_password(request):
-    return render(request, 'forgot_password.html')
+    if request.method == 'POST':
+        form = ForgotPasswordForm(request.POST)
+        if form.is_valid():
+            email = form.cleaned_data.get('email')
+            messages.success(request, f'Password reset link sent to {email}')
+            return redirect('reset')  # Redirect to the login page after sending the email
+    else:
+        form = ForgotPasswordForm()
+    return render(request, 'forgot_password.html' , {'form': form})
 
 
 def password_reset(request):
