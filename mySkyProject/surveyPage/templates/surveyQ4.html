@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -119,7 +119,7 @@
                   <span class="micro-circle" id="q12-micro-1"></span>
                   <span class="micro-circle" id="q12-micro-2"></span>
                 </span>
-                <span class="progress-step"id="q13">
+                <span class="progress-step" id="q13">
                   <span class="circle">13</span>
                   <span class="micro-circle" id="q13-micro-1"></span>
                   <span class="micro-circle" id="q13-micro-2"></span>
@@ -131,9 +131,7 @@
             </div>
             <div class="survey-header-container">
               <h1 class="survey-heading">Learning</h1>
-              <h3>
-                Are you consistently learning of interesting stuff?
-              </h3>
+              <h3>Are you consistently learning of interesting stuff?</h3>
             </div>
             <div class="scale-bar-container">
               <!-- Emoji placeholders -->
@@ -171,12 +169,20 @@
                   value="2"
                   class="scale-slider"
                   id="scaleSlider"
+                  name="vote_value"
                 />
               </div>
             </div>
             <div class="col-12">
               <div class="comment-container">
-                <form action="#" class="survey-form" id="surveyForm">
+                <form method="POST" class="survey-form" id="surveyForm">
+                  {% csrf_token %}
+                  <input
+                    type="hidden"
+                    name="health_card_id"
+                    value="{{ current_question.health_card_id }}"
+                  />
+                  <input type="hidden" name="user_id" value="user1" />
                   <input
                     type="text"
                     class="survey-field"
@@ -184,7 +190,26 @@
                     placeholder="Additional comments..."
                   />
                   <button type="submit" class="survey-button">
-                  <i class="fa-solid fa-paper-plane" style="color: #ffffff;"></i>
+                    <i
+                      class="fa-solid fa-paper-plane"
+                      style="color: #ffffff"
+                    ></i>
+                    <div class="dropdown-menu">
+                      <ul>
+                        <li><a href="#">Hello Manta!</a></li>
+                        <li><a href="#">👩🏻‍💻Profile</a></li>
+                        <li>
+                          <a href="{% url 'badges:badges' %}">🏆Badges</a>
+                        </li>
+                        <li>
+                          <a href="{% url 'settingsandbadges:settings' %}"
+                            >💻Settings</a
+                          >
+                        </li>
+                        <li><a href="#">Logout</a></li>
+                      </ul>
+                    </div>
+                  </button>
                 </form>
               </div>
             </div>
@@ -192,21 +217,26 @@
               <ul id="commentsList"></ul>
             </div>
             <div class="backAndNextBtns">
-            <div class="col-6">
-              <a href="{% url 'survey_question' question_number|add:-1 %}"
-                ><button id="backBtn" class="backBtn">Back</button></a
-              >
+              <div class="col-6">
+                <a href="{% url 'survey_question' question_number|add:-1 %}"
+                  ><button id="backBtn" class="backBtn">Back</button></a
+                >
               </div>
               <div class="col-6">
-              <a href="{% url 'survey_question' question_number|add:1 %}"
-                ><button id="nextQuestionBtn" class="nextQuestionBtn">Next Question</button></a
-              >
+                <a href="{% url 'survey_question' question_number|add:1 %}"
+                  ><button id="nextQuestionBtn" class="nextQuestionBtn">
+                    Next Question
+                  </button></a
+                >
               </div>
             </div>
           </div>
         </div>
       </div>
-      <div id="progress-data" data-current-question="{{ current_question }}"></div>
+      <div
+        id="progress-data"
+        data-current-question="{{ current_question }}"
+      ></div>
     </main>
     <script src="{% static 'surveyPage/js/surveyPage_js.js' %}"></script>
     <script

@@ -45,6 +45,19 @@
               weight="70"
             />
             <i class="fa-solid fa-arrow-down" style="color: #ffffff"></i>
+            <div class="dropdown-menu">
+              <ul>
+                <li><a href="#">Hello Manta!</a></li>
+                <li><a href="#">👩🏻‍💻Profile</a></li>
+                <li><a href="{% url 'badges:badges' %}">🏆Badges</a></li>
+                <li>
+                  <a href="{% url 'settingsandbadges:settings' %}"
+                    >💻Settings</a
+                  >
+                </li>
+                <li><a href="#">Logout</a></li>
+              </ul>
+            </div>
           </div>
         </div>
       </div>
@@ -171,12 +184,20 @@
                   value="2"
                   class="scale-slider"
                   id="scaleSlider"
+                  name="vote_value"
                 />
               </div>
             </div>
             <div class="col-12">
               <div class="comment-container">
-                <form action="#" class="survey-form" id="surveyForm">
+                <form method="POST" class="survey-form" id="surveyForm">
+                  {% csrf_token %}
+                  <input
+                    type="hidden"
+                    name="health_card_id"
+                    value="{{ current_question.health_card_id }}"
+                  />
+                  <input type="hidden" name="user_id" value="user1" />
                   <input
                     type="text"
                     class="survey-field"
