@@ -22,7 +22,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('welcomePage.urls')),
     path('survey/', include('surveyPage.urls')),
-    path('settings/', include('settingsandbadges.urls')),
+    path('settings/', include('settings.urls')),
     path('badges/', include('badges.urls')),
     path('profile/', include('pageProfile.urls')),
     path('dashboard/', include('dashboardPage.urls')),

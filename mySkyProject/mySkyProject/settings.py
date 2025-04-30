@@ -41,7 +41,7 @@ INSTALLED_APPS = [
     # Add the following line to the list of installed apps
     'welcomePage',
     'surveyPage',
-    'settingsandbadges',
+    'settings',
     'profile',
     'badges',
     'dashboardPage',
