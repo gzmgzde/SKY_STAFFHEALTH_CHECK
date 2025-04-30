@@ -12,7 +12,7 @@ body {
 }
 @font-face {
   font-family: "skyFont";
-  src: url("/mySkyProject/settingsandbadges/static/settingsandbadges/font/Sky\ Text.ttf")
+  src: url('../fonts/Sky_Text.ttf')
     format("truetype");
   font-weight: normal;
   font-style: normal;

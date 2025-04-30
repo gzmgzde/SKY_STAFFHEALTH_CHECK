@@ -1,0 +1,108 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "skyFont", sans-serif;
+}
+body {
+  background: linear-gradient(180deg, #53b0d4 20%, #e9b2b1 100%);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+}
+@font-face {
+  font-family: "skyFont";
+  src: url("/mySkyProject/surveyPage/static/surveyPage/font/Sky\ Text.ttf")
+    format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+nav {
+  position: relative;
+  padding: 0 2rem;
+}
+.navbar {
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  padding: 0 20px !important;
+  height: 80px !important;
+}
+nav .profile-pic {
+  border-radius: 50%;
+  object-fit: cover;
+  margin: 0;
+  width: 80px;
+}
+
+.fa-arrow-down {
+  margin-left: 0; /* Ensure no extra margin */
+}
+
+.navbar-left {
+  display: flex !important;
+  align-items: center !important;
+}
+
+.navbar-right {
+  display: flex !important;
+  align-items: center !important;
+  gap: 10px !important; /* Add spacing between profile pic and arrow */
+}
+@media (max-width: 768px) {
+  .navbar-logo img.logo {
+    height: 30px;
+    width: 30px;
+  }
+}
+/* Profile container */
+.profile-container {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+}
+
+/* Dropdown menu */
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 70px; /* Adjust based on the height of the profile picture */
+  right: 0;
+  background-color: #333;
+  color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  width: 150px;
+}
+
+/* Dropdown menu items */
+.dropdown-menu ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.dropdown-menu ul li {
+  padding: 10px 15px;
+  border-bottom: 1px solid #444;
+}
+
+.dropdown-menu ul li:last-child {
+  border-bottom: none;
+}
+
+.dropdown-menu ul li a {
+  color: #fff;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-menu ul li a:hover {
+  background-color: #555;
+}
+
+/* Show dropdown menu when active */
+.profile-container.active .dropdown-menu {
+  display: block;
+}
