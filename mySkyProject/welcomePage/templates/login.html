@@ -33,8 +33,8 @@
         {% block content %}
         <div class="login-section">
             <div class="login-card">
-                
-                <form id="loginForm" action="" method="post" style="max-width: 500px;">
+
+                <form id="loginForm" action="" method="post">
                     {% csrf_token %}
 
                     <br>
@@ -55,28 +55,30 @@
                         {% endfor %}
                     </div>
 
-
-                    <div class="form-group">
-                        {{ form.username }}
-                    </div>
-
-                    <div class="form-group">
-                        <div class="password-field">
-                        {{ form.password }}
-                        <img src="{% static 'welcomePage/images/eye.png' %}" class="toggle-password" alt="Toggle Password Visibility">
+                    <div class="login-inputs">
+                        <div class="form-group">
+                            {{ form.username }}
                         </div>
+
+                        <div class="form-group">
+                                {{ form.password }}
+                                
+                      
+                            <img src="{% static 'welcomePage/images/eye.png' %}" class="toggle-password" style="cursor: pointer;" 
+                                    alt="Toggle Password Visibility">
+                        </div>
+
                     </div>
-                    
-
-
+                    <br>
                     <!-- Remember me and forgot password -->
                     <label><input type="checkbox" name="remember_me" id="checkbox"> Remember Me</label>
 
+                    
                     <a href="{% url 'forgot_password' %} " class="forgot-password">Forgot Password?</a>
 
-                    
-                        <button type="submit" class="login-btn">Login</button>
-                    
+
+                    <button type="submit" class="login-btn">Login</button>
+
 
                     <p>Don't have an account? <a href="{% url 'register'%}" class="register-link">Register</a></p>
 
@@ -92,15 +94,15 @@
     {% endblock content %}
 
     <script>
-         //password toggle
-         document.querySelectorAll('.toggle-password').forEach(icon => {
-                    icon.addEventListener('click', function () {
-                        const passwordInput = this.previousElementSibling;
-                        const isPassword = passwordInput.type === 'password';
-                        passwordInput.type = isPassword ? 'text' : 'password';
-                        this.classList.toggle('visible', isPassword);
-                    });
-                });
+        //password toggle
+        document.querySelectorAll('.toggle-password').forEach(icon => {
+            icon.addEventListener('click', function () {
+                const passwordInput = this.previousElementSibling;
+                const isPassword = passwordInput.type === 'password';
+                passwordInput.type = isPassword ? 'text' : 'password';
+                this.classList.toggle('visible', isPassword);
+            });
+        });
     </script>
 </body>
 
