@@ -5,6 +5,14 @@ from . import db
 from .models import User, Metric, Alert, Dashboard
 from functools import wraps
 
+from django.shortcuts import render
+from django.http import HttpResponse
+
+# Create your views here.
+
+def summary(request):
+    return render(request, 'summary_pages/index.html')
+
 def admin_required(f):
     @wraps(f)
     def decorated_function(*args, **kwargs):

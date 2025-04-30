@@ -26,4 +26,5 @@ urlpatterns = [
     path('badges/', include('badges.urls')),
     path('profile/', include('pageProfile.urls')),
     path('dashboard/', include('dashboardPage.urls')),
+    path('summary/', include('summary_pages.urls')),
 ]
