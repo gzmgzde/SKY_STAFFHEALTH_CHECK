@@ -24,13 +24,8 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('welcomePage.urls')),
     path('survey/', include('surveyPage.urls')),
-    path('settings/', include('settingsandbadges.urls')),
+    path('settings/', include('settings.urls')),
     path('badges/', include('badges.urls')),
     path('profile/', include('pageProfile.urls')),
     path('dashboard/', include('dashboardPage.urls')),
-
-    path('login/', auth_views.LoginView.as_view(template_name='welcomePage/login.html'), name='login'),
-    path('forgot_password/', auth_views.PasswordChangeView.as_view(template_name='welcomePage/forgot_password.html'), name='forgot_password'),
-    path('password_reset/', auth_views.PasswordChangeDoneView.as_view(template_name='welcomePage/password_reset.html'), name='password_reset'),
-    path('register/', auth_views.PasswordResetView.as_view(template_name='welcomePage/register.html'), name='register'),
 ]

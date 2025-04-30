@@ -1,6 +1,12 @@
 from flask import Blueprint
+from django.urls import path
 from . import views
+app_name = 'summary'  
 
+
+urlpatterns = [
+    path('', views.summary, name='summary'),
+]
 # Create blueprints
 main_bp = Blueprint('main', __name__)
 auth_bp = Blueprint('auth', __name__, url_prefix='/auth')

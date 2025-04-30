@@ -51,7 +51,7 @@
                 <li><a href="#">👩🏻‍💻Profile</a></li>
                 <li><a href="{% url 'badges:badges' %}">🏆Badges</a></li>
                 <li>
-                  <a href="{% url 'settingsandbadges:settings' %}"
+                  <a href="{% url 'settings:settings' %}"
                     >💻Settings</a
                   >
                 </li>
@@ -214,7 +214,7 @@
             </div>
             <div class="backAndNextBtns">
             <div class="col-6">
-              <a href="{% url 'survey_q13' %}"
+              <a href="{% url 'survey_question' question_number|add:-1 %}"
                 ><button id="backBtn" class="backBtn">Back</button></a
               >
               </div>
