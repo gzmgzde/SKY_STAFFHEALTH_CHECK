@@ -1,34 +1,36 @@
 from django.shortcuts import render, redirect
 from .models import Vote, HealthCard
 
-
 def survey(request):
     return redirect('survey_question', question_number=1)
 
 def survey_question(request, question_number):
-    if question_number < 1 or question_number > 14:
-        return redirect('survey')
-
-    # Get health card for the current question
     health_cards = HealthCard.objects.all().order_by('health_card_id')
-    questions = [{'number': i+1, 'health_card': card} for i, card in enumerate(health_cards)]
-    
-    try:
-        current_question = next(q for q in questions if q['number'] == question_number)
-    except StopIteration:
-        return redirect('survey')
 
-    # For question 14, render completion page (surveyQ14.html)
-    if question_number == 14:
+    # If no health cards in DB, show an error page instead of looping redirects
+    if not health_cards.exists():
+        return render(request, 'no_health_cards.html')
+
+    total_questions = health_cards.count()
+
+    if question_number < 1 or question_number > total_questions:
+        # Instead of redirecting infinitely, show first question or an error
+        return redirect('survey_question', question_number=1)
+
+    questions = [{'number': i+1, 'health_card': card} for i, card in enumerate(health_cards)]
+    current_question = questions[question_number - 1]
+
+    # For last question, render completion page
+    if question_number == total_questions:
         template_name = 'surveyQ14.html'
         context = {
             'current_question': current_question,
             'question_number': question_number,
-            'total_questions': 14
+            'total_questions': total_questions
         }
         return render(request, template_name, context)
 
-    # Handle form submission for questions 1-14
+    # Handle form submission
     if request.method == 'POST':
         vote_value = request.POST.get('vote_value')
         vote_comment = request.POST.get('vote_comment')
@@ -41,14 +43,13 @@ def survey_question(request, question_number):
                 health_card_id=health_card_id,
                 user_id=user_id
             )
-        # Redirect to next question
         return redirect('survey_question', question_number=question_number + 1)
 
-    # Render question template for questions.
+    # Render question template
     template_name = f'surveyQ{question_number}.html'
     context = {
         'current_question': current_question,
         'question_number': question_number,
-        'total_questions': 14
+        'total_questions': total_questions
     }
     return render(request, template_name, context)
