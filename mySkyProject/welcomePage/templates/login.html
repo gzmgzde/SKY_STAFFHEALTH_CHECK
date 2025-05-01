@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SKYvibe</title>
+    <title>SKYvibe - Login </title>
     {% load static %} <!-- Load the static tag -->
     <link rel="stylesheet" href="{% static 'welcomePage/css/homePage_css.css' %}">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
@@ -37,6 +37,7 @@
                 <form id="loginForm" action="" method="post">
                     {% csrf_token %}
 
+                    <!-- Login Errors -->
                     <br>
                     <div class="form-errors">
                         {% if form.non_field_errors %}
@@ -55,6 +56,7 @@
                         {% endfor %}
                     </div>
 
+                    <!-- Login Inputs -->
                     <div class="login-inputs">
                         <div class="form-group">
                             {{ form.username }}
@@ -62,18 +64,16 @@
 
                         <div class="form-group">
                                 {{ form.password }}
-                                
-                      
+                            <!-- Password toggle icon - user can see their password -->
                             <img src="{% static 'welcomePage/images/eye.png' %}" class="toggle-password" style="cursor: pointer;" 
                                     alt="Toggle Password Visibility">
                         </div>
 
                     </div>
                     <br>
-                    <!-- Remember me and forgot password -->
+                    <!-- Remember me and forgot password buttons-->
                     <label><input type="checkbox" name="remember_me" id="checkbox"> Remember Me</label>
 
-                    
                     <a href="{% url 'forgot_password' %} " class="forgot-password">Forgot Password?</a>
 
 

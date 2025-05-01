@@ -307,7 +307,7 @@ font-size: 16px;
 .password-container input[type="password"],
 .password-container input[type="text"] {
     width: 100%;
-    padding: 10px 40px 10px 10px; /* Add padding on right for eye icon */
+    padding: 10px 40px 10px 10px; 
     border: 2px solid rgba(255, 255, 255, 0.5);
     border-radius: 25px;
     background: transparent;
@@ -328,7 +328,7 @@ font-size: 16px;
     width: 20px;
     height: 20px;
     cursor: pointer;
-    opacity: 0.7; /* Matches previous rgba(255, 255, 255, 0.7) */
+    opacity: 0.7; 
     transition: opacity 0.3s;
 }
 
@@ -347,7 +347,7 @@ font-size: 16px;
 
 .name-container {
     display: flex;
-    gap: 10px; /* Add spacing between the inputs */
+    gap: 10px; 
 }
 
 .name-container input {
@@ -360,114 +360,42 @@ font-size: 16px;
     font-size: 14px;
 }
 
-.department-container {
-    display: flex;
-    gap: 10px; /* Add spacing between the inputs */
-}
-
-.department-container input {
-    flex: 1; /* Make both inputs take equal width */
-    padding: 10px;
-    border: 2px solid rgba(255, 255, 255, 0.5);
-    border-radius: 25px;
-    background: transparent;
-    color: white;
-    font-size: 14px;
-}
-.department-container select {
-    flex: 1; /* Match the width of name-container inputs */
-    padding: 10px; /* Match padding of name-container inputs */
-    border: 2px solid rgba(255, 255, 255, 0.5); /* Match border */
-    border-radius: 25px; /* Match border-radius */
-    background: transparent; /* Match background */
-    color: white; /* Match text color */
-    font-size: 14px; /* Match font size */
-    height: 47px;
-    appearance: none; /* Remove default browser styling for dropdowns */
-    -webkit-appearance: none; /* For Safari */
-    -moz-appearance: none; /* For Firefox */
-    background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg xmlns%3D%22http%3A//www.w3.org/2000/svg%22 viewBox%3D%220 0 4 5%22%3E%3Cpath fill%3D%22%23ffffff%22 d%3D%22M2 0L0 2h4z%22/%3E%3C/svg%3E');
-    background-repeat: no-repeat;
-    background-position: right 10px center;
-    background-size: 14px;
-    
-}
-
-.department-container select option {
-    background: #1C29D9; /* Dropdown background color */
-    color: white; /* Dropdown text color */
-}
-
-/* Container for Engineer and Management buttons */
-.button-container {
-    display: flex; /* Place buttons side by side */
-    justify-content: space-between; /* Add space between the buttons */
-    align-items: center; /* Align buttons vertically */
-    margin-bottom: 20px; /* Add spacing below the buttons */
-}
-
-/* Common styles for both buttons */
-.button-container .engineer-btn,
-.button-container .management-btn {
-    width: 100%;
-    max-width: 200px;
-    padding: 10px;
-    border-radius: 25px;
-    font-weight: bold;
-    font-size: 20px;
-    cursor: pointer;
-    text-align: center;
-    margin: 5px auto;
-    display: block;
-    background: transparent;
-    color: white;
-    border: 2px solid white; 
-}
-
-.button-container .engineer-btn.active,
-.button-container .management-btn.active {
-    color: #1C29D9;
-    background: rgba(255, 255, 255, 0.574);
-}
-
-/* Container for departments and teams */
 .department-team-container {
-    display: flex; /* Use flexbox for side-by-side layout */
-    gap: 20px; /* Add space between the fields */
-    justify-content: space-between; /* Distribute space evenly */
-    margin-bottom: 20px; /* Add spacing below the container */
+    display: flex; 
+    gap: 20px; 
+    justify-content: space-between; 
+    margin-bottom: 20px; 
 }
 
-/* Ensure both fields take equal width */
+
 .department-team-container .form-group {
-    flex: 1; /* Make both fields take equal space */
+    flex: 1; 
 }
 
-/* Optional: Adjust input and select field styling */
+
 .department-team-container select {
-    width: 100%; /* Ensure the dropdowns take full width */
-    padding: 10px; /* Add padding for better appearance */
-    border: 1px solid #ccc; /* Add a border */
-    border-radius: 5px; /* Rounded corners */
-    font-size: 16px; /* Font size */
+    width: 100%; 
+    padding: 10px; 
+    border: 1px solid #ccc; 
+    border-radius: 5px; 
+    font-size: 16px; 
 }
 
-/* Style for the terms and conditions container */
+
 .terms-container {
-    display: flex; /* Use flexbox for side-by-side layout */
-    align-items: center; /* Align checkbox and text vertically */
-    gap: 10px; /* Add spacing between the checkbox and text */
-    margin-bottom: 20px; /* Add spacing below the container */
-    font-size: 14px; /* Adjust font size for the text */
-    color: white; /* Match text color with the form */
+    display: flex; 
+    align-items: center; 
+    gap: 10px; 
+    margin-bottom: 20px; 
+    font-size: 14px; 
+    color: white; 
 }
 
-/* Style for the checkbox */
 .terms-container input[type="checkbox"] {
     width: 20px;
     height: 20px;
     cursor: pointer;
-    accent-color: #1C29D9; /* Set the checkbox color */
+    accent-color: #1C29D9; 
 }
 .login-card .terms-container input[type="checkbox"] {
     margin-left: -200px;

@@ -31,14 +31,15 @@
         </div>
 
     {% block content %}
-      <!-- Register form - user clicks "register") -->
+      <!-- Register form - user clicks "register" -->
       <div class="register-card" id="registerForm">
         <br>
         <a class="back-login" href="{% url 'login' %}" style="font-size: large;"> &#60; Back</a>
 
         <form id="registerform" action="" method="post" >
         {% csrf_token %}
-        
+
+        <!-- Register Errors -->
         <div class="form-errors">
             {% if form.non_field_errors %}
                 <ul>
@@ -56,7 +57,7 @@
             {% endfor %}
         </div>
 
-         <!-- Render each form field with custom styling -->
+         <!-- Register Form -->
          <div class="form-group">
             {{ form.email }}
         </div>
@@ -81,6 +82,7 @@
         </div>
         <div class="form-group">
             {{ form.password1 }}
+            <!-- Password visibility - toggle  -->
             <img src="{% static 'welcomePage/images/eye.png' %}" class="toggle-password" alt="Toggle Password Visibility">
         </div>
         <p class="password-requirements">
