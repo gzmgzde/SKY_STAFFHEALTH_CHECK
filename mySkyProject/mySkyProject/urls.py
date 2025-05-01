@@ -30,7 +30,7 @@ urlpatterns = [
     path('dashboard/', include('dashboardPage.urls')),
 
 
-    #please dont delete this. 
+    #please dont delete this.
     path('login/', auth_views.LoginView.as_view(template_name='welcomePage/login.html'), name='login'),
      path('forgot_password/', auth_views.PasswordChangeView.as_view(template_name='welcomePage/forgot_password.html'), name='forgot_password'),
      path('password_reset/', auth_views.PasswordChangeDoneView.as_view(template_name='welcomePage/password_reset.html'), name='password_reset'),

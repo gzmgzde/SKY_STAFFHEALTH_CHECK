@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect
-from .models import Vote, HealthCard, User
+from .models import Vote, HealthCard
+
 
 def survey(request):
     return redirect('survey_question', question_number=1)
