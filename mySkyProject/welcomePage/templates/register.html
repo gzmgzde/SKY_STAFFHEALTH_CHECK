@@ -37,6 +37,7 @@
         <a class="back-login" href="{% url 'login' %}" style="font-size: large;"> &#60; Back</a>
 
         <form id="registerform" action="" method="post" >
+        <!-- CSRF token for security -->
         {% csrf_token %}
 
         <!-- Register Errors -->
