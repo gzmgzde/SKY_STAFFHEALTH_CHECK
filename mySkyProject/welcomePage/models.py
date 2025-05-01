@@ -46,6 +46,7 @@ class Team(models.Model):
     def __str__(self):
         return self.team_name
 
+# This is the model for creating an admin etc. 
 class UserManager(BaseUserManager):
     def create_user(self, email, password=None, **extra_fields):
         if not email:

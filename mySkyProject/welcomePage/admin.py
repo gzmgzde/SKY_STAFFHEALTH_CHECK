@@ -3,6 +3,7 @@ from .forms import UserRegisterForm
 from .models import Administrator, Department,  Team,  User
 
 # Register your models here.
+
 @admin.register(Administrator)
 class AdministratorAdmin(admin.ModelAdmin):
     list_display = ('admin_id', 'email')
