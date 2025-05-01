@@ -1,6 +1,9 @@
 from django.db import models
 from django.contrib.auth.models import AbstractBaseUser, BaseUserManager
 
+# Create your models here.
+
+# This is the model for the Administrator table
 class Administrator(models.Model):
     admin_id = models.TextField(db_column='Admin_Id', primary_key=True, blank=True, null=False)
     email = models.TextField(db_column='Email', unique=True, blank=True, null=True)
@@ -11,10 +14,10 @@ class Administrator(models.Model):
         db_table = 'Administrator'
 
 
+# This is the model for the Department table
 class Department(models.Model):
     department_id = models.TextField(db_column='Department_Id', primary_key=True, blank=True, null=False)
     department_name = models.TextField(db_column='Department_Name')
-    # Removed circular foreign keys to User and Team
 
     class Meta:
         managed = True
@@ -23,7 +26,7 @@ class Department(models.Model):
     def __str__(self):
         return self.department_name
 
-
+# This is the model for the Team table
 class Team(models.Model):
     team_id = models.TextField(db_column='Team_Id', primary_key=True, blank=True, null=False)
     team_name = models.TextField(db_column='Team_Name')
@@ -31,8 +34,8 @@ class Team(models.Model):
     Department, 
     on_delete=models.CASCADE, 
     db_column='Depart_Id',
-    blank=True,  # Make this consistent with database
-    null= True,   # Make this consistent with database
+    blank=True, 
+    null= True,   
     related_name='teams'
 )
 
@@ -42,7 +45,6 @@ class Team(models.Model):
 
     def __str__(self):
         return self.team_name
-
 
 class UserManager(BaseUserManager):
     def create_user(self, email, password=None, **extra_fields):
@@ -65,6 +67,7 @@ class UserManager(BaseUserManager):
         return self.create_user(email, password, **extra_fields)
 
 
+# This is the model for the User table
 class User(AbstractBaseUser):
     user_id = models.TextField(db_column='User_Id', primary_key=True, blank=True, null=False)
     name = models.TextField(db_column='Name')
