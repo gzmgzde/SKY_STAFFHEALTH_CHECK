@@ -18,7 +18,7 @@ def survey_question(request, question_number):
     except StopIteration:
         return redirect('survey')
 
-    # For question 14, render completion page (surveyQ14.html) without form processing
+    # For question 14, render completion page (surveyQ14.html)
     if question_number == 14:
         template_name = 'surveyQ14.html'
         context = {
@@ -28,7 +28,7 @@ def survey_question(request, question_number):
         }
         return render(request, template_name, context)
 
-    # Handle form submission for questions 1-13
+    # Handle form submission for questions 1-14
     if request.method == 'POST':
         vote_value = request.POST.get('vote_value')
         vote_comment = request.POST.get('vote_comment')
@@ -41,10 +41,10 @@ def survey_question(request, question_number):
                 health_card_id=health_card_id,
                 user_id=user_id
             )
-        # Redirect to next question (or question 14 for completion)
+        # Redirect to next question
         return redirect('survey_question', question_number=question_number + 1)
 
-    # Render question template for questions 1-13
+    # Render question template for questions.
     template_name = f'surveyQ{question_number}.html'
     context = {
         'current_question': current_question,
