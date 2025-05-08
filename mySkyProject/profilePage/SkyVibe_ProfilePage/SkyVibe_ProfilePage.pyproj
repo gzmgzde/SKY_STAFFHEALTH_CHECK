@@ -55,7 +55,7 @@
     <Folder Include="SkyVibe_ProfilePage\" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="profile.html" />
+    <Content Include="app\templates\app\profile.html" />
     <Content Include="requirements.txt" />
     <Content Include="db.sqlite3" />
     <Content Include="app\static\app\content\bootstrap.css" />
@@ -87,7 +87,7 @@
     <Content Include="app\templates\app\login.html" />
     <Content Include="app\templates\app\loginpartial.html" />
     <Content Include="SkyVibe_ProfilePage\style.html" />
-    <Content Include="Profile_Stylesheet.css" />
+    <Content Include="app\static\app\content\Profile_Stylesheet.css" />
   </ItemGroup>
   <ItemGroup>
     <None Include="readme.html">

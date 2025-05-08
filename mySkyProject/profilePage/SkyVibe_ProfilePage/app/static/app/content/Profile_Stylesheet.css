@@ -1,0 +1,143 @@
+
+* {
+    margin: 0; /* Remove default margins */
+    padding: 0; /* Remove default paddings */
+    box-sizing: border-box; 
+}
+
+/* General */
+body {
+    font-family: 'Arial', sans-serif; 
+    background: linear-gradient(to bottom, #ffebf0, #ffe6e6); /* Gradient background */
+    color: #333; /* text color */
+}
+
+.container {
+    max-width: 1200px; /* width of the container */
+    margin: 0 auto; /* Center the container horizontally */
+    padding: 20px;
+    display: flex; 
+    gap: 20px; /* Add spacing between elements */
+}
+
+/* Header */
+.header {
+    display: flex; 
+    justify-content: space-between; /* Align items at the start and end */
+    align-items: center; /* Vertically center items */
+    padding: 10px 20px; /* padding inside header */
+    background-color: #ffebf0; 
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* subtle shadow */
+}
+
+.logo img {
+    width: 100px; 
+}
+
+.user-profile {
+    display: flex; 
+    align-items: center; /* Vertically center items */
+    gap: 10px; /* spacing between profile pic and username */
+}
+
+    .user-profile img {
+        width: 30px; /* pic size */
+        border-radius: 50%; /* make the pic circular */
+    }
+
+/* Profile main section*/
+.profile-section {
+    display: flex; 
+    gap: 20px; /* spacing between the profile piv and details */
+}
+
+.profile-image {
+    width: 200px; /* width of profile pic container */
+    height: 200px; 
+    background: #cb97a4; 
+    border-radius: 10px; /* round corners */
+    display: flex; 
+    flex-direction: column; /*items vertically */
+    align-items: center; /* Center items horizontally */
+    justify-content: center; /* Center items vertically */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* subtle shadow */
+}
+
+    .profile-image img {
+        width: 150px; /* Set profile image size */
+        height: 150px; 
+        border-radius: 50%; /* profile pic circular */
+        object-fit: cover; /* Ensure image fits within the container */
+    }
+
+.edit-button {
+    background-color: #007bff; /* blue background */
+    color: white; 
+    border: none; /* remove border */
+    padding: 5px 10px; /* padding inside button */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* pointer cursor change on hover */
+    margin-top: 10px; /* Add spacing above the button */
+}
+
+    .edit-button:hover {
+        background-color: #0056b3; /* Dark blue on hover */
+    }
+
+.profile-details {
+    flex: 1; /* Allow this section to take up remaining space */
+    background: #fff;
+    border-radius: 10px; /* Rounded corners */
+    padding: 20px; 
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+}
+
+    .profile-details h2 {
+        color: #333; /* text color */
+        margin-bottom: 20px; /* spacing below title */
+    }
+
+.info-section {
+    margin-bottom: 20px; /* Add spacing below each info section */
+}
+
+    .info-section h3 {
+        color: #555; /* text color */
+        border-bottom: 2px solid #ddd; /* border below subheading */
+        padding-bottom: 10px; /* space below the subheading */
+        margin-bottom: 10px; /* spacing below border */
+    }
+
+.info-row {
+    display: grid; /* grid layout */
+    grid-template-columns: repeat(2, 1fr); /* two equal columns */
+    gap: 10px; /* spacing between rows and columns */
+}
+
+.info-item {
+    background: #f9f9f9; 
+    padding: 10px; /* padding inside each item */
+    border-radius: 5px; 
+}
+
+    .info-item label {
+        font-weight: bold; 
+        color: #777; /* text color */
+        display: block; 
+        margin-bottom: 5px; /* spacing below label */
+    }
+
+    .info-item p {
+        color: #333;
+    }
+
+/* Footer Styles */
+.footer {
+    text-align: center; 
+    padding: 10px; 
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* shadow */
+    position: fixed; /* fix footer at the bottom */
+    bottom: 0; /* Position at the bottom of the viewport */
+    width: 100%; /* Full width */
+}
