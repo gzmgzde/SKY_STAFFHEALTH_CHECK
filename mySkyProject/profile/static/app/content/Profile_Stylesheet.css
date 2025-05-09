@@ -1,13 +1,12 @@
-
 * {
     margin: 0; /* Remove default margins */
     padding: 0; /* Remove default paddings */
-    box-sizing: border-box; 
+    box-sizing: border-box;
 }
 
 /* General */
 body {
-    font-family: 'Arial', sans-serif; 
+    font-family: 'Arial', sans-serif;
     background: linear-gradient(to bottom, #ffebf0, #ffe6e6); /* Gradient background */
     color: #333; /* text color */
 }
@@ -16,26 +15,26 @@ body {
     max-width: 1200px; /* width of the container */
     margin: 0 auto; /* Center the container horizontally */
     padding: 20px;
-    display: flex; 
+    display: flex;
     gap: 20px; /* Add spacing between elements */
 }
 
 /* Header */
 .header {
-    display: flex; 
+    display: flex;
     justify-content: space-between; /* Align items at the start and end */
     align-items: center; /* Vertically center items */
     padding: 10px 20px; /* padding inside header */
-    background-color: #ffebf0; 
+    background-color: #ffebf0;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* subtle shadow */
 }
 
 .logo img {
-    width: 100px; 
+    width: 100px;
 }
 
 .user-profile {
-    display: flex; 
+    display: flex;
     align-items: center; /* Vertically center items */
     gap: 10px; /* spacing between profile pic and username */
 }
@@ -45,19 +44,19 @@ body {
         border-radius: 50%; /* make the pic circular */
     }
 
-/* Profile main section*/
+/* Profile main section */
 .profile-section {
-    display: flex; 
-    gap: 20px; /* spacing between the profile piv and details */
+    display: flex;
+    gap: 20px; /* spacing between the profile pic and details */
 }
 
 .profile-image {
     width: 200px; /* width of profile pic container */
-    height: 200px; 
-    background: #cb97a4; 
+    height: 200px;
+    background: #cb97a4;
     border-radius: 10px; /* round corners */
-    display: flex; 
-    flex-direction: column; /*items vertically */
+    display: flex;
+    flex-direction: column; /* items vertically */
     align-items: center; /* Center items horizontally */
     justify-content: center; /* Center items vertically */
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* subtle shadow */
@@ -65,14 +64,14 @@ body {
 
     .profile-image img {
         width: 150px; /* Set profile image size */
-        height: 150px; 
+        height: 150px;
         border-radius: 50%; /* profile pic circular */
         object-fit: cover; /* Ensure image fits within the container */
     }
 
 .edit-button {
     background-color: #007bff; /* blue background */
-    color: white; 
+    color: white;
     border: none; /* remove border */
     padding: 5px 10px; /* padding inside button */
     border-radius: 5px; /* Rounded corners */
@@ -88,7 +87,7 @@ body {
     flex: 1; /* Allow this section to take up remaining space */
     background: #fff;
     border-radius: 10px; /* Rounded corners */
-    padding: 20px; 
+    padding: 20px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
 }
 
@@ -115,15 +114,15 @@ body {
 }
 
 .info-item {
-    background: #f9f9f9; 
+    background: #f9f9f9;
     padding: 10px; /* padding inside each item */
-    border-radius: 5px; 
+    border-radius: 5px;
 }
 
     .info-item label {
-        font-weight: bold; 
+        font-weight: bold;
         color: #777; /* text color */
-        display: block; 
+        display: block;
         margin-bottom: 5px; /* spacing below label */
     }
 
@@ -133,8 +132,8 @@ body {
 
 /* Footer Styles */
 .footer {
-    text-align: center; 
-    padding: 10px; 
+    text-align: center;
+    padding: 10px;
     background-color: #fff;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* shadow */
     position: fixed; /* fix footer at the bottom */
