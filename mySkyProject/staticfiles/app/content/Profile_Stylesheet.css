@@ -1,0 +1,183 @@
+
+* {
+    margin: 0; /* Remove default margins */
+    padding: 0; /* Remove default paddings */
+    box-sizing: border-box; 
+}
+
+body {
+    font-family: 'skyFont', sans-serif;
+    background: linear-gradient(180deg, #87CEEB 0%, #ffebf0 100%); /* Gradient background */
+    color: #333; /* text color */
+}
+
+nav {
+    position: relative;
+    padding: 0 2rem;
+}
+
+.navbar {
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    padding: 0 20px !important;
+    height: 80px !important;
+}
+
+nav .profile-pic {
+    border-radius: 50%;
+    object-fit: cover;
+    margin: 0;
+    width: 80px;
+}
+
+.fa-arrow-down {
+    margin-left: 0; /* Ensure no extra margin */
+}
+
+.navbar-left {
+    display: flex !important;
+    align-items: center !important;
+}
+
+.navbar-right {
+    display: flex !important;
+    align-items: center !important;
+    gap: 10px !important; /* Add spacing between profile pic and arrow */
+}
+
+@media (max-width: 768px) {
+    .navbar-logo img.logo {
+        height: 30px;
+        width: 30px;
+    }
+}
+
+.container {
+    max-width: 1200px; /* width of the container */
+    margin: 0 auto; /* Center the container horizontally */
+    padding: 20px;
+    display: flex; 
+    gap: 20px; /* Add spacing between elements */
+}
+
+/* Header */
+.header {
+    display: flex; 
+    justify-content: space-between; /* Align items at the start and end */
+    align-items: center; /* Vertically center items */
+    padding: 10px 20px; /* padding inside header */
+    background-color: #ffebf0; 
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* subtle shadow */
+}
+
+.logo img {
+    width: 100px; 
+}
+
+.h2 {
+    background: #f9f9f9;
+}
+
+.h3 {
+    background: #777;
+}
+
+.user-profile {
+    display: flex; 
+    align-items: center; /* Vertically center items */
+    gap: 10px; /* spacing between profile pic and username */
+}
+
+    .user-profile img {
+        width: 30px; /* pic size */
+        border-radius: 50%; /* make the pic circular */
+    }
+
+/* Profile main section*/
+.profile-section {
+    display: flex; 
+    gap: 20px; /* spacing between the profile piv and details */
+}
+
+.profile-image {
+    width: 200px; /* width of profile pic container */
+    height: 200px;
+    background:  rgba(255, 255, 255, 0.4);
+    border-radius: 10px; /* round corners */
+    display: flex;
+    flex-direction: column; /*items vertically */
+    align-items: center; /* Center items horizontally */
+    justify-content: center; /* Center items vertically */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* subtle shadow */
+}
+
+    .profile-image img {
+        width: 150px; /* Set profile image size */
+        height: 150px; 
+        border-radius: 50%; /* profile pic circular */
+        object-fit: cover; /* Ensure image fits within the container */
+    }
+
+.edit-button {
+    background-color: rgba(255, 255, 255, 0.4); /* transparent background */
+    color: white;
+    border: none; /* remove border */
+    padding: 5px 10px; /* padding inside button */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* pointer cursor change on hover */
+    margin-top: 10px; /* Add spacing above the button */
+}
+
+    .edit-button:hover {
+        background-color: #0056b3; /* Dark blue on hover */
+    }
+
+.profile-details {
+    flex: 1; /* Allow this section to take up remaining space */
+    background: rgba(255, 255, 255, 0.4);
+    border-radius: 10px; /* Rounded corners */
+    padding: 80px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+}
+
+    .profile-details h2 {
+        color: #333; /* text color */
+        margin-bottom: 20px; /* spacing below title */
+    }
+
+.info-section {
+    margin-bottom: 20px; /* Add spacing below each info section */
+}
+
+    .info-section h3 {
+        color: #fff; /* text color white */
+
+        padding-bottom: 10px; /* space below the subheading */
+        margin-bottom: 10px; /* spacing below border */
+    }
+
+.info-row {
+    display: grid; /* grid layout */
+    grid-template-columns: repeat(2, 1fr); /* two equal columns */
+    gap: 10px; /* spacing between rows and columns */
+}
+
+.info-item {
+
+    padding: 10px; /* padding inside each item */
+    border-radius: 5px;
+}
+
+    .info-item label {
+        font-weight: bold; 
+        color: #777; /* text color */
+        display: block; 
+        margin-bottom: 5px; /* spacing below label */
+    }
+
+    .info-item p {
+        color: #333;
+    }
+
+

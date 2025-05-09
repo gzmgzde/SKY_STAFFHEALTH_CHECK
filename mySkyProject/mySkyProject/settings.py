@@ -43,9 +43,8 @@ INSTALLED_APPS = [
     'surveyPage',
     'settings',
     'profile',
-    'badges',
-    'dashboardPage',
-
+    #'badge',
+    #'dashboardPage',
 ]
 
 MIDDLEWARE = [
@@ -140,7 +139,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 AUTH_USER_MODEL = 'welcomePage.User'
 
-LOGIN_REDIRECT_URL = "/dashboardPage:dashboard"
+#LOGIN_REDIRECT_URL = "/dashboardPage:dashboard"
 
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'  
 DEFAULT_FROM_EMAIL = 'skyvibe.westminster@hotmail.com'

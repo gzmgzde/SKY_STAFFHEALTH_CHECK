@@ -151,7 +151,7 @@ class UserLoginForm(AuthenticationForm):
             # Call the base class clean method to run the standard authentication logic.
             cleaned_data = super().clean()
             if not cleaned_data.get('username'):
-                raise forms.ValidationError("Email is required.")
+                raise forms.ValidationError("username is required.")
             if not cleaned_data.get('password'):
                 raise forms.ValidationError("Password is required.")
             return cleaned_data

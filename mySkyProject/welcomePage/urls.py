@@ -11,5 +11,5 @@ urlpatterns = [
     path('forgot_password/', views.forgot_password, name="welcomePage_forgot_password"),
     path('password_reset/', views.password_reset, name="welcomePage_password_reset"),
     path('register/', views.register, name="welcomePage_register"),
-    path('dashboard/', dashboard_views.dashboard, name='dashboard'),
+    #path('dashboard/', dashboard_views.dashboard, name='dashboard'),
 ]

@@ -25,9 +25,9 @@ urlpatterns = [
     path('', include('welcomePage.urls')),
     path('survey/', include('surveyPage.urls')),
     path('settings/', include('settings.urls')),
-    path('badges/', include('badges.urls')),
-    path('profile/', include('pageProfile.urls')),
-    path('dashboard/', include('dashboardPage.urls')),
+    #path('badges/', include('badges.urls')),
+    path('profile/', include('profile.urls')),
+    #path('dashboard/', include('dashboardPage.urls')),
 
 
     #please dont delete this.

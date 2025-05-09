@@ -1,0 +1,627 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <Name>mySkyProject</Name>
+    <RootNamespace>mySkyProject</RootNamespace>
+    <TestFramework>Pytest</TestFramework>
+  </PropertyGroup>
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>bf4a07d4-c793-4b1c-baf8-bd710f6f88e6</ProjectGuid>
+    <ProjectHome>.</ProjectHome>
+    <ProjectTypeGuids>{5F0BE9CA-D677-4A4D-8806-6076C0FAAD37};{349c5851-65df-11da-9384-00065b846f21};{888888a0-9f3d-457c-b088-3a5042f75d52}</ProjectTypeGuids>
+    <StartupFile>manage.py</StartupFile>
+    <SearchPath>
+    </SearchPath>
+    <WorkingDirectory>.</WorkingDirectory>
+    <WebBrowserUrl>http://localhost</WebBrowserUrl>
+    <LaunchProvider>Django launcher</LaunchProvider>
+    <DjangoSettingsModule>mySkyProject.settings</DjangoSettingsModule>
+    <OutputPath>.</OutputPath>
+    <SuppressCollectPythonCloudServiceFiles>true</SuppressCollectPythonCloudServiceFiles>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <DebugSymbols>true</DebugSymbols>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <DebugSymbols>true</DebugSymbols>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="badges\admin.py" />
+    <Compile Include="badges\apps.py" />
+    <Compile Include="badges\migrations\__init__.py" />
+    <Compile Include="badges\models.py" />
+    <Compile Include="badges\tests.py" />
+    <Compile Include="badges\urls.py" />
+    <Compile Include="badges\views.py" />
+    <Compile Include="badges\__init__.py" />
+    <Compile Include="dashboardPage\admin.py" />
+    <Compile Include="dashboardPage\migrations\__init__.py" />
+    <Compile Include="dashboardPage\models.py" />
+    <Compile Include="dashboardPage\tests.py" />
+    <Compile Include="dashboardPage\urls.py" />
+    <Compile Include="dashboardPage\views.py" />
+    <Compile Include="dashboardPage\__init__.py" />
+    <Compile Include="manage.py" />
+    <Compile Include="mySkyProject\asgi.py" />
+    <Compile Include="mySkyProject\__init__.py" />
+    <Compile Include="mySkyProject\settings.py" />
+    <Compile Include="mySkyProject\urls.py" />
+    <Compile Include="mySkyProject\wsgi.py" />
+    <Compile Include="profile\forms.py" />
+    <Compile Include="profile\migrations\__init__.py" />
+    <Compile Include="profile\models.py" />
+    <Compile Include="profile\tests.py" />
+    <Compile Include="profile\urls.py" />
+    <Compile Include="profile\views.py" />
+    <Compile Include="profile\__init__.py" />
+    <Compile Include="settings\admin.py" />
+    <Compile Include="settings\apps.py" />
+    <Compile Include="settings\migrations\__init__.py" />
+    <Compile Include="settings\models.py" />
+    <Compile Include="settings\tests.py" />
+    <Compile Include="settings\urls.py" />
+    <Compile Include="settings\views.py" />
+    <Compile Include="settings\__init__.py" />
+    <Compile Include="summary_pages\admin.py" />
+    <Compile Include="summary_pages\app.py" />
+    <Compile Include="summary_pages\auth.py" />
+    <Compile Include="summary_pages\config.py" />
+    <Compile Include="summary_pages\forms.py" />
+    <Compile Include="summary_pages\metrics.py" />
+    <Compile Include="summary_pages\models.py" />
+    <Compile Include="summary_pages\tests.py" />
+    <Compile Include="summary_pages\urls.py" />
+    <Compile Include="summary_pages\views.py" />
+    <Compile Include="summary_pages\__init__.py" />
+    <Compile Include="surveyPage\admin.py" />
+    <Compile Include="surveyPage\apps.py" />
+    <Compile Include="surveyPage\migrations\0001_initial.py" />
+    <Compile Include="surveyPage\migrations\__init__.py" />
+    <Compile Include="surveyPage\models.py" />
+    <Compile Include="surveyPage\tests.py" />
+    <Compile Include="surveyPage\urls.py" />
+    <Compile Include="surveyPage\views.py" />
+    <Compile Include="surveyPage\__init__.py" />
+    <Compile Include="testUser.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="welcomePage\admin.py" />
+    <Compile Include="welcomePage\apps.py" />
+    <Compile Include="welcomePage\forms.py" />
+    <Compile Include="welcomePage\migrations\0001_initial.py" />
+    <Compile Include="welcomePage\migrations\0002_rename_depart_team_department_remove_department_team_and_more.py" />
+    <Compile Include="welcomePage\migrations\0003_remove_user_department_remove_user_team_and_more.py" />
+    <Compile Include="welcomePage\migrations\0004_user_department_user_team_alter_team_department.py" />
+    <Compile Include="welcomePage\migrations\__init__.py" />
+    <Compile Include="welcomePage\models.py" />
+    <Compile Include="welcomePage\tests.py" />
+    <Compile Include="welcomePage\urls.py" />
+    <Compile Include="welcomePage\views.py" />
+    <Compile Include="welcomePage\__init__.py" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="badges\" />
+    <Folder Include="badges\migrations\" />
+    <Folder Include="badges\static\" />
+    <Folder Include="badges\static\badges\" />
+    <Folder Include="badges\static\badges\css\" />
+    <Folder Include="badges\static\badges\font\" />
+    <Folder Include="badges\static\badges\images\" />
+    <Folder Include="badges\static\badges\js\" />
+    <Folder Include="badges\static\css\" />
+    <Folder Include="badges\static\font\" />
+    <Folder Include="badges\static\images\" />
+    <Folder Include="badges\static\js\" />
+    <Folder Include="badges\templates\" />
+    <Folder Include="dashboardPage\" />
+    <Folder Include="dashboardPage\migrations\" />
+    <Folder Include="dashboardPage\static\" />
+    <Folder Include="dashboardPage\static\dashboardPage\" />
+    <Folder Include="dashboardPage\static\dashboardPage\images\" />
+    <Folder Include="dashboardPage\static\dashboardPage\js\" />
+    <Folder Include="dashboardPage\templates\" />
+    <Folder Include="fonts\" />
+    <Folder Include="images\" />
+    <Folder Include="mySkyProject\" />
+    <Folder Include="profile\" />
+    <Folder Include="profile\migrations\" />
+    <Folder Include="profile\migrations\__pycache__\" />
+    <Folder Include="profile\static\" />
+    <Folder Include="profile\static\app\" />
+    <Folder Include="profile\static\app\content\" />
+    <Folder Include="profile\static\app\fonts\" />
+    <Folder Include="profile\static\app\images\" />
+    <Folder Include="profile\static\app\scripts\" />
+    <Folder Include="profile\templates\" />
+    <Folder Include="profile\templates\profile\" />
+    <Folder Include="settings\" />
+    <Folder Include="settings\migrations\" />
+    <Folder Include="settings\static\" />
+    <Folder Include="settings\static\settings\" />
+    <Folder Include="settings\static\settings\css\" />
+    <Folder Include="settings\static\settings\font\" />
+    <Folder Include="settings\static\settings\images\" />
+    <Folder Include="settings\static\settings\js\" />
+    <Folder Include="settings\templates\" />
+    <Folder Include="staticfiles\" />
+    <Folder Include="staticfiles\admin\" />
+    <Folder Include="staticfiles\admin\css\" />
+    <Folder Include="staticfiles\admin\css\vendor\" />
+    <Folder Include="staticfiles\admin\css\vendor\select2\" />
+    <Folder Include="staticfiles\admin\img\" />
+    <Folder Include="staticfiles\admin\img\gis\" />
+    <Folder Include="staticfiles\admin\js\" />
+    <Folder Include="staticfiles\admin\js\admin\" />
+    <Folder Include="staticfiles\admin\js\vendor\" />
+    <Folder Include="staticfiles\admin\js\vendor\jquery\" />
+    <Folder Include="staticfiles\admin\js\vendor\select2\" />
+    <Folder Include="staticfiles\admin\js\vendor\select2\i18n\" />
+    <Folder Include="staticfiles\admin\js\vendor\xregexp\" />
+    <Folder Include="staticfiles\badges\" />
+    <Folder Include="staticfiles\badges\css\" />
+    <Folder Include="staticfiles\badges\font\" />
+    <Folder Include="staticfiles\badges\images\" />
+    <Folder Include="staticfiles\badges\js\" />
+    <Folder Include="staticfiles\css\" />
+    <Folder Include="staticfiles\dashboardPage\" />
+    <Folder Include="staticfiles\dashboardPage\images\" />
+    <Folder Include="staticfiles\dashboardPage\js\" />
+    <Folder Include="staticfiles\font\" />
+    <Folder Include="staticfiles\images\" />
+    <Folder Include="staticfiles\js\" />
+    <Folder Include="staticfiles\settings\" />
+    <Folder Include="staticfiles\settings\css\" />
+    <Folder Include="staticfiles\settings\font\" />
+    <Folder Include="staticfiles\settings\images\" />
+    <Folder Include="staticfiles\settings\js\" />
+    <Folder Include="staticfiles\surveyPage\" />
+    <Folder Include="staticfiles\surveyPage\css\" />
+    <Folder Include="staticfiles\surveyPage\font\" />
+    <Folder Include="staticfiles\surveyPage\images\" />
+    <Folder Include="staticfiles\surveyPage\js\" />
+    <Folder Include="staticfiles\welcomePage\" />
+    <Folder Include="staticfiles\welcomePage\css\" />
+    <Folder Include="staticfiles\welcomePage\fonts\" />
+    <Folder Include="staticfiles\welcomePage\images\" />
+    <Folder Include="summary_pages\" />
+    <Folder Include="summary_pages\static\" />
+    <Folder Include="summary_pages\static\css\" />
+    <Folder Include="summary_pages\static\images\" />
+    <Folder Include="summary_pages\static\images\icons\" />
+    <Folder Include="summary_pages\static\js\" />
+    <Folder Include="summary_pages\templates\" />
+    <Folder Include="summary_pages\templates\auth\" />
+    <Folder Include="surveyPage\" />
+    <Folder Include="surveyPage\migrations\" />
+    <Folder Include="surveyPage\static\" />
+    <Folder Include="surveyPage\static\surveyPage\" />
+    <Folder Include="surveyPage\static\surveyPage\css\" />
+    <Folder Include="surveyPage\static\surveyPage\font\" />
+    <Folder Include="surveyPage\static\surveyPage\images\" />
+    <Folder Include="surveyPage\static\surveyPage\js\" />
+    <Folder Include="surveyPage\templates\" />
+    <Folder Include="welcomePage\" />
+    <Folder Include="welcomePage\migrations\" />
+    <Folder Include="welcomePage\static\" />
+    <Folder Include="welcomePage\static\welcomePage\" />
+    <Folder Include="welcomePage\static\welcomePage\css\" />
+    <Folder Include="welcomePage\static\welcomePage\fonts\" />
+    <Folder Include="welcomePage\static\welcomePage\images\" />
+    <Folder Include="welcomePage\templates\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="badges\static\badges\css\badges_css.css" />
+    <Content Include="badges\static\badges\font\Sky_Text.ttf" />
+    <Content Include="badges\static\badges\images\bad-emoji.png" />
+    <Content Include="badges\static\badges\images\BadgeBronzeQ32022.png" />
+    <Content Include="badges\static\badges\images\BadgeBronzeQ32023.png" />
+    <Content Include="badges\static\badges\images\BadgeBronzeQ32024.png" />
+    <Content Include="badges\static\badges\images\BadgeDiamondQ12022.png" />
+    <Content Include="badges\static\badges\images\BadgeDiamondQ12023.png" />
+    <Content Include="badges\static\badges\images\BadgeDiamondQ12024.png" />
+    <Content Include="badges\static\badges\images\BadgeGoldQ22022.png" />
+    <Content Include="badges\static\badges\images\BadgeGoldQ22023.png" />
+    <Content Include="badges\static\badges\images\BadgeGoldQ22024.png" />
+    <Content Include="badges\static\badges\images\BadgeSilverQ12025.png" />
+    <Content Include="badges\static\badges\images\bronze_badge.png" />
+    <Content Include="badges\static\badges\images\diamond_badge.png" />
+    <Content Include="badges\static\badges\images\gold_badge.png" />
+    <Content Include="badges\static\badges\images\good-emoji.png" />
+    <Content Include="badges\static\badges\images\logo.png" />
+    <Content Include="badges\static\badges\images\neutral-emoji.png" />
+    <Content Include="badges\static\badges\images\Unknown.jpg" />
+    <Content Include="badges\static\badges\js\badges.js" />
+    <Content Include="badges\static\css\settingsandbadges_css.css" />
+    <Content Include="badges\static\font\Sky_Text.ttf" />
+    <Content Include="badges\static\images\bad-emoji.png" />
+    <Content Include="badges\static\images\bronze_badge.png" />
+    <Content Include="badges\static\images\diamond_badge.png" />
+    <Content Include="badges\static\images\gold_badge.png" />
+    <Content Include="badges\static\images\good-emoji.png" />
+    <Content Include="badges\static\images\logo.png" />
+    <Content Include="badges\static\images\neutral-emoji.png" />
+    <Content Include="badges\static\images\Unknown.jpg" />
+    <Content Include="badges\static\js\settingsandbadges_js.js" />
+    <Content Include="badges\templates\badgesPage.html" />
+    <Content Include="dashboardPage\static\dashboardPage\dashboard_css.css" />
+    <Content Include="dashboardPage\static\dashboardPage\images\card-image.png" />
+    <Content Include="dashboardPage\static\dashboardPage\images\card-image2.png" />
+    <Content Include="dashboardPage\static\dashboardPage\images\card-image3.png" />
+    <Content Include="dashboardPage\static\dashboardPage\js\dashboard_js.js" />
+    <Content Include="dashboardPage\static\dashboardPage\Sky Text.ttf" />
+    <Content Include="dashboardPage\templates\dashboardPage.html" />
+    <Content Include="fonts\Sky Text.ttf" />
+    <Content Include="images\arrow_up.png" />
+    <Content Include="images\avatar.jpg" />
+    <Content Include="images\cloud1.png" />
+    <Content Include="images\cloud2.png" />
+    <Content Include="images\cloud3.png" />
+    <Content Include="images\cloud4.png" />
+    <Content Include="images\cloud5.png" />
+    <Content Include="images\logo.png" />
+    <Content Include="images\sky.png" />
+    <Content Include="profile\migrations\__pycache__\__init__.cpython-312.pyc" />
+    <Content Include="profile\static\app\content\bootstrap.css" />
+    <Content Include="profile\static\app\content\bootstrap.min.css" />
+    <Content Include="profile\static\app\content\Profile_Stylesheet.css" />
+    <Content Include="profile\static\app\content\site.css" />
+    <Content Include="profile\static\app\fonts\Sky Text.ttf" />
+    <Content Include="profile\static\app\images\arrow_up.png" />
+    <Content Include="profile\static\app\images\cloud1.png" />
+    <Content Include="profile\static\app\images\cloud2.png" />
+    <Content Include="profile\static\app\images\cloud3.png" />
+    <Content Include="profile\static\app\images\cloud4.png" />
+    <Content Include="profile\static\app\images\cloud5.png" />
+    <Content Include="profile\static\app\images\logo.png" />
+    <Content Include="profile\static\app\images\sky.png" />
+    <None Include="profile\static\app\scripts\_references.js" />
+    <Content Include="profile\static\app\scripts\bootstrap.js" />
+    <Content Include="profile\static\app\scripts\bootstrap.min.js" />
+    <None Include="profile\static\app\scripts\jquery.validate-vsdoc.js" />
+    <None Include="profile\static\app\scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="profile\static\app\scripts\jquery-1.10.2.js" />
+    <Content Include="profile\static\app\scripts\jquery-1.10.2.min.js" />
+    <Content Include="profile\static\app\scripts\jquery-1.10.2.min.map" />
+    <Content Include="profile\static\app\scripts\jquery.validate.js" />
+    <Content Include="profile\static\app\scripts\jquery.validate.min.js" />
+    <Content Include="profile\static\app\scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="profile\static\app\scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="profile\static\app\scripts\modernizr-2.6.2.js" />
+    <Content Include="profile\static\app\scripts\respond.js" />
+    <Content Include="profile\static\app\scripts\respond.min.js" />
+    <Content Include="profile\templates\about.html" />
+    <Content Include="profile\templates\profile\profile.html" />
+    <Content Include="settings\static\settings\css\settings_css.css" />
+    <Content Include="settings\static\settings\font\Sky Text.ttf" />
+    <Content Include="settings\static\settings\images\bad-emoji.png" />
+    <Content Include="settings\static\settings\images\BadgeBronzeQ32022.png" />
+    <Content Include="settings\static\settings\images\BadgeBronzeQ32023.png" />
+    <Content Include="settings\static\settings\images\BadgeBronzeQ32024.png" />
+    <Content Include="settings\static\settings\images\BadgeDiamondQ12022.png" />
+    <Content Include="settings\static\settings\images\BadgeDiamondQ12023.png" />
+    <Content Include="settings\static\settings\images\BadgeDiamondQ12024.png" />
+    <Content Include="settings\static\settings\images\BadgeGoldQ22022.png" />
+    <Content Include="settings\static\settings\images\BadgeGoldQ22023.png" />
+    <Content Include="settings\static\settings\images\BadgeGoldQ22024.png" />
+    <Content Include="settings\static\settings\images\BadgeSilverQ12025.png" />
+    <Content Include="settings\static\settings\images\bronze_badge.png" />
+    <Content Include="settings\static\settings\images\diamond_badge.png" />
+    <Content Include="settings\static\settings\images\gold_badge.png" />
+    <Content Include="settings\static\settings\images\good-emoji.png" />
+    <Content Include="settings\static\settings\images\logo.png" />
+    <Content Include="settings\static\settings\images\neutral-emoji.png" />
+    <Content Include="settings\static\settings\images\Unknown.jpg" />
+    <Content Include="settings\static\settings\js\settings_js.js" />
+    <Content Include="settings\templates\settingPage.html" />
+    <Content Include="SKYvibe_Db.sql" />
+    <Content Include="staticfiles\admin\css\autocomplete.css" />
+    <Content Include="staticfiles\admin\css\base.css" />
+    <Content Include="staticfiles\admin\css\changelists.css" />
+    <Content Include="staticfiles\admin\css\dark_mode.css" />
+    <Content Include="staticfiles\admin\css\dashboard.css" />
+    <Content Include="staticfiles\admin\css\forms.css" />
+    <Content Include="staticfiles\admin\css\login.css" />
+    <Content Include="staticfiles\admin\css\nav_sidebar.css" />
+    <Content Include="staticfiles\admin\css\responsive.css" />
+    <Content Include="staticfiles\admin\css\responsive_rtl.css" />
+    <Content Include="staticfiles\admin\css\rtl.css" />
+    <Content Include="staticfiles\admin\css\unusable_password_field.css" />
+    <Content Include="staticfiles\admin\css\vendor\select2\LICENSE-SELECT2.md" />
+    <Content Include="staticfiles\admin\css\vendor\select2\select2.css" />
+    <Content Include="staticfiles\admin\css\vendor\select2\select2.min.css" />
+    <Content Include="staticfiles\admin\css\widgets.css" />
+    <Content Include="staticfiles\admin\img\calendar-icons.svg" />
+    <Content Include="staticfiles\admin\img\gis\move_vertex_off.svg" />
+    <Content Include="staticfiles\admin\img\gis\move_vertex_on.svg" />
+    <Content Include="staticfiles\admin\img\icon-addlink.svg" />
+    <Content Include="staticfiles\admin\img\icon-alert.svg" />
+    <Content Include="staticfiles\admin\img\icon-calendar.svg" />
+    <Content Include="staticfiles\admin\img\icon-changelink.svg" />
+    <Content Include="staticfiles\admin\img\icon-clock.svg" />
+    <Content Include="staticfiles\admin\img\icon-deletelink.svg" />
+    <Content Include="staticfiles\admin\img\icon-hidelink.svg" />
+    <Content Include="staticfiles\admin\img\icon-no.svg" />
+    <Content Include="staticfiles\admin\img\icon-unknown-alt.svg" />
+    <Content Include="staticfiles\admin\img\icon-unknown.svg" />
+    <Content Include="staticfiles\admin\img\icon-viewlink.svg" />
+    <Content Include="staticfiles\admin\img\icon-yes.svg" />
+    <Content Include="staticfiles\admin\img\inline-delete.svg" />
+    <Content Include="staticfiles\admin\img\LICENSE" />
+    <Content Include="staticfiles\admin\img\README.txt" />
+    <Content Include="staticfiles\admin\img\search.svg" />
+    <Content Include="staticfiles\admin\img\selector-icons.svg" />
+    <Content Include="staticfiles\admin\img\sorting-icons.svg" />
+    <Content Include="staticfiles\admin\img\tooltag-add.svg" />
+    <Content Include="staticfiles\admin\img\tooltag-arrowright.svg" />
+    <Content Include="staticfiles\admin\js\actions.js" />
+    <Content Include="staticfiles\admin\js\admin\DateTimeShortcuts.js" />
+    <Content Include="staticfiles\admin\js\admin\RelatedObjectLookups.js" />
+    <Content Include="staticfiles\admin\js\autocomplete.js" />
+    <Content Include="staticfiles\admin\js\calendar.js" />
+    <Content Include="staticfiles\admin\js\cancel.js" />
+    <Content Include="staticfiles\admin\js\change_form.js" />
+    <Content Include="staticfiles\admin\js\collapse.js" />
+    <Content Include="staticfiles\admin\js\core.js" />
+    <Content Include="staticfiles\admin\js\filters.js" />
+    <Content Include="staticfiles\admin\js\inlines.js" />
+    <Content Include="staticfiles\admin\js\jquery.init.js" />
+    <Content Include="staticfiles\admin\js\nav_sidebar.js" />
+    <Content Include="staticfiles\admin\js\popup_response.js" />
+    <Content Include="staticfiles\admin\js\prepopulate.js" />
+    <Content Include="staticfiles\admin\js\prepopulate_init.js" />
+    <Content Include="staticfiles\admin\js\SelectBox.js" />
+    <Content Include="staticfiles\admin\js\SelectFilter2.js" />
+    <Content Include="staticfiles\admin\js\theme.js" />
+    <Content Include="staticfiles\admin\js\unusable_password_field.js" />
+    <Content Include="staticfiles\admin\js\urlify.js" />
+    <Content Include="staticfiles\admin\js\vendor\jquery\jquery.js" />
+    <Content Include="staticfiles\admin\js\vendor\jquery\jquery.min.js" />
+    <Content Include="staticfiles\admin\js\vendor\jquery\LICENSE.txt" />
+    <Content Include="staticfiles\admin\js\vendor\select2\i18n\af.js" />
+    <Content Include="staticfiles\admin\js\vendor\select2\i18n\ar.js" />
+    <Content Include="staticfiles\admin\js\vendor\select2\i18n\az.js" />
+    <Content Include="staticfiles\admin\js\vendor\select2\i18n\bg.js" />
+    <Content Include="staticfiles\admin\js\vendor\select2\i18n\bn.js" />
+    <Content Include="staticfiles\admin\js\vendor\select2\i18n\bs.js" />
+    <Content Include="staticfiles\admin\js\vendor\select2\i18n\ca.js" />
+    <Content Include="staticfiles\admin\js\vendor\select2\i18n\cs.js" />
+    <Content Include="staticfiles\admin\js\vendor\select2\i18n\da.js" />
+    <Content Include="staticfiles\admin\js\vendor\select2\i18n\de.js" />
+    <Content Include="staticfiles\admin\js\vendor\select2\i18n\dsb.js" />
+    <Content Include="staticfiles\admin\js\vendor\select2\i18n\el.js" />
+    <Content Include="staticfiles\admin\js\vendor\select2\i18n\en.js" />
+    <Content Include="staticfiles\admin\js\vendor\select2\i18n\es.js" />
+    <Content Include="staticfiles\admin\js\vendor\select2\i18n\et.js" />
+    <Content Include="staticfiles\admin\js\vendor\select2\i18n\eu.js" />
+    <Content Include="staticfiles\admin\js\vendor\select2\i18n\fa.js" />
+    <Content Include="staticfiles\admin\js\vendor\select2\i18n\fi.js" />
+    <Content Include="staticfiles\admin\js\vendor\select2\i18n\fr.js" />
+    <Content Include="staticfiles\admin\js\vendor\select2\i18n\gl.js" />
+    <Content Include="staticfiles\admin\js\vendor\select2\i18n\he.js" />
+    <Content Include="staticfiles\admin\js\vendor\select2\i18n\hi.js" />
+    <Content Include="staticfiles\admin\js\vendor\select2\i18n\hr.js" />
+    <Content Include="staticfiles\admin\js\vendor\select2\i18n\hsb.js" />
+    <Content Include="staticfiles\admin\js\vendor\select2\i18n\hu.js" />
+    <Content Include="staticfiles\admin\js\vendor\select2\i18n\hy.js" />
+    <Content Include="staticfiles\admin\js\vendor\select2\i18n\id.js" />
+    <Content Include="staticfiles\admin\js\vendor\select2\i18n\is.js" />
+    <Content Include="staticfiles\admin\js\vendor\select2\i18n\it.js" />
+    <Content Include="staticfiles\admin\js\vendor\select2\i18n\ja.js" />
+    <Content Include="staticfiles\admin\js\vendor\select2\i18n\ka.js" />
+    <Content Include="staticfiles\admin\js\vendor\select2\i18n\km.js" />
+    <Content Include="staticfiles\admin\js\vendor\select2\i18n\ko.js" />
+    <Content Include="staticfiles\admin\js\vendor\select2\i18n\lt.js" />
+    <Content Include="staticfiles\admin\js\vendor\select2\i18n\lv.js" />
+    <Content Include="staticfiles\admin\js\vendor\select2\i18n\mk.js" />
+    <Content Include="staticfiles\admin\js\vendor\select2\i18n\ms.js" />
+    <Content Include="staticfiles\admin\js\vendor\select2\i18n\nb.js" />
+    <Content Include="staticfiles\admin\js\vendor\select2\i18n\ne.js" />
+    <Content Include="staticfiles\admin\js\vendor\select2\i18n\nl.js" />
+    <Content Include="staticfiles\admin\js\vendor\select2\i18n\pl.js" />
+    <Content Include="staticfiles\admin\js\vendor\select2\i18n\ps.js" />
+    <Content Include="staticfiles\admin\js\vendor\select2\i18n\pt-BR.js" />
+    <Content Include="staticfiles\admin\js\vendor\select2\i18n\pt.js" />
+    <Content Include="staticfiles\admin\js\vendor\select2\i18n\ro.js" />
+    <Content Include="staticfiles\admin\js\vendor\select2\i18n\ru.js" />
+    <Content Include="staticfiles\admin\js\vendor\select2\i18n\sk.js" />
+    <Content Include="staticfiles\admin\js\vendor\select2\i18n\sl.js" />
+    <Content Include="staticfiles\admin\js\vendor\select2\i18n\sq.js" />
+    <Content Include="staticfiles\admin\js\vendor\select2\i18n\sr-Cyrl.js" />
+    <Content Include="staticfiles\admin\js\vendor\select2\i18n\sr.js" />
+    <Content Include="staticfiles\admin\js\vendor\select2\i18n\sv.js" />
+    <Content Include="staticfiles\admin\js\vendor\select2\i18n\th.js" />
+    <Content Include="staticfiles\admin\js\vendor\select2\i18n\tk.js" />
+    <Content Include="staticfiles\admin\js\vendor\select2\i18n\tr.js" />
+    <Content Include="staticfiles\admin\js\vendor\select2\i18n\uk.js" />
+    <Content Include="staticfiles\admin\js\vendor\select2\i18n\vi.js" />
+    <Content Include="staticfiles\admin\js\vendor\select2\i18n\zh-CN.js" />
+    <Content Include="staticfiles\admin\js\vendor\select2\i18n\zh-TW.js" />
+    <Content Include="staticfiles\admin\js\vendor\select2\LICENSE.md" />
+    <Content Include="staticfiles\admin\js\vendor\select2\select2.full.js" />
+    <Content Include="staticfiles\admin\js\vendor\select2\select2.full.min.js" />
+    <Content Include="staticfiles\admin\js\vendor\xregexp\LICENSE.txt" />
+    <Content Include="staticfiles\admin\js\vendor\xregexp\xregexp.js" />
+    <Content Include="staticfiles\admin\js\vendor\xregexp\xregexp.min.js" />
+    <Content Include="staticfiles\badges\css\badges_css.css" />
+    <Content Include="staticfiles\badges\font\Sky_Text.ttf" />
+    <Content Include="staticfiles\badges\images\bad-emoji.png" />
+    <Content Include="staticfiles\badges\images\BadgeBronzeQ32022.png" />
+    <Content Include="staticfiles\badges\images\BadgeBronzeQ32023.png" />
+    <Content Include="staticfiles\badges\images\BadgeBronzeQ32024.png" />
+    <Content Include="staticfiles\badges\images\BadgeDiamondQ12022.png" />
+    <Content Include="staticfiles\badges\images\BadgeDiamondQ12023.png" />
+    <Content Include="staticfiles\badges\images\BadgeDiamondQ12024.png" />
+    <Content Include="staticfiles\badges\images\BadgeGoldQ22022.png" />
+    <Content Include="staticfiles\badges\images\BadgeGoldQ22023.png" />
+    <Content Include="staticfiles\badges\images\BadgeGoldQ22024.png" />
+    <Content Include="staticfiles\badges\images\BadgeSilverQ12025.png" />
+    <Content Include="staticfiles\badges\images\bronze_badge.png" />
+    <Content Include="staticfiles\badges\images\diamond_badge.png" />
+    <Content Include="staticfiles\badges\images\gold_badge.png" />
+    <Content Include="staticfiles\badges\images\good-emoji.png" />
+    <Content Include="staticfiles\badges\images\logo.png" />
+    <Content Include="staticfiles\badges\images\neutral-emoji.png" />
+    <Content Include="staticfiles\badges\images\Unknown.jpg" />
+    <Content Include="staticfiles\badges\js\badges.js" />
+    <Content Include="staticfiles\css\settingsandbadges_css.css" />
+    <Content Include="staticfiles\dashboardPage\dashboard_css.css" />
+    <Content Include="staticfiles\dashboardPage\dashboard_js.js" />
+    <Content Include="staticfiles\dashboardPage\images\card-image.png" />
+    <Content Include="staticfiles\dashboardPage\images\card-image2.png" />
+    <Content Include="staticfiles\dashboardPage\images\card-image3.png" />
+    <Content Include="staticfiles\dashboardPage\js\dashboard_js.js" />
+    <Content Include="staticfiles\dashboardPage\Sky Text.ttf" />
+    <Content Include="staticfiles\font\Sky_Text.ttf" />
+    <Content Include="staticfiles\images\bad-emoji.png" />
+    <Content Include="staticfiles\images\bronze_badge.png" />
+    <Content Include="staticfiles\images\diamond_badge.png" />
+    <Content Include="staticfiles\images\gold_badge.png" />
+    <Content Include="staticfiles\images\good-emoji.png" />
+    <Content Include="staticfiles\images\logo.png" />
+    <Content Include="staticfiles\images\neutral-emoji.png" />
+    <Content Include="staticfiles\images\Unknown.jpg" />
+    <Content Include="staticfiles\js\settingsandbadges_js.js" />
+    <Content Include="staticfiles\settings\css\settings_css.css" />
+    <Content Include="staticfiles\settings\font\Sky Text.ttf" />
+    <Content Include="staticfiles\settings\images\bad-emoji.png" />
+    <Content Include="staticfiles\settings\images\BadgeBronzeQ32022.png" />
+    <Content Include="staticfiles\settings\images\BadgeBronzeQ32023.png" />
+    <Content Include="staticfiles\settings\images\BadgeBronzeQ32024.png" />
+    <Content Include="staticfiles\settings\images\BadgeDiamondQ12022.png" />
+    <Content Include="staticfiles\settings\images\BadgeDiamondQ12023.png" />
+    <Content Include="staticfiles\settings\images\BadgeDiamondQ12024.png" />
+    <Content Include="staticfiles\settings\images\BadgeGoldQ22022.png" />
+    <Content Include="staticfiles\settings\images\BadgeGoldQ22023.png" />
+    <Content Include="staticfiles\settings\images\BadgeGoldQ22024.png" />
+    <Content Include="staticfiles\settings\images\BadgeSilverQ12025.png" />
+    <Content Include="staticfiles\settings\images\bronze_badge.png" />
+    <Content Include="staticfiles\settings\images\diamond_badge.png" />
+    <Content Include="staticfiles\settings\images\gold_badge.png" />
+    <Content Include="staticfiles\settings\images\good-emoji.png" />
+    <Content Include="staticfiles\settings\images\logo.png" />
+    <Content Include="staticfiles\settings\images\neutral-emoji.png" />
+    <Content Include="staticfiles\settings\images\Unknown.jpg" />
+    <Content Include="staticfiles\settings\js\settings_js.js" />
+    <Content Include="staticfiles\surveyPage\css\surveyPage_css.css" />
+    <Content Include="staticfiles\surveyPage\font\Sky Text.ttf" />
+    <Content Include="staticfiles\surveyPage\images\bad-emoji.png" />
+    <Content Include="staticfiles\surveyPage\images\good-emoji.png" />
+    <Content Include="staticfiles\surveyPage\images\logo.png" />
+    <Content Include="staticfiles\surveyPage\images\neutral-emoji.png" />
+    <Content Include="staticfiles\surveyPage\images\Unknown.jpg" />
+    <Content Include="staticfiles\surveyPage\js\surveyPage_js.js" />
+    <Content Include="staticfiles\welcomePage\css\homePage_css.css" />
+    <Content Include="staticfiles\welcomePage\fonts\Sky_Text.ttf" />
+    <Content Include="staticfiles\welcomePage\images\2025_SPRING.png" />
+    <Content Include="staticfiles\welcomePage\images\2025_WINTER.png" />
+    <Content Include="staticfiles\welcomePage\images\arrow_up.png" />
+    <Content Include="staticfiles\welcomePage\images\cloud1.png" />
+    <Content Include="staticfiles\welcomePage\images\cloud2.png" />
+    <Content Include="staticfiles\welcomePage\images\cloud3.png" />
+    <Content Include="staticfiles\welcomePage\images\cloud4.png" />
+    <Content Include="staticfiles\welcomePage\images\cloud5.png" />
+    <Content Include="staticfiles\welcomePage\images\eye.png" />
+    <Content Include="staticfiles\welcomePage\images\logo.png" />
+    <Content Include="staticfiles\welcomePage\images\sky.png" />
+    <Content Include="staticfiles\welcomePage\images\warning.png" />
+    <Content Include="summary_pages\dhanjo.db" />
+    <Content Include="summary_pages\README.md" />
+    <Content Include="summary_pages\requirements.txt" />
+    <Content Include="summary_pages\static\css\index.css" />
+    <Content Include="summary_pages\static\images\icons\logo.png" />
+    <Content Include="summary_pages\static\js\dashboard.js" />
+    <Content Include="summary_pages\static\js\metric-detail.js" />
+    <Content Include="summary_pages\templates\auth\index.html" />
+    <Content Include="summary_pages\templates\auth\metric-detail.html" />
+    <Content Include="surveyPage\static\surveyPage\css\surveyPage_css.css" />
+    <Content Include="surveyPage\static\surveyPage\font\Sky Text.ttf" />
+    <Content Include="surveyPage\static\surveyPage\images\bad-emoji.png" />
+    <Content Include="surveyPage\static\surveyPage\images\good-emoji.png" />
+    <Content Include="surveyPage\static\surveyPage\images\logo.png" />
+    <Content Include="surveyPage\static\surveyPage\images\neutral-emoji.png" />
+    <Content Include="surveyPage\static\surveyPage\images\Unknown.jpg" />
+    <Content Include="surveyPage\static\surveyPage\js\surveyPage_js.js" />
+    <Content Include="surveyPage\templates\surveyQ1.html" />
+    <Content Include="surveyPage\templates\surveyQ10.html" />
+    <Content Include="surveyPage\templates\surveyQ11.html" />
+    <Content Include="surveyPage\templates\surveyQ12.html" />
+    <Content Include="surveyPage\templates\surveyQ13.html" />
+    <Content Include="surveyPage\templates\surveyQ14.html" />
+    <Content Include="surveyPage\templates\surveyQ2.html" />
+    <Content Include="surveyPage\templates\surveyQ3.html" />
+    <Content Include="surveyPage\templates\surveyQ4.html" />
+    <Content Include="surveyPage\templates\surveyQ5.html" />
+    <Content Include="surveyPage\templates\surveyQ6.html" />
+    <Content Include="surveyPage\templates\surveyQ7.html" />
+    <Content Include="surveyPage\templates\surveyQ8.html" />
+    <Content Include="surveyPage\templates\surveyQ9.html" />
+    <Content Include="welcomePage\.DS_Store" />
+    <Content Include="welcomePage\static\.DS_Store" />
+    <Content Include="welcomePage\static\welcomePage\.DS_Store" />
+    <Content Include="welcomePage\static\welcomePage\css\homePage_css.css" />
+    <Content Include="welcomePage\static\welcomePage\fonts\Sky_Text.ttf" />
+    <Content Include="welcomePage\static\welcomePage\images\2025_SPRING.png" />
+    <Content Include="welcomePage\static\welcomePage\images\2025_WINTER.png" />
+    <Content Include="welcomePage\static\welcomePage\images\arrow_up.png" />
+    <Content Include="welcomePage\static\welcomePage\images\cloud1.png" />
+    <Content Include="welcomePage\static\welcomePage\images\cloud2.png" />
+    <Content Include="welcomePage\static\welcomePage\images\cloud3.png" />
+    <Content Include="welcomePage\static\welcomePage\images\cloud4.png" />
+    <Content Include="welcomePage\static\welcomePage\images\cloud5.png" />
+    <Content Include="welcomePage\static\welcomePage\images\eye.png" />
+    <Content Include="welcomePage\static\welcomePage\images\logo.png" />
+    <Content Include="welcomePage\static\welcomePage\images\sky.png" />
+    <Content Include="welcomePage\static\welcomePage\images\warning.png" />
+    <Content Include="welcomePage\templates\forgot_password.html" />
+    <Content Include="welcomePage\templates\homePage.html" />
+    <Content Include="welcomePage\templates\login.html" />
+    <Content Include="welcomePage\templates\password_reset.html" />
+    <Content Include="welcomePage\templates\register.html" />
+    <Content Include="db.sqlite3" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.Django.targets" />
+  <!-- Specify pre- and post-build commands in the BeforeBuild and 
+       AfterBuild targets below. -->
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <AutoAssignPort>True</AutoAssignPort>
+          <UseCustomServer>True</UseCustomServer>
+          <CustomServerUrl>http://localhost</CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}" User="">
+        <WebProjectProperties>
+          <StartPageUrl>
+          </StartPageUrl>
+          <StartAction>CurrentPage</StartAction>
+          <AspNetDebugging>True</AspNetDebugging>
+          <SilverlightDebugging>False</SilverlightDebugging>
+          <NativeDebugging>False</NativeDebugging>
+          <SQLDebugging>False</SQLDebugging>
+          <ExternalProgram>
+          </ExternalProgram>
+          <StartExternalURL>
+          </StartExternalURL>
+          <StartCmdLineArguments>
+          </StartCmdLineArguments>
+          <StartWorkingDirectory>
+          </StartWorkingDirectory>
+          <EnableENC>False</EnableENC>
+          <AlwaysStartWebServerOnDebug>False</AlwaysStartWebServerOnDebug>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>
