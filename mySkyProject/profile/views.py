@@ -23,5 +23,5 @@ def login_view(request):
             login(request, user)
             return redirect('profile')  # Redirect to a success page.
         else:
-            return render(request, 'welcomePage/login.html', {'error': 'Invalid email or password'})
-    return render(request, 'welcomePage/login.html')
+            return render(request, 'profile/login.html', {'error': 'Invalid email or password'})
+    return render(request, 'profile/login.html')

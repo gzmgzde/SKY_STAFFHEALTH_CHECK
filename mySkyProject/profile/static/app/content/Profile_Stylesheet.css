@@ -1,14 +1,56 @@
+
 * {
     margin: 0; /* Remove default margins */
     padding: 0; /* Remove default paddings */
     box-sizing: border-box;
 }
 
-/* General */
 body {
-    font-family: 'Arial', sans-serif;
-    background: linear-gradient(to bottom, #ffebf0, #ffe6e6); /* Gradient background */
+    font-family: 'skyFont', sans-serif;
+    background: linear-gradient(180deg, #87CEEB 0%, #ffebf0 100%); /* Gradient background */
     color: #333; /* text color */
+}
+
+nav {
+    position: relative;
+    padding: 0 2rem;
+}
+
+.navbar {
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    padding: 0 20px !important;
+    height: 80px !important;
+}
+
+nav .profile-pic {
+    border-radius: 50%;
+    object-fit: cover;
+    margin: 0;
+    width: 80px;
+}
+
+.fa-arrow-down {
+    margin-left: 0; /* Ensure no extra margin */
+}
+
+.navbar-left {
+    display: flex !important;
+    align-items: center !important;
+}
+
+.navbar-right {
+    display: flex !important;
+    align-items: center !important;
+    gap: 10px !important; /* Add spacing between profile pic and arrow */
+}
+
+@media (max-width: 768px) {
+    .navbar-logo img.logo {
+        height: 30px;
+        width: 30px;
+    }
 }
 
 .container {
@@ -33,6 +75,14 @@ body {
     width: 100px;
 }
 
+.h2 {
+    background: #f9f9f9;
+}
+
+.h3 {
+    background: #777;
+}
+
 .user-profile {
     display: flex;
     align-items: center; /* Vertically center items */
@@ -44,19 +94,19 @@ body {
         border-radius: 50%; /* make the pic circular */
     }
 
-/* Profile main section */
+/* Profile main section*/
 .profile-section {
     display: flex;
-    gap: 20px; /* spacing between the profile pic and details */
+    gap: 20px; /* spacing between the profile piv and details */
 }
 
 .profile-image {
     width: 200px; /* width of profile pic container */
     height: 200px;
-    background: #cb97a4;
+    background: rgba(255, 255, 255, 0.4);
     border-radius: 10px; /* round corners */
     display: flex;
-    flex-direction: column; /* items vertically */
+    flex-direction: column; /*items vertically */
     align-items: center; /* Center items horizontally */
     justify-content: center; /* Center items vertically */
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* subtle shadow */
@@ -70,7 +120,7 @@ body {
     }
 
 .edit-button {
-    background-color: #007bff; /* blue background */
+    background-color: rgba(255, 255, 255, 0.4); /* transparent background */
     color: white;
     border: none; /* remove border */
     padding: 5px 10px; /* padding inside button */
@@ -85,9 +135,9 @@ body {
 
 .profile-details {
     flex: 1; /* Allow this section to take up remaining space */
-    background: #fff;
+    background: rgba(255, 255, 255, 0.4);
     border-radius: 10px; /* Rounded corners */
-    padding: 20px;
+    padding: 80px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
 }
 
@@ -101,8 +151,8 @@ body {
 }
 
     .info-section h3 {
-        color: #555; /* text color */
-        border-bottom: 2px solid #ddd; /* border below subheading */
+        color: #fff; /* text color white */
+
         padding-bottom: 10px; /* space below the subheading */
         margin-bottom: 10px; /* spacing below border */
     }
@@ -114,7 +164,6 @@ body {
 }
 
 .info-item {
-    background: #f9f9f9;
     padding: 10px; /* padding inside each item */
     border-radius: 5px;
 }
@@ -129,14 +178,3 @@ body {
     .info-item p {
         color: #333;
     }
-
-/* Footer Styles */
-.footer {
-    text-align: center;
-    padding: 10px;
-    background-color: #fff;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* shadow */
-    position: fixed; /* fix footer at the bottom */
-    bottom: 0; /* Position at the bottom of the viewport */
-    width: 100%; /* Full width */
-}

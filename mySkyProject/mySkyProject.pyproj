@@ -272,6 +272,7 @@
     <Content Include="profile\static\app\content\site.css" />
     <Content Include="profile\static\app\fonts\Sky Text.ttf" />
     <Content Include="profile\static\app\images\arrow_up.png" />
+    <Content Include="profile\static\app\images\avatar.jpg" />
     <Content Include="profile\static\app\images\cloud1.png" />
     <Content Include="profile\static\app\images\cloud2.png" />
     <Content Include="profile\static\app\images\cloud3.png" />

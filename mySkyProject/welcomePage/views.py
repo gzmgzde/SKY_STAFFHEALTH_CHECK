@@ -30,7 +30,7 @@ def login_view(request):
 
         if user is not None:
             login(request, user)  # Log the user in
-            return redirect('/profile/profile.html')  # Redirect to the profile page after successful login
+            return redirect('/profile')  # Redirect to the profile page after successful login
         else:
             form.add_error(None, 'Invalid credentials')
     else:
